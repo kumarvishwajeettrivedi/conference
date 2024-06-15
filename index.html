@@ -2,67 +2,176 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computer Vision and New Technologies Conference</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'loop-scroll': 'loop-scroll 50s linear infinite',
+                    },
+                    keyframes: {
+                        'loop-scroll': {
+                            from: { transform: 'translateX(0)' },
+                            to: { transform: 'translateX(-100%)' },
+                        }
+                    }
+                },
+            },
+            plugins: [],
+        }
+    </script>
+    <script type="module">
+        import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header1">
-        <div class="container">
-            <div class="row col-md-16">
-                <div class="col-md-4">
-                    <p><strong>Submission Deadline:</strong>june 15,2024</p>
-                </div>
-                <div class="col-md-4">
-                    <p><strong>Acceptance Date:</strong>july 12,2024</p>
-                </div>
-                <div class="col-md-4">
-                    <p><strong>Conference Dates:</strong>september 10,2024</p>
-                </div>
-            </div>
+    <!-- Header -->
+    <header class="flex items-center justify-between border-b border-gray-500 pb-2 mt-2 mx-11">
+        <div>
+            <p><strong>Submission Deadline:</strong> June 15,2024</p>
+        </div>
+        <div>
+            <p><strong>Acceptance Date:</strong> July 12,2024</p>
+        </div>
+        <div>
+            <p><strong>Conference Dates:</strong> September 10,2024</p>
         </div>
     </header>
 
+    <nav class="bg-white border-gray-200">
+        <div class="flex flex-wrap items-center justify-between mx-11 p-4">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container2" style="padding-left: 100px; display: flex;">
-            <div class="logo-container">
-                <a class="navbar-brand" href="#">
-                    <img src="event-logo.png" alt="Event Logo">
-                </a>
-                <a class="navbar-brand" href="#">
-                    <img src="college-logo.png" alt="College Logo">
-                </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a href="#" class="flex items-center space-x-8 rtl:space-x-reverse">
+                <img src="img/event-logo.png" width="55" height="55" alt="Event Logo" />
+                <img src="img/college-logo.png" alt="College Logo" width="55" height="55" alt="College Logo">
+                <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+            </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"
-                style="display: flex ; justify-content: space-between; padding-left:350px;">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                    <li>
+                        <a href="#" class="block py-4 px-3 text-blue-700" aria-current="page">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html">About</a>
+                    <li>
+                        <a href="#"
+                            class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Speakers</a>
+                    <li>
+                        <a href="#"
+                            class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Committees</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Guidelines</a>
+                    <li>
+                        <a href="#"
+                            class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Speakers</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Venue</a>
+                    <li>
+                        <a href="#"
+                            class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Sponsorships</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li>
+                        <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar"
+                            class="flex items-center justify-between w-full py-4 px-1 text-gray-500 hover:bg-transparent border-0 hover:text-blue-700">Program
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Papers</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Poster</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Reviewer</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Sponsorship</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
+                                        for Authors</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
+                                        Dates</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2"
+                            class="flex items-center justify-between w-full py-4 px-1 text-gray-500 hover:bg-transparent border-0 hover:text-blue-700">Contact
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar2"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contact
+                                        Us</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">How
+                                        to Reach Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar3"
+                            class="flex items-center justify-between w-full py-4 px-1 text-gray-500 hover:bg-transparent border-0 hover:text-blue-700">Downloads
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar3"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Brochure</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</a>
                     </li>
                 </ul>
             </div>
@@ -70,228 +179,504 @@
     </nav>
 
 
-    <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="hero-image-container">
-                        <img src="hero.jpg" alt="Hero Image" class="img-fluid custom-hero-image"
-                            style="height: 650px; margin-top:10px;margin-bottom: 40px;">
-                        <div class="overlay-text">
-                            <!--<h1>allthei</h1>-->
+    <!-- Hero Section -->
+
+    <section>
+        <div class="relative h-[600px]">
+            <img class="object-cover h-[600px] w-full" src="img/hero.jpg">
+            <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <p class="text-white font-bold text-xl text-center mb-4">INTERNATIONAL CONFERENCE ON GLOBAL MENTAL
+                    HEALTH AND PUBLIC<br>HEALTH CHALLENGES & INNOVATION</p>
+                <img class="mb-4" width="200px" height="200px" src="img/college-logo.png">
+                <p class="text-white font-black text-4xl mb-4">GMHPHCI' 2022</p>
+                <p class="text-white text-lg mb-4 font-medium">25th - 27th November'2022</p>
+                <p class="text-white text-sm mb-4 font-bold">Organized By</p>
+                <p class="text-white text-xl font-extrabold">National Institute of Technology Sikkim</p>
+                <p class="text-white text-lg fonr-bold">Ravangla, Sikkim - 737139, India</p>
+            </div>
+
+
+    </section>
+
+    <!-- About Us -->
+    <section>
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">About Us</h2>
+            <div class="flex gap-14">
+                <div class="flex flex-col items-start gap-14">
+                    <p class="text-gray-700 text-justify text-lg">
+                        Welcome to the Computer Vision and New Technologies Conference. We
+                        are dedicated to fostering innovation and collaboration in the
+                        fields of computer vision and emerging technologies. Our
+                        conference brings together experts, researchers, and enthusiasts
+                        from around the world to share knowledge, exchange ideas, and
+                        explore the latest advancements.
+                    </p>
+                    <button
+                        class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition ease-in-out delay-150 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:scale-125 duration-700">Read
+                        More</button>
+                </div>
+
+
+                <img src="img/about-us-image.jpg" alt="About Us Image" height="500px" width="500px" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics -->
+    <section>
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Topics of Event</h2>
+
+            <!-- Slider -->
+            <div data-hs-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true }' class="relative">
+                <div class="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
+                    <div
+                        class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Robotics & Mechatronics</h2>
+                                    <div class="flex flex-col text-lg gap-2">
+                                        <p><b>➼</b> Robotics Control & Navigation</p>
+                                        <p><b>➼</b> Robot Perception & Sensing</p>
+                                        <p><b>➼</b> Human-Robot Interaction</p>
+                                        <p><b>➼</b> Robotics Applications & Systems</p>
+                                        <p><b>➼</b> Mechatronic System Design</p>
+                                        <p><b>➼</b> Intelligent Control Systems</p>
+                                        <p><b>➼</b> Robotic Hardware & Mechanism</p>
+
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Artificial Intelligence</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Supervised Learning</p>
+                                        <p><b>➼</b> Unsupervised Learning</p>
+                                        <p><b>➼</b> Reinforcement Learning</p>
+                                        <p><b>➼</b> Neural Networks</p>
+                                        <p><b>➼</b> Natural Language Processing (NLP)</p>
+                                        <p><b>➼</b> Text Classification</p>
+                                        <p><b>➼</b> Sentiment Analysis</p>
+                                        <p><b>➼</b> Computer Vision</p>
+                                        <p><b>➼</b> AI Ethics, Fairness & Bias</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">System Control & Optimizations</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Control Theory & Techniques</p>
+                                        <p><b>➼</b> Multi-Agent Systems & Distributed Control</p>
+                                        <p><b>➼</b> Stochastic Control & Estimation</p>
+                                        <p><b>➼</b> Optimization Algorithms and Techniques</p>
+                                        <p><b>➼</b> System Identification & Parameter Estimation</p>
+                                        <p><b>➼</b> Adaptive & Learning Control Systems</p>
+                                        <p><b>➼</b> Knowledge Base Management Systems (KBMS)</p>
+
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Expert System</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Knowledge Representation & Acquisition</p>
+                                        <p><b>➼</b> Rule-Based Systems</p>
+                                        <p><b>➼</b> Ontologies & Semantic Networks</p>
+                                        <p><b>➼</b> Inference Engines & Reasoning</p>
+                                        <p><b>➼</b> Decision Support Systems</p>
+                                        <p><b>➼</b> Bias & Fairness in Expert Systems</p>
+                                        <p><b>➼</b> Knowledge Base Management Systems (KBMS)</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Telecommunication Networks & Systems</p>
+                                        <p><b>➼</b> Internet of Things (IoT) and Smart Cities</p>
+                                        <p><b>➼</b> Cloud Computing & Virtualization</p>
+                                        <p><b>➼</b> Cybersecurity and Privacy</p>
+                                        <p><b>➼</b> Software Defined Networks</p>
+                                        <p><b>➼</b> 5G/6G</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Image Processing</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Image Enhancement</p>
+                                        <p><b>➼</b> Image Restoration</p>
+                                        <p><b>➼</b> Image Segmentation</p>
+                                        <p><b>➼</b> Feature Extraction and Representation</p>
+                                        <p><b>➼</b> Object Detection & Recognition</p>
+                                        <p><b>➼</b> Biomedical Image Analysis</p>
+                                        <p><b>➼</b> Remote Sensing Image Processing</p>
+                                        <p><b>➼</b> Real-Time Image Processing</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">AI in Control Application</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Model-Free Control Methods</p>
+                                        <p><b>➼</b> Model-Based Control with Machine Learning</p>
+                                        <p><b>➼</b> Deep Learning in Control Systems</p>
+                                        <p><b>➼</b> Machine Learning for Non-linear control</p>
+                                        <p><b>➼</b> Interpretability & Explainability in Learned Control
+                                            Systems</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="hs-carousel-slide">
+                            <div class="flex justify-start h-full bg-gray-100 gap-10">
+                                <img src="http://placehold.it/384" alt="...">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence</h2>
+                                    <div class="flex flex-col gap-2 text-lg">
+                                        <p><b>➼</b> Fuzzy Systems</p>
+                                        <p><b>➼</b> Evolutionary Algorithms</p>
+                                        <p><b>➼</b> Swarm Intelligence</p>
+                                        <p><b>➼</b> Rough Sets and Granular Computing</p>
+                                        <p><b>➼</b> Metaheuristic Optimization</p>
+                                        <p><b>➼</b> Multi-Objective Optimization</p>
+                                        <p><b>➼</b> Explainable and Interpretable Soft Computing</p>
+                                        <p><b>➼</b> Bio-Inspired Computing</p>
+                                    </div>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 " style="margin-top:130px;">
-                    <h2>About Us</h2>
-                    <p>Welcome to the Computer Vision and New Technologies Conference. We are dedicated to fostering
-                        innovation and collaboration in the fields of computer vision and emerging technologies. Our
-                        conference brings together experts, researchers, and enthusiasts from around the world to share
-                        knowledge, exchange ideas, and explore the latest advancements.
-                    </p>
-                    <button class="btn btn-primary"><a href="aboutus.html " style="z-index: 1;color: white;">Read
-                            More</a></button>
-                </div>
-                <div class="col-md-6">
-                    <img src="about-us-image.jpg" alt="About Us Image" class="shadow-image" style="margin-top:130px;">
-                </div>
+                <button type="button"
+                    class="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-s-lg">
+                    <span class="text-2xl" aria-hidden="true">
+                        <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6"></path>
+                        </svg>
+                    </span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <button type="button"
+                    class="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-e-lg">
+                    <span class="sr-only">Next</span>
+                    <span class="text-2xl" aria-hidden="true">
+                        <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </span>
+                </button>
             </div>
-        </div>
-    </section>
 
-    <section class="topics">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Topics of Event</h2>
-                    <!-- Todo: Add topics list -->
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- Chief Speakers -->
-    <section class="speakers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Chief Speakers</h2>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="speaker1.jpg" alt="Speaker 1">
-                                <h5>Speaker 1</h5>
-                                <p>LinkedIn Profile</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="speaker2.jpg" alt="Speaker 2">
-                                <h5>Speaker 2</h5>
-                                <p>LinkedIn Profile</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="speaker3.jpg" alt="Speaker 3">
-                                <h5>Speaker 3</h5>
-                                <p>LinkedIn Profile</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <img src="speaker4.jpg" alt="Speaker 4">
-                                <h5>Speaker 4</h5>
-                                <p>LinkedIn Profile</p>
-                            </div>
-                        </div>
-                    </div>
+    <section>
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Chief Speakers</h2>
 
+            <div class="grid grid-cols-3 place-content-between place-items-center gap-10">
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Committee -->
-    <section class="committee">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Committee</h2>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="card">
-                                <h5>Chief Patron</h5>
-                                <p>Name of Chief Patron</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <h5>Patron</h5>
-                                <p>Name of Patron</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <h5>Advisory Committee</h5>
-                                <p>Names of Advisory Committee</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card">
-                                <h5>Technical Team</h5>
-                                <p>Names of Technical Team</p>
-                            </div>
-                        </div>
+    <section>
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
+
+            <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/250">
+                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                        <p class="mb-4">Designation</p>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
+
         </div>
     </section>
 
     <!-- Important Dates and Schedules -->
-    <section class="dates">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Important Dates and Schedules</h2>
-                    <!-- Todo: Add dates and schedules list -->
-                </div>
-            </div>
+    <section class="mb-16">
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Important Dates and Schedules
+            </h2>
         </div>
     </section>
 
     <!-- Sponsors and Partners -->
-    <section class="sponsors">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Sponsors and Partners</h2>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="sponsor1.jpg" alt="Sponsor 1">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="sponsor2.jpg" alt="Sponsor 2">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="sponsor3.jpg" alt="Sponsor 3">
-                        </div>
-                        <div class="col-md-3">
-                            <img src="sponsor4.jpg" alt="Sponsor 4">
+    <section>
+        <div class="bg-gray-200 py-14">
+            <h2 class="font-bold text-5xl text-center mb-16">Sponsors and Partners</h2>
+            <div class="flex overflow-hidden space-x-56">
+                <div class="flex animate-loop-scroll gap-8">
+                    <img src="img/Sponsor.png" height="150" width="150">
+                    <img src="img/Sponsor1.png" height="150" width="150">
+                    <img src="img/Sponsor2.jpg" height="150" width="150">
+                    <img src="img/Sponsor3.png" height="150" width="150">
+                </div>
+
+                <div class="flex animate-loop-scroll gap-8" aria-hidden="true">
+                    <img src="img/Sponsor.png" height="150" width="150">
+                    <img src="img/Sponsor1.png" height="150" width="150">
+                    <img src="img/Sponsor2.jpg" height="150" width="150">
+                    <img src="img/Sponsor3.png" height="150" width="150">
+                </div>
+
+                <div class="flex animate-loop-scroll gap-8" aria-hidden="true">
+                    <img src="img/Sponsor.png" height="150" width="150">
+                    <img src="img/Sponsor1.png" height="150" width="150">
+                    <img src="img/Sponsor2.jpg" height="150" width="150">
+                    <img src="img/Sponsor3.png" height="150" width="150">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Us & How to Reach Us -->
+    <section class="mb-16">
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Contact Us
+            </h2>
+            <div class="grid grid-cols-3">
+                <div>
+                    <p class="text-xl font-bold">Name</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                </div>
+                <div>
+                    <p class="text-xl font-bold">Name</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                </div>
+                <div>
+                    <p class="text-xl font-bold">Name</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                </div>
+                <div>
+                    <p class="text-xl font-bold">Name</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                </div>
+                <div>
+                    <p class="text-xl font-bold">Name</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                </div>
+            </div>
+
+            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200 mt-12">How to Reach Us
+            </h2>
+            <p class="text-gray-500 mb-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quibusdam
+                deserunt in ex. Ut, aspernatur illum, officia consequatur, accusamus eius odio quo beatae distinctio
+                dolore est. Facere soluta optio laborum.</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.4866987041128!2d88.3570138982879!3d27.297952727662235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e69b043d020435%3A0x6accf5242d3a7518!2sNational%20Institute%20Of%20Technology%20Sikkim!5e0!3m2!1sen!2sin!4v1718091914332!5m2!1sen!2sin"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-96"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-700">
+        <div class="mx-auto w-full p-4 py-6 px-16">
+            <div class="flex justify-between">
+                <div>
+                    <div class="flex items-center mb-8">
+                        <img src="img/event-logo.png" class="h-8 me-3" alt="Event Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Event
+                            Name</span>
+                    </div>
+                    <p class="text-white mb-2">Organized by Indian Institute of Information Technology Ranchi</p>
+                    <p class="text-white text-lg"><b>Venue</b> - MP Hall, NIT Sikkim, Ravangla, South Sikkim – 737139,
+                        India</p>
+                    <p class="text-white font-bold text-lg mt-4">Email - <a href="#"
+                            class="font-normal">xyz@nitsikkim.ac.in</a></p>
+                </div>
+
+                <div class="flex gap-20">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Useful Links</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-1">
+                                <a href="#" class="hover:underline">Home</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="#" class="hover:underline">About Us</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="#" class="hover:underline">Call for Papers</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="#" class="hover:underline">Important Dates</a>
+                            </li>
+                        </ul>
+
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white mt-8">Social Media
+                        </h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="text-gray-400 hover:text-[#1877F2] fa-xl"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-[#1DA1F2] fa-xl"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-red-500 fa-xl"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-[#E1306c] fa-xl"><i
+                                    class="fab fa-instagram"></i></a>
                         </div>
                     </div>
+
+                    <div class="w-[500px]">
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase">Contact Us</h2>
+                        <form>
+                            <div class="mb-4">
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
+                                    email</label>
+                                <input type="email" id="email"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="xyz@gmail.com" required>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="message"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
+                                    message</label>
+                                <textarea id="message" rows="6"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Leave a comment..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                        href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                </span>
 
-
-    <section class="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Contact Us</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="mobile">Mobile</label>
-                            <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile">
-                        </div>
-                        <div class="form-group">
-                            <label for="query">Query</label>
-                            <textarea class="form-control" id="query" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="quick-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Speakers</a></li>
-                        <li><a href="#">Guidelines</a></li>
-                        <li><a href="#">Venue</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <p class="venue-information">Venue: National Institute Of Technology Sikkim, Ravangla</p>
-                    <p class="important-numbers">Important Numbers: 123-456-7980, 987-654-3210</p>
-                    <ul class="social-media">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="index.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 
 </html>
