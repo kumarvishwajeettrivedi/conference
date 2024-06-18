@@ -7,32 +7,146 @@
     <title>Computer Vision and New Technologies Conference</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'loop-scroll': 'loop-scroll 50s linear infinite',
-                    },
-                    keyframes: {
-                        'loop-scroll': {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-100%)' },
-                        }
-                    }
-                },
-            },
-            plugins: [],
-        }
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        'loop-scroll': 'loop-scroll 50s linear infinite',
+        'running-code': 'running-code 20s linear infinite',
+      },
+      keyframes: {
+        'loop-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+        'running-code': { 
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-100%)' },
+        },
+      },
+      colors: {
+        futuristic: {
+          primary: '#00FFFF',
+          secondary: '#0F0F0F',
+          accent: '#FF00FF',
+        },
+      },
+      fontSize: {
+        'xxs': '0.625rem',
+        '3xl': '1.75rem',
+      },
+      fontWeight: {
+        hairline: '100',
+        extrabold: '800',
+      },
+    },
+  },
+  plugins: [],
+};
+
+
     </script>
+       <style>
+        
+         body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5; 
+            color: #333;
+        }
+        .carousel {
+      width: 100%;
+      height: 300px;
+      background-color: #000; /* Black carousel background */
+      margin-top: 20px;
+    }
+    .text-light {
+      font-weight: lighter;
+    }
+        .background-grid {
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
+                            linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+          background-size: 50px 50px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          animation: grid-fade 10s ease-in-out infinite;
+        }
+        .code-animation {
+          font-family: 'Courier New', Courier, monospace;
+          white-space: pre;
+          overflow: hidden;
+          height: 100%;
+          color: rgba(255, 255, 255, 0.8);
+          animation: running-code 20s linear infinite;
+          display: flex;
+          flex-direction: column;
+          gap: 0; 
+          padding-right: 20px; 
+          box-sizing: border-box; 
+        }
+        @keyframes running-code {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(calc(-100% + 1em));
+          }
+        }
+        .custom-blur {
+          filter: blur(1.5px); 
+        }
+        .overlay-image {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 25%;
+          background: url('img/overlay.png') no-repeat center center;
+          background-size: cover;
+          opacity: 0.2; 
+          pointer-events: none; 
+        }
+        .carousel {
+            width: 100%;
+            height: 300px; 
+            background-color: black;
+            margin-top: 20px;
+        }
+        .text-light {
+            font-weight: lighter;
+        }
+        .animate-loop-scroll {
+            animation: loop-scroll 20s linear infinite;
+        }
+
+        @keyframes loop-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+      </style>
+   
     <script type="module">
         import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body>
-
+<body >
+      
     <!-- Header -->
     <header class="flex items-center justify-between border-b border-gray-500 pb-2 mt-2 mx-11">
         <div>
@@ -50,9 +164,9 @@
         <div class="flex flex-wrap items-center justify-between mx-11 p-4">
 
             <a href="#" class="flex items-center space-x-8 rtl:space-x-reverse">
-                <img src="img/event-logo.png" width="55" height="55" alt="Event Logo" />
-                <img src="img/college-logo.png" alt="College Logo" width="55" height="55" alt="College Logo">
-                <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+                <img src="img/event-logo.png" width="65" height="65" alt="Event Logo" />
+                <img src="img/college-logo.png" alt="College Logo" width="65" height="65" alt="College Logo">
+          
             </a>
 
             <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
@@ -87,37 +201,37 @@
                             </svg></button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Papers</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Poster</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Reviewer</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Sponsorship</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
                                         for Authors</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
                                         Dates</a>
                                 </li>
                             </ul>
@@ -182,28 +296,91 @@
     <!-- Hero Section -->
     <section>
         <div class="relative h-[600px]">
-            <img class="object-cover h-[600px] w-full" src="img/hero.jpg">
-            <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center">
-                <p class="text-white font-bold text-xl text-center mb-4">INTERNATIONAL CONFERENCE ON GLOBAL MENTAL
-                    HEALTH AND PUBLIC<br>HEALTH CHALLENGES & INNOVATION</p>
-                <img class="mb-4" width="200px" height="200px" src="img/college-logo.png">
-                <p class="text-white font-black text-4xl mb-4">GMHPHCI' 2022</p>
-                <p class="text-white text-lg mb-4 font-medium">25th - 27th November'2022</p>
-                <p class="text-white text-sm mb-4 font-bold">Organized By</p>
-                <p class="text-white text-xl font-extrabold">National Institute of Technology Sikkim</p>
-                <p class="text-white text-lg fonr-bold">Ravangla, Sikkim - 737139, India</p>
+          <img class="object-cover h-[600px] w-full" src="img/hero.jpg" alt="Hero Image">
+          <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <p class="text-white font-bold text-xl text-center mb-4">
+              INTERNATIONAL CONFERENCE ON COMPUTER VISION AND AI<br>TECHNOLOGY & INNOVATION
+            </p>
+            <img class="mb-4" width="200px" height="200px" src="img/college-logo.png" alt="College Logo">
+            <p class="text-white font-black text-4xl mb-4">CONFERENCE' 2024</p>
+            <p class="text-white text-lg mb-4 font-medium">25th - 27th November'2024</p>
+            <p class="text-white text-sm mb-4 font-bold">Organized By</p>
+            <p class="text-white text-xl font-extrabold">National Institute of Technology Sikkim</p>
+            <p class="text-white text-lg font-bold">Ravangla, Sikkim - 737139, India</p>
+          </div>
+    
+          <!-- Running Code Animation with Blur -->
+          <div class="absolute left-0 top-0 h-screen w-1/4 custom-blur">
+            <div class="code-animation p-4">
+              <code>
+                import numpy as np;<br>
+                import pandas as pd;<br>
+                import tensorflow as tf;<br>
+                from sklearn.model_selection import train_test_split;<br>
+                from sklearn.metrics import accuracy_score;<br>
+                from tensorflow.keras.models import Sequential;<br>
+                from tensorflow.keras.layers import Dense, Dropout;<br>
+                from tensorflow.keras.utils import to_categorical;<br><br>
+                
+                // Load and preprocess dataset<br>
+                data = pd.read_csv('data/ai_conference_data.csv');<br>
+                X = data.drop('label', axis=1).values;<br>
+                y = data['label'].values;<br>
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42);<br>
+                y_train = to_categorical(y_train);<br>
+                y_test = to_categorical(y_test);<br><br>
+                
+                // Build the neural network model<br>
+                model = Sequential();<br>
+                model.add(Dense(64, activation='relu', input_shape=(X_train.shape[1],)));<br>
+                model.add(Dropout(0.5));<br>
+                model.add(Dense(32, activation='relu'));<br>
+                model.add(Dropout(0.5));<br>
+                model.add(Dense(y_train.shape[1], activation='softmax'));<br>
+                model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']);<br><br>
+                
+                // Train the model<br>
+                history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test));<br><br>
+                
+                // Evaluate the model<br>
+                y_pred = model.predict(X_test);<br>
+                y_pred_labels = np.argmax(y_pred, axis=1);<br>
+                y_true_labels = np.argmax(y_test, axis=1);<br>
+                accuracy = accuracy_score(y_true_labels, y_pred_labels);<br>
+                console.log(`Model accuracy: ${accuracy * 100:.2f}%`);<br><br>
+                
+                // Function to make predictions<br>
+                function makePrediction(inputData) {<br>
+                  inputData = np.array(inputData).reshape(1, -1);<br>
+                  const prediction = model.predict(inputData);<br>
+                  const predictedClass = np.argmax(prediction, axis=1);<br>
+                  return predictedClass;<br>
+                }<br><br>
+                
+                // Example prediction<br>
+                const sampleData = X_test[0];<br>
+                const prediction = makePrediction(sampleData);<br>
+                console.log(`Predicted class for sample data: ${prediction[0]}`);<br>
+                // More AI and ML code snippets can be added here<br>
+              </code>
             </div>
-
-
-    </section>
+          </div>
+    
+          
+      </section>
+   
+    
+    
 
     <!-- About Us -->
-    <section>
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">About Us</h2>
+    <section class="mt-10">
+        <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Us</h2>
+    
+            <!-- About Us Content -->
             <div class="flex gap-14">
-                <div class="flex flex-col items-start gap-14">
+                <div class="flex flex-col items-start gap-6">
                     <p class="text-gray-700 text-justify text-lg">
                         Welcome to the Computer Vision and New Technologies Conference. We
                         are dedicated to fostering innovation and collaboration in the
@@ -212,21 +389,123 @@
                         from around the world to share knowledge, exchange ideas, and
                         explore the latest advancements.
                     </p>
+                    <!-- Read More Button (Toggleable) -->
                     <button
-                        class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition ease-in-out delay-150 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:scale-125 duration-700">Read
-                        More</button>
+                        class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition ease-in-out delay-150 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:scale-125 duration-700"
+                        onclick="toggleContent('aboutUsContent')">Read More</button>
+    
+                    <!-- Expandable Content -->
+                    <div id="aboutUsContent" class="hidden mt-4">
+                        <p class="text-gray-700 text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                            quis lorem ut libero malesuada feugiat. Vivamus magna justo,
+                            lacinia eget consectetur sed, convallis at tellus. Curabitur non
+                            nulla sit amet nisl tempus convallis quis ac lectus. Cras
+                            ultricies ligula sed magna dictum porta.
+                        </p>
+                        <p class="text-gray-700 text-justify">
+                            Phasellus eget velit at justo mollis elementum. Nulla quis lorem
+                            ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Curabitur aliquet quam id dui
+                            posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
+                            porttitor accumsan tincidunt. Vivamus suscipit tortor eget
+                            felis porttitor volutpat.
+                        </p>
+                    </div>
                 </div>
-
-
+    
+                <!-- About Us Image -->
                 <img src="img/about-us-image.jpg" alt="About Us Image" height="500px" width="500px" />
             </div>
         </div>
+    
+        <!-- About Sikkim Section -->
+        <div class="container mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Sikkim</h2>
+            <div class="flex gap-14">
+                <div class="flex flex-col items-start gap-6">
+                    <p class="text-gray-700 text-justify text-lg">
+                        Discover the natural beauty and cultural richness of Sikkim. Nestled
+                        in the Himalayas, Sikkim offers breathtaking landscapes, vibrant
+                        festivals, and warm hospitality. Explore its serene monasteries,
+                        lush valleys, and adventure trails that make it a paradise for
+                        travelers and nature enthusiasts.
+                    </p>
+                    <!-- Read More Button (Toggleable) -->
+                    <button
+                        class="px-3 py-2 rounded text-white border-4 border-green-400 shadow-xl shadow-green-400/50 transition ease-in-out delay-150 bg-green-400 hover:text-green-500 hover:bg-transparent hover:scale-125 duration-700"
+                        onclick="toggleContent('aboutSikkimContent')">Read More</button>
+    
+                    <!-- Expandable Content -->
+                    <div id="aboutSikkimContent" class="hidden mt-4">
+                        <p class="text-gray-700 text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                            quis lorem ut libero malesuada feugiat. Vivamus magna justo,
+                            lacinia eget consectetur sed, convallis at tellus. Curabitur non
+                            nulla sit amet nisl tempus convallis quis ac lectus. Cras
+                            ultricies ligula sed magna dictum porta.
+                        </p>
+                        <p class="text-gray-700 text-justify">
+                            Phasellus eget velit at justo mollis elementum. Nulla quis lorem
+                            ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Curabitur aliquet quam id dui
+                            posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
+                            porttitor accumsan tincidunt. Vivamus suscipit tortor eget
+                            felis porttitor volutpat.
+                        </p>
+                    </div>
+                </div>
+                <img src="img/images.jpg" alt="About Us Image" height="400px" width="500px" />
+              
+            </div>
+        </div>
+    
+        <!-- About College Section -->
+        <div class="container mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About College</h2>
+            <div class="flex gap-14">
+                <div class="flex flex-col items-start gap-6">
+                    <p class="text-gray-700 text-justify text-lg">
+                        Learn about the esteemed National Institute of Technology Sikkim.
+                        Established to empower students with knowledge and skills, the
+                        institute offers cutting-edge education in engineering, technology,
+                        and management. Join a community dedicated to academic excellence
+                        and innovation.
+                    </p>
+                    <!-- Read More Button (Toggleable) -->
+                    <button
+                        class="px-3 py-2 rounded text-white border-4 border-purple-400 shadow-xl shadow-purple-400/50 transition ease-in-out delay-150 bg-purple-400 hover:text-purple-500 hover:bg-transparent hover:scale-125 duration-700"
+                        onclick="toggleContent('aboutCollegeContent')">Read More</button>
+    
+                    <!-- Expandable Content -->
+                    <div id="aboutCollegeContent" class="hidden mt-4">
+                        <p class="text-gray-700 text-justify">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                            quis lorem ut libero malesuada feugiat. Vivamus magna justo,
+                            lacinia eget consectetur sed, convallis at tellus. Curabitur non
+                            nulla sit amet nisl tempus convallis quis ac lectus. Cras
+                            ultricies ligula sed magna dictum porta.
+                        </p>
+                        <p class="text-gray-700 text-justify">
+                            Phasellus eget velit at justo mollis elementum. Nulla quis lorem
+                            ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Curabitur aliquet quam id dui
+                            posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
+                            porttitor accumsan tincidunt. Vivamus suscipit tortor eget
+                            felis porttitor volutpat.
+                        </p>
+                    </div>
+                </div>
+                <img src="img/nitsikkim.jpg" alt="About Us Image" height="500px" width="500px" />
+            </div>
+        </div>
     </section>
+    
 
     <!-- Topics -->
     <section>
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Topics of Event</h2>
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Topics of Event</h2>
 
             <!-- Slider -->
             <div data-hs-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true }' class="relative">
@@ -309,8 +588,7 @@
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
                                 <img src="http://placehold.it/384" alt="...">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology
-                                    </h2>
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology</h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Telecommunication Networks & Systems</p>
                                         <p><b>➼</b> Internet of Things (IoT) and Smart Cities</p>
@@ -360,8 +638,7 @@
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
                                 <img src="http://placehold.it/384" alt="...">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence
-                                    </h2>
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence</h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Fuzzy Systems</p>
                                         <p><b>➼</b> Evolutionary Algorithms</p>
@@ -408,7 +685,7 @@
     <!-- Chief Speakers -->
     <section>
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Chief Speakers</h2>
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Chief Speakers</h2>
 
             <div class="grid grid-cols-3 place-content-between place-items-center gap-10">
                 <div class="text-center">
@@ -464,10 +741,10 @@
         </div>
     </section>
 
-    <!-- Committee -->
-    <section>
+     <!-- Committee -->
+     <section>
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
 
             <div id="default-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
@@ -789,15 +1066,17 @@
     <!-- Important Dates and Schedules -->
     <section class="mb-16">
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Important Dates and Schedules
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Important Dates and Schedules
             </h2>
         </div>
     </section>
 
+    
+
     <!-- Sponsors and Partners -->
     <section>
         <div class="bg-gray-200 py-14">
-            <h2 class="font-bold text-5xl text-center mb-16">Sponsors and Partners</h2>
+            <h2 class="font-medium text-5xl text-center mb-16">Sponsors and Partners</h2>
             <div class="flex overflow-hidden space-x-56">
                 <div class="flex animate-loop-scroll gap-8">
                     <img src="img/Sponsor.png" height="150" width="150">
@@ -828,9 +1107,9 @@
     <!-- Contact Us & How to Reach Us -->
     <section class="mb-16">
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Contact Us
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Contact Us
             </h2>
-            <div class="grid grid-cols-3">
+            <div class="grid grid-cols-3 ">
                 <div>
                     <p class="text-xl font-bold">Name</p>
                     <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
@@ -846,19 +1125,11 @@
                     <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
                     <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
                 </div>
-                <div>
-                    <p class="text-xl font-bold">Name</p>
-                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
-                </div>
-                <div>
-                    <p class="text-xl font-bold">Name</p>
-                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
-                </div>
+               
+              
             </div>
 
-            <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200 mt-12">How to Reach Us
+            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200 mt-12">How to Reach Us
             </h2>
             <p class="text-gray-500 mb-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quibusdam
                 deserunt in ex. Ut, aspernatur illum, officia consequatur, accusamus eius odio quo beatae distinctio
@@ -955,7 +1226,14 @@
     </footer>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js">
+    
+    function toggleContent(id) {
+        const element = document.getElementById(id);
+        element.classList.toggle('hidden');
+    }
+
+    </script>
 </body>
 
 </html>
