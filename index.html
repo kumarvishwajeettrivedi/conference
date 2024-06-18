@@ -87,37 +87,37 @@
                             </svg></button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Papers</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Poster</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Reviewer</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
                                         for Sponsorship</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
                                         for Authors</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
                                         Dates</a>
                                 </li>
                             </ul>
@@ -180,7 +180,6 @@
 
 
     <!-- Hero Section -->
-
     <section>
         <div class="relative h-[600px]">
             <img class="object-cover h-[600px] w-full" src="img/hero.jpg">
@@ -310,7 +309,8 @@
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
                                 <img src="http://placehold.it/384" alt="...">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology</h2>
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology
+                                    </h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Telecommunication Networks & Systems</p>
                                         <p><b>➼</b> Internet of Things (IoT) and Smart Cities</p>
@@ -360,7 +360,8 @@
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
                                 <img src="http://placehold.it/384" alt="...">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence</h2>
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence
+                                    </h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Fuzzy Systems</p>
                                         <p><b>➼</b> Evolutionary Algorithms</p>
@@ -468,40 +469,318 @@
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
             <h2 class="font-bold text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
 
-            <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
-                <div class="text-center">
-                    <img src="https://placehold.co/250">
-                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                        <p class="mb-4">Designation</p>
-                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mt-28">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://placehold.co/250">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="text-center">
-                    <img src="https://placehold.co/250">
-                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                        <p class="mb-4">Designation</p>
-                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                <!-- Slider indicators -->
+                <div class="flex bottom-5 left-1/2 space-x-3 text-white -translate-y-[29rem]">
+                    <button type="button" class="text-sm font-bold w-48 p-1 rounded-full" aria-current="true" 
+                        aria-label="Slide 1" data-carousel-slide-to="0">Patron and Convenor</button>
+                    <button type="button" class="text-sm font-bold w-28 p-1 rounded-full" aria-current="false"
+                        aria-label="Slide 2" data-carousel-slide-to="1">Advisory</button>
+                    <button type="button" class="text-sm font-bold w-40 p-1 rounded-full" aria-current="false"
+                        aria-label="Slide 3" data-carousel-slide-to="2">Technical Program</button>
+                    <button type="button" class="text-sm font-bold w-32 p-1 rounded-full" aria-current="false"
+                        aria-label="Slide 4" data-carousel-slide-to="3">Publication</button>
+                    <button type="button" class="text-sm font-bold w-48 p-1 rounded-full" aria-current="false"
+                        aria-label="Slide 5" data-carousel-slide-to="4">Sponsorship, Publicity and Social Media</button>
+                    <button type="button" class="text-sm font-bold w-28 p-1 rounded-full" aria-current="false"
+                        aria-label="Slide 6" data-carousel-slide-to="5">Logistic</button>
+                    <button type="button" class="text-sm font-bold w-36 p-1 rounded-full" aria-current="false"
+                        aria-label="Slide 7" data-carousel-slide-to="6">Technical and Website</button>
                 </div>
-                <div class="text-center">
-                    <img src="https://placehold.co/250">
-                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                        <p class="mb-4">Designation</p>
-                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img src="https://placehold.co/250">
-                    <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                        <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                        <p class="mb-4">Designation</p>
-                        <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
+
             </div>
+
+
         </div>
 
         </div>
