@@ -66,6 +66,8 @@ module.exports = {
       background-color: #000; /* Black carousel background */
       margin-top: 20px;
     }
+   
+        
     .text-light {
       font-weight: lighter;
     }
@@ -134,7 +136,7 @@ module.exports = {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(-50%);
             }
         }
       </style>
@@ -286,7 +288,7 @@ module.exports = {
     </nav>
     
     <!-- Hero Section -->
-    <section>
+    <section class="overflow-hidden">
         <div class="relative h-[600px]">
           <img class="object-cover h-[600px] w-full" src="img/hero.jpg" alt="Hero Image">
           <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
@@ -349,6 +351,12 @@ module.exports = {
                   const predictedClass = np.argmax(prediction, axis=1);<br>
                   return predictedClass;<br>
                 }<br><br>
+                // Evaluate the model<br>
+                y_pred = model.predict(X_test);<br>
+                y_pred_labels = np.argmax(y_pred, axis=1);<br>
+                y_true_labels = np.argmax(y_test, axis=1);<br>
+                accuracy = accuracy_score(y_true_labels, y_pred_labels);<br>
+                console.log(`Model accuracy: ${accuracy * 100:.2f}%`);<br><br>
                 
                 // Example prediction<br>
                 const sampleData = X_test[0];<br>
@@ -410,7 +418,10 @@ module.exports = {
                 <img src="img/about-us-image.jpg" alt="About Us Image" height="500px" width="500px" />
             </div>
         </div>
-    
+
+
+      
+      
         <!-- About Sikkim Section -->
         <div class="container mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Sikkim</h2>
@@ -488,7 +499,7 @@ module.exports = {
                         </p>
                     </div>
                 </div>
-                <img src="img/nitsikkim.jpg" alt="About Us Image" height="500px" width="500px" />
+                <img src="img/nitsikkim.jpg" alt="About Us Image" style="height: 350px; width: 500px;" />
             </div>
         </div>
     </section>
@@ -506,7 +517,7 @@ module.exports = {
                         class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/Robotics_andMechatronics.jpg" alt="Robotics_andMechatronics" style="height: 384px; width: 384px;">
                                 <span class="self-start text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Robotics & Mechatronics</h2>
                                     <div class="flex flex-col text-lg gap-2">
@@ -524,7 +535,7 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/Artificial_intelegence.jpg" alt="Artificial_intelegence" style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Artificial Intelligence</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -543,7 +554,7 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/system_controlandoptimization.jpg" alt="system_controlandoptimization" style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">System Control & Optimizations</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -561,8 +572,8 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
+                                <img src="img/expert_system.jpg" alt="..." style="height: 384px; width: 384px;">
+                                <span class="self-start text-4xl text-gray-800 transition duration-700" >
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Expert System</h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Knowledge Representation & Acquisition</p>
@@ -578,7 +589,7 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/informatin_communicationtechnology.jpg" alt="informatin_communicationtechnology" style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -594,7 +605,7 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/image_processing_example.jpg" alt="image_processing_example" style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Image Processing</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -612,7 +623,7 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/Ai_in controlapplication.jpg" alt="Ai_incontrol application" style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">AI in Control Application</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -628,7 +639,7 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="http://placehold.it/384" alt="...">
+                                <img src="img/softcomputing.jpg" alt="softcomputing "style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -782,48 +793,64 @@ module.exports = {
                             </div>
                         </div>
                     </div>
-                    <!-- Item 2 -->
+                    <!-- Advisory_committee -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
-                            <div class="text-center">
-                                <img src="https://placehold.co/250">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+                            <div class="text-center transform transition-transform duration-300 hover:scale-105">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="font-bold text-xl mb-2 pt-4">Binod Kanaujia</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                            class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <img src="https://placehold.co/250">
+                            <div class="text-center transform transition-transform duration-300 hover:scale-105">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Dinesh_Kumar_BennettUniv.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="font-bold text-xl mb-2 pt-4">Dinesh Kumar</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                            class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <img src="https://placehold.co/250">
+                            <div class="text-center transform transition-transform duration-300 hover:scale-105">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="font-bold text-xl mb-2 pt-4">Lalit Kumar Awasthi</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                            class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
-                            <div class="text-center">
-                                <img src="https://placehold.co/250">
+                            <div class="text-center transform transition-transform duration-300 hover:scale-105">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                    <p class="font-bold text-xl mb-2 pt-4">Name</p>
+                                    <p class="font-bold text-xl mb-2 pt-4">Laxmidhar Behera</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                            class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
+                            <div class="text-center transform transition-transform duration-300 hover:scale-105">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Laxmidhar Behera</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center transform transition-transform duration-300 hover:scale-105">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
+                                <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
+                                    <p class="font-bold text-xl mb-2 pt-4">Laxmidhar Behera</p>
+                                    <p class="mb-4">Designation</p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <!-- Repeat the above structure for additional images -->
                         </div>
                     </div>
-                    <!-- Item 3 -->
+                    
+                    
+                    
+                    <!-- Technical program -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
                             <div class="text-center">
@@ -1209,8 +1236,8 @@ module.exports = {
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
-                        href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+                        href="https://flowbite.com/" class="hover:underline">ThinkEl™</a>. All Rights Reserved.
                 </span>
 
             </div>
