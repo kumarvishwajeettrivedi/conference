@@ -7,126 +7,141 @@
     <title>Computer Vision and New Technologies Conference</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./src/styles.css">
 
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
-module.exports = {
-  theme: {
-    extend: {
-      animation: {
-        'loop-scroll': 'loop-scroll 50s linear infinite',
-        'running-code': 'running-code 20s linear infinite',
-      },
-      keyframes: {
-        'loop-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
-        },
-        'running-code': { 
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-100%)' },
-        },
-      },
-      colors: {
-        futuristic: {
-          primary: '#00FFFF',
-          secondary: '#0F0F0F',
-          accent: '#FF00FF',
-        },
-      },
-      fontSize: {
-        'xxs': '0.625rem',
-        '3xl': '1.75rem',
-      },
-      fontWeight: {
-        hairline: '100',
-        extrabold: '800',
-      },
-    },
-  },
-  plugins: [],
-};
+        module.exports = {
+            theme: {
+                extend: {
+                    animation: {
+                        'loop-scroll': 'loop-scroll 50s linear infinite',
+                        'running-code': 'running-code 20s linear infinite',
+                    },
+                    keyframes: {
+                        'loop-scroll': {
+                            from: { transform: 'translateX(0)' },
+                            to: { transform: 'translateX(-100%)' },
+                        },
+                        'running-code': {
+                            '0%': { transform: 'translateY(0)' },
+                            '100%': { transform: 'translateY(-100%)' },
+                        },
+                    },
+                    colors: {
+                        futuristic: {
+                            primary: '#00FFFF',
+                            secondary: '#0F0F0F',
+                            accent: '#FF00FF',
+                        },
+                    },
+                    fontSize: {
+                        'xxs': '0.625rem',
+                        '3xl': '1.75rem',
+                    },
+                    fontWeight: {
+                        hairline: '100',
+                        extrabold: '800',
+                    },
+                },
+            },
+            plugins: [],
+        };
 
 
     </script>
-       <style>
-        
-         body {
+    <style>
+        body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5; 
+            background-color: #f5f5f5;
             color: #333;
         }
-        .carousel {
-      width: 100%;
-      height: 300px;
-      background-color: #000; /* Black carousel background */
-      margin-top: 20px;
-    }
-   
-        
-    .text-light {
-      font-weight: lighter;
-    }
-        .background-grid {
-          background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
-                            linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-          background-size: 50px 50px;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-          animation: grid-fade 10s ease-in-out infinite;
+
+        body::-webkit-scrollbar {
+            display: none;
         }
-        .code-animation {
-          font-family: 'Courier New', Courier, monospace;
-          white-space: pre;
-          overflow: hidden;
-          height: 100%;
-          color: rgba(255, 255, 255, 0.8);
-          animation: running-code 20s linear infinite;
-          display: flex;
-          flex-direction: column;
-          gap: 0; 
-          padding-right: 20px; 
-          box-sizing: border-box; 
-        }
-        @keyframes running-code {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(calc(-100% + 1em));
-          }
-        }
-        .custom-blur {
-          filter: blur(1.5px); 
-        }
-        .overlay-image {
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 25%;
-          background: url('img/overlay.png') no-repeat center center;
-          background-size: cover;
-          opacity: 0.2; 
-          pointer-events: none; 
-        }
+
         .carousel {
             width: 100%;
-            height: 300px; 
-            background-color: black;
+            height: 300px;
+            background-color: #000;
+            /* Black carousel background */
             margin-top: 20px;
         }
+
+
         .text-light {
             font-weight: lighter;
         }
+
+        .background-grid {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: grid-fade 10s ease-in-out infinite;
+        }
+
+        .code-animation {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            overflow: hidden;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.8);
+            animation: running-code 20s linear infinite;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        @keyframes running-code {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(-100% + 1em));
+            }
+        }
+
+        .custom-blur {
+            filter: blur(1.5px);
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 25%;
+            background: url('img/overlay.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 300px;
+            background-color: black;
+            margin-top: 20px;
+        }
+
+        .text-light {
+            font-weight: lighter;
+        }
+
         .animate-loop-scroll {
             animation: loop-scroll 20s linear infinite;
         }
@@ -135,20 +150,129 @@ module.exports = {
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
         }
-      </style>
-   
+    </style>
+
     <script type="module">
         import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body >
-      
+<body>
+
+    <!-- Registration -->
+    <div id="default-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                    <h3 class="text-xl font-semibold text-gray-900">
+                        Registration
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        data-modal-hide="default-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5 space-y-4">
+
+                    <div>
+                        <h5 class="font-bold text-lg mb-2">Registration Fees:</h5>
+                        <table class="table-auto text-sm border-collapse border border-gray-500 w-full">
+                            <thead class="text-center text-base">
+                                <tr>
+                                    <th class="border-2 border-gray-500 py-4">Category</th>
+                                    <th class="border-2 border-gray-500 py-4">Indian delegates<br>(in Rupees)</th>
+                                    <th class="border-2 border-gray-500 py-4">Foreign delegates<br>(in USD)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border-2 border-gray-500 pl-4 py-1">Attendees</td>
+                                    <td class="border-2 border-gray-500 text-center">Rs. 3500 + 18% GST</td>
+                                    <td class="border-2 border-gray-500 text-center">$80</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-gray-500 pl-4 py-1">Student/Research Scholars</td>
+                                    <td class="border-2 border-gray-500 text-center">Rs. 7500 + 18% GST</td>
+                                    <td class="border-2 border-gray-500 text-center">$200</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-gray-500 pl-4 py-1">Faculty</td>
+                                    <td class="border-2 border-gray-500 text-center">Rs. 8500 + 18% GST</td>
+                                    <td class="border-2 border-gray-500 text-center">$250</td>
+                                </tr>
+                                <tr>
+                                    <td class="border-2 border-gray-500 pl-4 py-1">Author from Industry</td>
+                                    <td class="border-2 border-gray-500 text-center">Rs. 9500 + 18% GST</td>
+                                    <td class="border-2 border-gray-500 text-center">$300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-lg mb-2">Mode of Payment:</h5>
+                        <p class="text-sm text-gray-700 mb-2">All payments should be made through online electronic
+                            transfer in the account of conference with following detail:</p>
+                        <div class="flex justify-center">
+                            <table class="table-auto text-sm">
+                                <tbody>
+                                    <tr>
+                                        <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Beneficiary Name</td>
+                                        <td class="border-b-2 border-gray-300 py-1">Indian Institute of Information
+                                            Technology Sikkim</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Account No</td>
+                                        <td class="border-b-2 border-gray-300 py-1">11111111111</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Branch</td>
+                                        <td class="border-b-2 border-gray-300 py-1">SBI Ravangla</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">IFSC Code</td>
+                                        <td class="border-b-2 border-gray-300 py-1">SBIN0000000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">CIF No.</td>
+                                        <td class="border-b-2 border-gray-300 py-1">00000000000</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">MICR Code</td>
+                                        <td class="border-b-2 border-gray-300 py-1">000000000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Modal footer -->
+                <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <button data-modal-hide="default-modal" type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="flex items-center justify-between border-b border-gray-500 pb-2 mt-2 mx-11">
         <div>
@@ -163,12 +287,12 @@ module.exports = {
     </header>
     <nav class="bg-white border-gray-200">
         <div class="flex flex-wrap items-center justify-between mx-11 p-4">
-    
+
             <a href="#" class="flex items-center space-x-8 rtl:space-x-reverse">
                 <img src="img/event-logo.png" width="65" height="65" alt="Event Logo" />
                 <img src="img/college-logo.png" alt="College Logo" width="65" height="65">
             </a>
-    
+
             <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
@@ -207,27 +331,33 @@ module.exports = {
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call for Papers</a>
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Papers</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call for Poster</a>
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Poster</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call for Reviewer</a>
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Reviewer</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call for Sponsorship</a>
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
+                                        for Sponsorship</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines for Authors</a>
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
+                                        for Authors</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important Dates</a>
+                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
+                                        Dates</a>
                                 </li>
                             </ul>
                         </div>
@@ -248,11 +378,13 @@ module.exports = {
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contact Us</a>
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contact
+                                        Us</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">How to Reach Us</a>
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">How
+                                        to Reach Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -279,35 +411,35 @@ module.exports = {
                         </div>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block py-2 px-3 text-gray-900 font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</a>
+                        <button data-modal-target="default-modal" data-modal-toggle="default-modal"
+                            class="block py-2 px-3 text-gray-900 font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section class="overflow-hidden">
         <div class="relative h-[600px]">
-          <img class="object-cover h-[600px] w-full" src="img/hero.jpg" alt="Hero Image">
-          <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <p class="text-white font-bold text-xl text-center mb-4">
-              INTERNATIONAL CONFERENCE ON COMPUTER VISION AND AI<br>TECHNOLOGY & INNOVATION
-            </p>
-            <img class="mb-4" width="200px" height="200px" src="img/college-logo.png" alt="College Logo">
-            <p class="text-white font-black text-4xl mb-4">CONFERENCE' 2024</p>
-            <p class="text-white text-lg mb-4 font-medium">25th - 27th November'2024</p>
-            <p class="text-white text-sm mb-4 font-bold">Organized By</p>
-            <p class="text-white text-xl font-extrabold">National Institute of Technology Sikkim</p>
-            <p class="text-white text-lg font-bold">Ravangla, Sikkim - 737139, India</p>
-          </div>
-    
-          <!-- Running Code Animation with Blur -->
-          <div class="absolute left-0 top-0 h-screen w-1/4 custom-blur">
-            <div class="code-animation p-4">
-              <code>
+            <img class="object-cover h-[600px] w-full" src="img/hero.jpg" alt="Hero Image">
+            <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <p class="text-white font-bold text-3xl text-center mb-4">
+                    International Conference on Robotics, Communication and Soft Computing
+                </p>
+                <img class="mb-4" width="200px" height="200px" src="img/college-logo.png" alt="College Logo">
+                <p class="text-white font-black text-4xl mb-4">RCSC' 2024</p>
+                <p class="text-white text-lg mb-4 font-medium">January 29 – January 31’ 2025</p>
+                <p class="text-white text-sm mb-4 font-bold">Organized By</p>
+                <p class="text-white text-xl font-extrabold">National Institute of Technology Sikkim</p>
+                <p class="text-white text-lg font-bold">Ravangla, Sikkim - 737139, India</p>
+            </div>
+
+            <!-- Running Code Animation with Blur -->
+            <div class="absolute left-0 top-0 h-screen w-1/4 custom-blur">
+                <div class="code-animation p-4">
+                    <code>
                 import numpy as np;<br>
                 import pandas as pd;<br>
                 import tensorflow as tf;<br>
@@ -364,150 +496,225 @@ module.exports = {
                 console.log(`Predicted class for sample data: ${prediction[0]}`);<br>
                 // More AI and ML code snippets can be added here<br>
               </code>
+                </div>
             </div>
-          </div>
-    
-          
-      </section>
-   
-    
-    
+
+
+    </section>
+
+
+
 
     <!-- About Us -->
     <section class="mt-10">
-        <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Us</h2>
-    
-            <!-- About Us Content -->
-            <div class="flex gap-14">
-                <div class="flex flex-col items-start gap-6">
-                    <p class="text-gray-700 text-justify text-lg">
-                        Welcome to the Computer Vision and New Technologies Conference. We
-                        are dedicated to fostering innovation and collaboration in the
-                        fields of computer vision and emerging technologies. Our
-                        conference brings together experts, researchers, and enthusiasts
-                        from around the world to share knowledge, exchange ideas, and
-                        explore the latest advancements.
-                    </p>
-                    <!-- Read More Button (Toggleable) -->
-                    <button
-                        class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition ease-in-out delay-150 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:scale-125 duration-700"
-                        onclick="toggleContent('aboutUsContent')">Read More</button>
-    
-                    <!-- Expandable Content -->
-                    <div id="aboutUsContent" class="hidden mt-4">
-                        <p class="text-gray-700 text-justify">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                            quis lorem ut libero malesuada feugiat. Vivamus magna justo,
-                            lacinia eget consectetur sed, convallis at tellus. Curabitur non
-                            nulla sit amet nisl tempus convallis quis ac lectus. Cras
-                            ultricies ligula sed magna dictum porta.
+        <div class="flex mx-auto max-w-7xl gap-8">
+
+            <!-- About Event -->
+            <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl">
+                <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Us</h2>
+                <img src="img/about-us-image.jpg" alt="About Us Image" class="mb-5" />
+                <!-- About Us Content -->
+                <div class="flex gap-14">
+                    <div class="flex flex-col items-start gap-6">
+                        <p class="text-gray-700 text-justify text-lg">
+                            Welcome to the Computer Vision and New Technologies Conference. We
+                            are dedicated to fostering innovation and collaboration in the
+                            fields of computer vision and emerging technologies. Our
+                            conference brings together experts, researchers, and enthusiasts
+                            from around the world to share knowledge, exchange ideas, and
+                            explore the latest advancements.
                         </p>
-                        <p class="text-gray-700 text-justify">
-                            Phasellus eget velit at justo mollis elementum. Nulla quis lorem
-                            ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Curabitur aliquet quam id dui
-                            posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
-                            porttitor accumsan tincidunt. Vivamus suscipit tortor eget
-                            felis porttitor volutpat.
-                        </p>
+                        <!-- Read More Button (Toggleable) -->
+                        <button
+                            class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition ease-in-out delay-150 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:scale-125 duration-700"
+                            onclick="toggleContent('aboutUsContent')">Read More</button>
+
+                        <!-- Expandable Content -->
+                        <div id="aboutUsContent" class="hidden mt-4">
+                            <p class="text-gray-700 text-justify">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                quis lorem ut libero malesuada feugiat. Vivamus magna justo,
+                                lacinia eget consectetur sed, convallis at tellus. Curabitur non
+                                nulla sit amet nisl tempus convallis quis ac lectus. Cras
+                                ultricies ligula sed magna dictum porta.
+                            </p>
+                            <p class="text-gray-700 text-justify">
+                                Phasellus eget velit at justo mollis elementum. Nulla quis lorem
+                                ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Curabitur aliquet quam id dui
+                                posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
+                                porttitor accumsan tincidunt. Vivamus suscipit tortor eget
+                                felis porttitor volutpat.
+                            </p>
+                        </div>
                     </div>
                 </div>
-    
-                <!-- About Us Image -->
-                <img src="img/about-us-image.jpg" alt="About Us Image" height="500px" width="500px" />
+            </div>
+
+            <!-- Sponsor, Dates, Registration -->
+            <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-md">
+
+                <!-- Sponsor -->
+                <div>
+                    <h2 class="font-medium text-4xl border-b-1 border-gray-100">Sponsors</h2>
+                    <div class="bg-[#921b1f] h-1 max-w-[50%] mb-6"></div>
+                    <img src="img/Sponsor-Collage.png" alt="Sponsor" class="mb-6">
+                </div>
+
+                <!-- Dates -->
+                <h2 class="font-medium text-4xl border-b-1 border-gray-100">Important Dates</h2>
+                <div class="bg-[#921b1f] h-1 max-w-[75%] mb-6"></div>
+
+                <ol class="relative border-s border-gray-200">
+                    <li class="mb-10 ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-6 h-6 bg-blue-900 rounded-full -start-3 ring-8 ring-[#f5f5f5]">
+                            <svg class="w-2.5 h-2.5 text-blue-300" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </span>
+                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 ">Flowbite
+                            Application UI v2.0.0
+                        </h3>
+                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+
+                            pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce
+                            & Marketing pages.</p>
+                    </li>
+                    <li class="mb-10 ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-6 h-6 bg-blue-900 rounded-full -start-3 ring-8 ring-[#f5f5f5]">
+                            <svg class="w-2.5 h-2.5 text-blue-300" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </span>
+                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Flowbite Figma v1.3.0</h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and
+                            components are first designed in Figma and we keep a parity between the two versions even as
+                            we update the project.</p>
+                    </li>
+                    <li class="ms-6">
+                        <span
+                            class="absolute flex items-center justify-center w-6 h-6 bg-blue-900 rounded-full -start-3 ring-8 ring-[#f5f5f5]">
+                            <svg class="w-2.5 h-2.5 text-blue-300" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </span>
+                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Flowbite Library v1.2.2
+                        </h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web
+                            components and interactive elements built on top of Tailwind CSS.</p>
+                    </li>
+                </ol>
+
+
+
             </div>
         </div>
 
 
-      
-      
-        <!-- About Sikkim Section -->
-        <div class="container mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Sikkim</h2>
-            <div class="flex gap-14">
-                <div class="flex flex-col items-start gap-6">
-                    <p class="text-gray-700 text-justify text-lg">
-                        Discover the natural beauty and cultural richness of Sikkim. Nestled
-                        in the Himalayas, Sikkim offers breathtaking landscapes, vibrant
-                        festivals, and warm hospitality. Explore its serene monasteries,
-                        lush valleys, and adventure trails that make it a paradise for
-                        travelers and nature enthusiasts.
-                    </p>
-                    <!-- Read More Button (Toggleable) -->
-                    <button
-                        class="px-3 py-2 rounded text-white border-4 border-green-400 shadow-xl shadow-green-400/50 transition ease-in-out delay-150 bg-green-400 hover:text-green-500 hover:bg-transparent hover:scale-125 duration-700"
-                        onclick="toggleContent('aboutSikkimContent')">Read More</button>
-    
-                    <!-- Expandable Content -->
-                    <div id="aboutSikkimContent" class="hidden mt-4">
-                        <p class="text-gray-700 text-justify">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                            quis lorem ut libero malesuada feugiat. Vivamus magna justo,
-                            lacinia eget consectetur sed, convallis at tellus. Curabitur non
-                            nulla sit amet nisl tempus convallis quis ac lectus. Cras
-                            ultricies ligula sed magna dictum porta.
-                        </p>
-                        <p class="text-gray-700 text-justify">
-                            Phasellus eget velit at justo mollis elementum. Nulla quis lorem
-                            ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Curabitur aliquet quam id dui
-                            posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
-                            porttitor accumsan tincidunt. Vivamus suscipit tortor eget
-                            felis porttitor volutpat.
-                        </p>
-                    </div>
-                </div>
+
+        <!-- About Sikkim and College -->
+        <div class="flex max-w-7xl mx-auto gap-8">
+            <!-- About Sikkim Section -->
+            <div class="mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
+                <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Sikkim</h2>
                 <img src="img/images.jpg" alt="About Us Image" height="400px" width="500px" />
-              
-            </div>
-        </div>
-    
-        <!-- About College Section -->
-        <div class="container mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About College</h2>
-            <div class="flex gap-14">
-                <div class="flex flex-col items-start gap-6">
-                    <p class="text-gray-700 text-justify text-lg">
-                        Learn about the esteemed National Institute of Technology Sikkim.
-                        Established to empower students with knowledge and skills, the
-                        institute offers cutting-edge education in engineering, technology,
-                        and management. Join a community dedicated to academic excellence
-                        and innovation.
-                    </p>
-                    <!-- Read More Button (Toggleable) -->
-                    <button
-                        class="px-3 py-2 rounded text-white border-4 border-purple-400 shadow-xl shadow-purple-400/50 transition ease-in-out delay-150 bg-purple-400 hover:text-purple-500 hover:bg-transparent hover:scale-125 duration-700"
-                        onclick="toggleContent('aboutCollegeContent')">Read More</button>
-    
-                    <!-- Expandable Content -->
-                    <div id="aboutCollegeContent" class="hidden mt-4">
-                        <p class="text-gray-700 text-justify">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                            quis lorem ut libero malesuada feugiat. Vivamus magna justo,
-                            lacinia eget consectetur sed, convallis at tellus. Curabitur non
-                            nulla sit amet nisl tempus convallis quis ac lectus. Cras
-                            ultricies ligula sed magna dictum porta.
+                <div class="flex gap-14">
+                    <div class="flex flex-col items-start gap-6">
+                        <p class="text-gray-700 text-justify text-lg">
+                            Discover the natural beauty and cultural richness of Sikkim. Nestled
+                            in the Himalayas, Sikkim offers breathtaking landscapes, vibrant
+                            festivals, and warm hospitality. Explore its serene monasteries,
+                            lush valleys, and adventure trails that make it a paradise for
+                            travelers and nature enthusiasts.
                         </p>
-                        <p class="text-gray-700 text-justify">
-                            Phasellus eget velit at justo mollis elementum. Nulla quis lorem
-                            ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Curabitur aliquet quam id dui
-                            posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
-                            porttitor accumsan tincidunt. Vivamus suscipit tortor eget
-                            felis porttitor volutpat.
-                        </p>
+                        <!-- Read More Button (Toggleable) -->
+                        <button
+                            class="px-3 py-2 rounded text-white border-4 border-green-400 shadow-xl shadow-green-400/50 transition ease-in-out delay-150 bg-green-400 hover:text-green-500 hover:bg-transparent hover:scale-125 duration-700"
+                            onclick="toggleContent('aboutSikkimContent')">Read More</button>
+
+                        <!-- Expandable Content -->
+                        <div id="aboutSikkimContent" class="hidden mt-4">
+                            <p class="text-gray-700 text-justify">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                quis lorem ut libero malesuada feugiat. Vivamus magna justo,
+                                lacinia eget consectetur sed, convallis at tellus. Curabitur non
+                                nulla sit amet nisl tempus convallis quis ac lectus. Cras
+                                ultricies ligula sed magna dictum porta.
+                            </p>
+                            <p class="text-gray-700 text-justify">
+                                Phasellus eget velit at justo mollis elementum. Nulla quis lorem
+                                ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Curabitur aliquet quam id dui
+                                posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
+                                porttitor accumsan tincidunt. Vivamus suscipit tortor eget
+                                felis porttitor volutpat.
+                            </p>
+                        </div>
                     </div>
+
+
                 </div>
-                <img src="img/nitsikkim.jpg" alt="About Us Image" style="height: 350px; width: 500px;" />
+            </div>
+
+            <!-- About College Section -->
+            <div class="mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
+                <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About College</h2>
+                <img src="img/nitsikkim.jpg" alt="About Us Image" style="height: 360px; width: 500px;" />
+                <div class="flex gap-14">
+                    <div class="flex flex-col items-start gap-6">
+                        <p class="text-gray-700 text-justify text-lg">
+                            Learn about the esteemed National Institute of Technology Sikkim.
+                            Established to empower students with knowledge and skills, the
+                            institute offers cutting-edge education in engineering, technology,
+                            and management. Join a community dedicated to academic excellence
+                            and innovation.
+                        </p>
+                        <!-- Read More Button (Toggleable) -->
+                        <button
+                            class="px-3 py-2 rounded text-white border-4 border-purple-400 shadow-xl shadow-purple-400/50 transition ease-in-out delay-150 bg-purple-400 hover:text-purple-500 hover:bg-transparent hover:scale-125 duration-700"
+                            onclick="toggleContent('aboutCollegeContent')">Read More</button>
+
+                        <!-- Expandable Content -->
+                        <div id="aboutCollegeContent" class="hidden mt-4">
+                            <p class="text-gray-700 text-justify">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                quis lorem ut libero malesuada feugiat. Vivamus magna justo,
+                                lacinia eget consectetur sed, convallis at tellus. Curabitur non
+                                nulla sit amet nisl tempus convallis quis ac lectus. Cras
+                                ultricies ligula sed magna dictum porta.
+                            </p>
+                            <p class="text-gray-700 text-justify">
+                                Phasellus eget velit at justo mollis elementum. Nulla quis lorem
+                                ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Curabitur aliquet quam id dui
+                                posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
+                                porttitor accumsan tincidunt. Vivamus suscipit tortor eget
+                                felis porttitor volutpat.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
+
+
+
+
     </section>
-    
+
 
     <!-- Topics -->
     <section>
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Topics of Event</h2>
 
             <!-- Slider -->
@@ -517,7 +724,8 @@ module.exports = {
                         class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/Robotics_andMechatronics.jpg" alt="Robotics_andMechatronics" style="height: 384px; width: 384px;">
+                                <img src="img/Robotics_andMechatronics.jpg" alt="Robotics_andMechatronics"
+                                    style="height: 384px; width: 384px;">
                                 <span class="self-start text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Robotics & Mechatronics</h2>
                                     <div class="flex flex-col text-lg gap-2">
@@ -535,7 +743,8 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/Artificial_intelegence.jpg" alt="Artificial_intelegence" style="height: 384px; width: 384px;">
+                                <img src="img/Artificial_intelegence.jpg" alt="Artificial_intelegence"
+                                    style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Artificial Intelligence</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -554,7 +763,8 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/system_controlandoptimization.jpg" alt="system_controlandoptimization" style="height: 384px; width: 384px;">
+                                <img src="img/system_controlandoptimization.jpg" alt="system_controlandoptimization"
+                                    style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">System Control & Optimizations</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -573,7 +783,7 @@ module.exports = {
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
                                 <img src="img/expert_system.jpg" alt="..." style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700" >
+                                <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Expert System</h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Knowledge Representation & Acquisition</p>
@@ -589,9 +799,11 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/informatin_communicationtechnology.jpg" alt="informatin_communicationtechnology" style="height: 384px; width: 384px;">
+                                <img src="img/informatin_communicationtechnology.jpg"
+                                    alt="informatin_communicationtechnology" style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology</h2>
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology
+                                    </h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Telecommunication Networks & Systems</p>
                                         <p><b>➼</b> Internet of Things (IoT) and Smart Cities</p>
@@ -605,7 +817,8 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/image_processing_example.jpg" alt="image_processing_example" style="height: 384px; width: 384px;">
+                                <img src="img/image_processing_example.jpg" alt="image_processing_example"
+                                    style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">Image Processing</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -623,7 +836,8 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/Ai_in controlapplication.jpg" alt="Ai_incontrol application" style="height: 384px; width: 384px;">
+                                <img src="img/Ai_in controlapplication.jpg" alt="Ai_incontrol application"
+                                    style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
                                     <h2 class="font-bold text-3xl mb-4 mt-10">AI in Control Application</h2>
                                     <div class="flex flex-col gap-2 text-lg">
@@ -639,9 +853,11 @@ module.exports = {
                         </div>
                         <div class="hs-carousel-slide">
                             <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/softcomputing.jpg" alt="softcomputing "style="height: 384px; width: 384px;">
+                                <img src="img/softcomputing.jpg" alt="softcomputing "
+                                    style="height: 384px; width: 384px;">
                                 <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence</h2>
+                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence
+                                    </h2>
                                     <div class="flex flex-col gap-2 text-lg">
                                         <p><b>➼</b> Fuzzy Systems</p>
                                         <p><b>➼</b> Evolutionary Algorithms</p>
@@ -687,7 +903,7 @@ module.exports = {
 
     <!-- Chief Speakers -->
     <section>
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Chief Speakers</h2>
 
             <div class="grid grid-cols-3 place-content-between place-items-center gap-10">
@@ -744,9 +960,9 @@ module.exports = {
         </div>
     </section>
 
-     <!-- Committee -->
-     <section>
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+    <!-- Committee -->
+    <section>
+        <div class="mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl h-full">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
 
             <div id="default-carousel" class="relative w-full" data-carousel="slide">
@@ -797,59 +1013,71 @@ module.exports = {
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                             <div class="text-center transform transition-transform duration-300 hover:scale-105">
-                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto"
+                                    src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
                                     <p class="font-bold text-xl mb-2 pt-4">Binod Kanaujia</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="text-center transform transition-transform duration-300 hover:scale-105">
-                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Dinesh_Kumar_BennettUniv.jpg">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto"
+                                    src="img/Committee_Members_Photos/Advisory_Committee/Dinesh_Kumar_BennettUniv.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
                                     <p class="font-bold text-xl mb-2 pt-4">Dinesh Kumar</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="text-center transform transition-transform duration-300 hover:scale-105">
-                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto"
+                                    src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
                                     <p class="font-bold text-xl mb-2 pt-4">Lalit Kumar Awasthi</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="text-center transform transition-transform duration-300 hover:scale-105">
-                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto"
+                                    src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
                                     <p class="font-bold text-xl mb-2 pt-4">Laxmidhar Behera</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="text-center transform transition-transform duration-300 hover:scale-105">
-                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto"
+                                    src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
                                     <p class="font-bold text-xl mb-2 pt-4">Laxmidhar Behera</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <div class="text-center transform transition-transform duration-300 hover:scale-105">
-                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto" src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
+                                <img class="w-full h-auto max-w-xs max-h-56 object-cover mx-auto"
+                                    src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg">
                                 <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
                                     <p class="font-bold text-xl mb-2 pt-4">Laxmidhar Behera</p>
                                     <p class="mb-4">Designation</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
+                                            class="fab fa-linkedin"></i></a>
                                 </div>
                             </div>
                             <!-- Repeat the above structure for additional images -->
                         </div>
                     </div>
-                    
-                    
-                    
+
+
+
                     <!-- Technical program -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <div class="grid grid-cols-4 place-content-between place-items-center gap-10">
@@ -1058,7 +1286,7 @@ module.exports = {
                 </div>
                 <!-- Slider indicators -->
                 <div class="flex bottom-5 left-1/2 space-x-3 text-white -translate-y-[29rem]">
-                    <button type="button" class="text-sm font-bold w-48 p-1 rounded-full" aria-current="true" 
+                    <button type="button" class="text-sm font-bold w-48 p-1 rounded-full" aria-current="true"
                         aria-label="Slide 1" data-carousel-slide-to="0">Patron and Convenor</button>
                     <button type="button" class="text-sm font-bold w-28 p-1 rounded-full" aria-current="false"
                         aria-label="Slide 2" data-carousel-slide-to="1">Advisory</button>
@@ -1082,50 +1310,9 @@ module.exports = {
         </div>
     </section>
 
-    <!-- Important Dates and Schedules -->
-    <section class="mb-16">
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
-            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Important Dates and Schedules
-            </h2>
-        </div>
-    </section>
-
-    
-
-    <!-- Sponsors and Partners -->
-    <section>
-        <div class="bg-gray-200 py-14">
-            <h2 class="font-medium text-5xl text-center mb-16">Sponsors and Partners</h2>
-            <div class="flex overflow-hidden space-x-56">
-                <div class="flex animate-loop-scroll gap-8">
-                    <img src="img/Sponsor.png" height="150" width="150">
-                    <img src="img/Sponsor1.png" height="150" width="150">
-                    <img src="img/Sponsor2.jpg" height="150" width="150">
-                    <img src="img/Sponsor3.png" height="150" width="150">
-                </div>
-
-                <div class="flex animate-loop-scroll gap-8" aria-hidden="true">
-                    <img src="img/Sponsor.png" height="150" width="150">
-                    <img src="img/Sponsor1.png" height="150" width="150">
-                    <img src="img/Sponsor2.jpg" height="150" width="150">
-                    <img src="img/Sponsor3.png" height="150" width="150">
-                </div>
-
-                <div class="flex animate-loop-scroll gap-8" aria-hidden="true">
-                    <img src="img/Sponsor.png" height="150" width="150">
-                    <img src="img/Sponsor1.png" height="150" width="150">
-                    <img src="img/Sponsor2.jpg" height="150" width="150">
-                    <img src="img/Sponsor3.png" height="150" width="150">
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-
     <!-- Contact Us & How to Reach Us -->
     <section class="mb-16">
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-[1200px]">
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Contact Us
             </h2>
             <div class="grid grid-cols-3 ">
@@ -1144,8 +1331,8 @@ module.exports = {
                     <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
                     <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
                 </div>
-               
-              
+
+
             </div>
 
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200 mt-12">How to Reach Us
@@ -1167,7 +1354,7 @@ module.exports = {
                 <div>
                     <div class="flex items-center mb-8">
                         <img src="img/event-logo.png" class="h-8 me-3" alt="Event Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Event
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap ">Event
                             Name</span>
                     </div>
                     <p class="text-white mb-2">Organized by Indian Institute of Information Technology Ranchi</p>
@@ -1179,7 +1366,7 @@ module.exports = {
 
                 <div class="flex gap-20">
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Useful Links</h2>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Useful Links</h2>
                         <ul class="text-gray-400 font-medium">
                             <li class="mb-1">
                                 <a href="#" class="hover:underline">Home</a>
@@ -1195,7 +1382,7 @@ module.exports = {
                             </li>
                         </ul>
 
-                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white mt-8">Social Media
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase  mt-8">Social Media
                         </h2>
                         <div class="grid grid-cols-2 gap-4">
                             <a href="#" class="text-gray-400 hover:text-[#1877F2] fa-xl"><i
@@ -1217,7 +1404,7 @@ module.exports = {
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
                                     email</label>
                                 <input type="email" id="email"
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                                     placeholder="xyz@gmail.com" required>
                             </div>
 
@@ -1226,7 +1413,7 @@ module.exports = {
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your
                                     message</label>
                                 <textarea id="message" rows="6"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                     placeholder="Leave a comment..."></textarea>
                             </div>
                         </form>
@@ -1246,11 +1433,11 @@ module.exports = {
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js">
-    
-    function toggleContent(id) {
-        const element = document.getElementById(id);
-        element.classList.toggle('hidden');
-    }
+
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
 
     </script>
 </body>
