@@ -56,10 +56,11 @@
     </script>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
+    color: #1b1d1f;
+}
+
 
         body::-webkit-scrollbar {
             display: none;
@@ -69,13 +70,23 @@
             width: 100%;
             height: 300px;
             background-color: #000;
-            /* Black carousel background */
+            
             margin-top: 20px;
         }
 
 
         .text-light {
             font-weight: lighter;
+        }
+        .expand-transition {
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+        }
+        .expand-transition.collapsed {
+            max-height: 0;
+        }
+        .expand-transition.expanded {
+            max-height: 1000px; /* Adjust based on content height */
         }
 
         .background-grid {
@@ -104,6 +115,27 @@
             padding-right: 20px;
             box-sizing: border-box;
         }
+   
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-80%); }
+    }
+
+    .animate-scroll {
+        display: flex;
+        animation: scroll 12s linear infinite;
+    }
+
+    a {
+  pointer-events: auto; 
+}
+
+    header {
+        background: linear-gradient(to right, lightblue, white, lightblue);
+    }
+    header div {
+        white-space: nowrap;
+    }
 
         @keyframes running-code {
             0% {
@@ -130,6 +162,12 @@
             opacity: 0.2;
             pointer-events: none;
         }
+        #dropdownNavbar {
+    z-index: 1000; /* Ensure it is on top */
+}
+#dropdownNavbar {
+    pointer-events: auto; /* Ensure pointer events are enabled */
+}
 
         .carousel {
             width: 100%;
@@ -159,6 +197,20 @@
 
     <script type="module">
         import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
+    
+    </script>
+       <script>
+       function toggleContent(expandedId, button) {
+            const expandedContent = document.getElementById(expandedId);
+
+            if (expandedContent.classList.contains('hidden')) {
+                expandedContent.classList.remove('hidden');
+                button.textContent = "Read Less";
+            } else {
+                expandedContent.classList.add('hidden');
+                button.textContent = "Read More";
+            }
+        }
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
@@ -266,30 +318,35 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <button data-modal-hide="default-modal" type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUptALLTvWPE9mK-7wPIN7Z3eFQ9cRmWw3NhC0yWL8YZuZ3w/viewform" target="_blank" rel="noopener noreferrer"
+   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+   Register
+</a>
+
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Header -->
-    <header class="flex items-center justify-between border-b border-gray-500 pb-2 mt-2 mx-11">
-        <div>
-            <p><strong>Submission Deadline:</strong> June 15,2024</p>
-        </div>
-        <div>
-            <p><strong>Acceptance Date:</strong> July 12,2024</p>
-        </div>
-        <div>
-            <p><strong>Conference Dates:</strong> September 10,2024</p>
+    <header class="relative pb-2 mt-0  w-[100%] mx-1 bg-gradient-to-r from-blue-100 via-white to-blue-100 overflow-hidden">
+        <div class="flex items-center mt-2 justify-between whitespace-nowrap animate-scroll">
+            <div>
+                <p><strong>Submission Deadline:</strong> June 15, 2024</p>
+            </div>
+            <div class="ml-20">
+                <p><strong>Acceptance Date:</strong> July 12, 2024</p>
+            </div>
+            <div class="ml-20">
+                <p><strong>Conference Dates:</strong> September 10, 2024</p>
+            </div>
         </div>
     </header>
     <nav class="bg-white border-gray-200">
         <div class="flex flex-wrap items-center justify-between mx-11 p-4">
 
             <a href="#" class="flex items-center space-x-8 rtl:space-x-reverse">
-                <img src="img/event-logo.png" width="65" height="65" alt="Event Logo" />
+                <img src="img/event_logo.png" width="100" height="100" alt="Event Logo" />
                 <img src="img/college-logo.png" alt="College Logo" width="65" height="65">
             </a>
 
@@ -300,7 +357,7 @@
                         <a href="#" class="block py-4 px-3 text-blue-700" aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#aboutus"
                             class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">About</a>
                     </li>
                     <li>
@@ -326,41 +383,19 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                aria-labelledby="dropdownLargeButton">
-                                <li>
-                                    <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
-                                        for Papers</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
-                                        for Poster</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
-                                        for Reviewer</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Call
-                                        for Sponsorship</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guidelines
-                                        for Authors</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-1 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Important
-                                        Dates</a>
-                                </li>
-                            </ul>
-                        </div>
+                        class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                      <ul class="py-2 text-sm text-gray-700 space-y-1">
+                          <li><a href="#papers1" class="block px-4 py-2 hover:bg-gray-100">Call for Papers</a></li>
+                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Call for Poster</a></li>
+                          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf9_ZGWvDPY5czm_0tbTbUC8PejVLDpMo3HIFH62x6RbrVTSQ/viewform"
+                                target="_blank" class="block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                                Call for Reviewer
+                            </a></li>
+                          <li><a href="#callforsponser" class="block px-4 py-2 hover:bg-gray-100">Call for Sponsorship</a></li>
+                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Guidelines for Authors</a></li>
+                          <li><a href="#imp_dates" class="block px-4 py-2 hover:bg-gray-100">Important Dates</a></li>
+                      </ul>
+                   </div>
                     </li>
                     <li>
                         <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2"
@@ -373,21 +408,25 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar2"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                aria-labelledby="dropdownLargeButton">
-                                <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Contact
-                                        Us</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">How
-                                        to Reach Us</a>
-                                </li>
-                            </ul>
-                        </div>
+                        class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                      <ul class="py-2 text-sm text-gray-700 space-y-1">
+                          <li>
+                              <a href="#howtoreach"
+                                 class="block px-4 py-2  hover:bg-blue-500 hover:text-whit transition-colors duration-300">
+                                 Contact Us
+                              </a>
+                          </li>
+                          <li>
+                              <a href="#howtoreach"
+                                 class="block px-4 py-2  hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                                 How to Reach Us
+                              </a>
+                          </li>
+                      </ul>
+                   </div>
+                   
+                   
+                   
                     </li>
                     <li>
                         <button id="dropdownNavbarLink3" data-dropdown-toggle="dropdownNavbar3"
@@ -400,19 +439,19 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar3"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                            <ul class="py-2 text-sm text-gray-700 space-y-1"
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Brochure</a>
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-blue-500 dark:hover:text-white">Brochure</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li>
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                            class="block py-2 px-3 text-gray-900 font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</button>
+                            class="block py-2 px-3 text-gray-900  rounded-lg font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</button>
                     </li>
                 </ul>
             </div>
@@ -506,17 +545,17 @@
 
 
     <!-- About Us -->
-    <section class="mt-10">
+    <section class="mt-10" id="aboutus">
         <div class="flex mx-auto max-w-7xl gap-8">
 
             <!-- About Event -->
             <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl">
                 <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Us</h2>
-                <img src="img/about-us-image.jpg" alt="About Us Image" class="mb-5" />
+                <img src="img/about-us-image.jpg" alt="About Us Image" class="mb-5 w-full h-auto" />
                 <!-- About Us Content -->
                 <div class="flex gap-14">
-                    <div class="flex flex-col items-start gap-6">
-                        <p class="text-gray-700 text-justify text-lg">
+                    <div class="flex flex-col items-start gap-2">
+                        <p id="aboutUsContent" class="text-gray-700 text-justify text-lg ">
                             Welcome to the Computer Vision and New Technologies Conference. We
                             are dedicated to fostering innovation and collaboration in the
                             fields of computer vision and emerging technologies. Our
@@ -524,29 +563,17 @@
                             from around the world to share knowledge, exchange ideas, and
                             explore the latest advancements.
                         </p>
-                        <!-- Read More Button (Toggleable) -->
-                        <button
-                            class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition ease-in-out delay-150 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:scale-125 duration-700"
-                            onclick="toggleContent('aboutUsContent')">Read More</button>
-
-                        <!-- Expandable Content -->
-                        <div id="aboutUsContent" class="hidden mt-4">
-                            <p class="text-gray-700 text-justify">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                                quis lorem ut libero malesuada feugiat. Vivamus magna justo,
-                                lacinia eget consectetur sed, convallis at tellus. Curabitur non
-                                nulla sit amet nisl tempus convallis quis ac lectus. Cras
-                                ultricies ligula sed magna dictum porta.
+                        <div id="expandedContent" class="hidden">
+                            <p class="text-gray-700 text-justify text-lg">
+                                Join us as we dive into cutting-edge research, innovative technologies, and the future of computer vision. Our speakers are world-renowned experts who will share their insights on the latest trends and challenges in the industry.
                             </p>
-                            <p class="text-gray-700 text-justify">
-                                Phasellus eget velit at justo mollis elementum. Nulla quis lorem
-                                ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. Curabitur aliquet quam id dui
-                                posuere blandit. Donec rutrum congue leo eget malesuada. Nulla
-                                porttitor accumsan tincidunt. Vivamus suscipit tortor eget
-                                felis porttitor volutpat.
+                            <p class="text-gray-700 text-justify text-lg">
+                                Whether you're an academic, a professional, or just someone passionate about technology, this conference offers a unique opportunity to learn, network, and be inspired. We look forward to welcoming you to an event that promises to be both enlightening and engaging.
                             </p>
                         </div>
+                        <button
+                            class="px-3 py-2 rounded text-white border-4 border-blue-400 shadow-xl shadow-blue-400/50 transition-all duration-700 bg-blue-400 hover:text-blue-500 hover:bg-transparent"
+                            onclick="toggleContent('expandedContent', this)">Read More</button>
                     </div>
                 </div>
             </div>
@@ -562,7 +589,7 @@
                 </div>
 
                 <!-- Dates -->
-                <h2 class="font-medium text-4xl border-b-1 border-gray-100">Important Dates</h2>
+                <h2 class="font-medium text-4xl border-b-1 border-gray-100" id="imp_dates">Important Dates</h2>
                 <div class="bg-[#921b1f] h-1 max-w-[75%] mb-6"></div>
 
                 <ol class="relative border-s border-gray-200">
@@ -624,9 +651,9 @@
             <!-- About Sikkim Section -->
             <div class="mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
                 <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About Sikkim</h2>
-                <img src="img/images.jpg" alt="About Us Image" height="400px" width="500px" />
+                <img src="img/images.jpg" alt="About Us Image"   class="h-[400px] w-full">
                 <div class="flex gap-14">
-                    <div class="flex flex-col items-start gap-6">
+                    <div class="flex flex-col items-start gap-1">
                         <p class="text-gray-700 text-justify text-lg">
                             Discover the natural beauty and cultural richness of Sikkim. Nestled
                             in the Himalayas, Sikkim offers breathtaking landscapes, vibrant
@@ -634,21 +661,15 @@
                             lush valleys, and adventure trails that make it a paradise for
                             travelers and nature enthusiasts.
                         </p>
-                        <!-- Read More Button (Toggleable) -->
-                        <button
-                            class="px-3 py-2 rounded text-white border-4 border-green-400 shadow-xl shadow-green-400/50 transition ease-in-out delay-150 bg-green-400 hover:text-green-500 hover:bg-transparent hover:scale-125 duration-700"
-                            onclick="toggleContent('aboutSikkimContent')">Read More</button>
-
-                        <!-- Expandable Content -->
                         <div id="aboutSikkimContent" class="hidden mt-4">
-                            <p class="text-gray-700 text-justify">
+                            <p class="text-gray-700 text-justify text-lg">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                                 quis lorem ut libero malesuada feugiat. Vivamus magna justo,
                                 lacinia eget consectetur sed, convallis at tellus. Curabitur non
                                 nulla sit amet nisl tempus convallis quis ac lectus. Cras
                                 ultricies ligula sed magna dictum porta.
                             </p>
-                            <p class="text-gray-700 text-justify">
+                            <p class="text-gray-700 text-justify text-lg">
                                 Phasellus eget velit at justo mollis elementum. Nulla quis lorem
                                 ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit. Curabitur aliquet quam id dui
@@ -657,6 +678,9 @@
                                 felis porttitor volutpat.
                             </p>
                         </div>
+                        <button
+                        class="px-3 py-2 rounded text-white border-4 border-green-400 shadow-xl shadow-green-400/50 transition ease-in-out delay-150 bg-green-400 hover:text-green-500 hover:bg-transparent "
+                        onclick="toggleContent('aboutSikkimContent',this)">Read More</button>
                     </div>
 
 
@@ -666,9 +690,9 @@
             <!-- About College Section -->
             <div class="mx-auto mt-10 border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
                 <h2 class="font-medium text-5xl text-center mb-8 border-b-1 border-gray-100">About College</h2>
-                <img src="img/nitsikkim.jpg" alt="About Us Image" style="height: 360px; width: 500px;" />
+                <img src="img/nitsikkim.jpg" alt="About Us Image"  class="h-[400px] w-full" />
                 <div class="flex gap-14">
-                    <div class="flex flex-col items-start gap-6">
+                    <div class="flex flex-col items-start gap-1">
                         <p class="text-gray-700 text-justify text-lg">
                             Learn about the esteemed National Institute of Technology Sikkim.
                             Established to empower students with knowledge and skills, the
@@ -676,21 +700,16 @@
                             and management. Join a community dedicated to academic excellence
                             and innovation.
                         </p>
-                        <!-- Read More Button (Toggleable) -->
-                        <button
-                            class="px-3 py-2 rounded text-white border-4 border-purple-400 shadow-xl shadow-purple-400/50 transition ease-in-out delay-150 bg-purple-400 hover:text-purple-500 hover:bg-transparent hover:scale-125 duration-700"
-                            onclick="toggleContent('aboutCollegeContent')">Read More</button>
-
-                        <!-- Expandable Content -->
+                    
                         <div id="aboutCollegeContent" class="hidden mt-4">
-                            <p class="text-gray-700 text-justify">
+                            <p class="text-gray-700 text-justify text-lg">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                                 quis lorem ut libero malesuada feugiat. Vivamus magna justo,
                                 lacinia eget consectetur sed, convallis at tellus. Curabitur non
                                 nulla sit amet nisl tempus convallis quis ac lectus. Cras
                                 ultricies ligula sed magna dictum porta.
                             </p>
-                            <p class="text-gray-700 text-justify">
+                            <p class="text-gray-700 text-justify text-lg">
                                 Phasellus eget velit at justo mollis elementum. Nulla quis lorem
                                 ut libero malesuada feugiat. Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit. Curabitur aliquet quam id dui
@@ -699,6 +718,9 @@
                                 felis porttitor volutpat.
                             </p>
                         </div>
+                        <button
+                            class="px-3 py-2 rounded text-white border-4 border-purple-400 shadow-xl shadow-purple-400/50 transition ease-in-out delay-150 bg-purple-400 hover:text-purple-500 hover:bg-transparent "
+                            onclick="toggleContent('aboutCollegeContent',this)">Read More</button>
                     </div>
 
                 </div>
@@ -713,7 +735,7 @@
 
 
     <!-- Topics -->
-    <section>
+    <section id="papers1">
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Topics of Event</h2>
 
@@ -975,403 +997,494 @@
                         <button onclick="showDiv(5)" id="bttn5" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Sponsorship, Publicity<br>and Social Media</button>
                         <button onclick="showDiv(6)" id="bttn6" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Logistic</button>
                         <button onclick="showDiv(7)" id="bttn7" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical and Website</button>
-                    </div>
+                      </div>
                 </div>
 
                 <div>
-                    <!-- Divs -->
-                    <div id="div1" class="content grid grid-cols-3 gap-y-4 gap-x-8">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    <!-- patrons and conviners -->
+                    <div id="div1" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+                        <!-- Card 1 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Chief_Patron/Director_MC_Govil.jpg" class="w-full h-[250px] object-cover" alt="Director MC Govil">
+                            <div class="p-4">
+                                <p class="mb-4 text-gray-700">Patron</p>
+                                <p class="font-bold text-xl mb-2">Prof. Mahesh Chandra Govil</p>
+                                <p class="mb-4 text-gray-700">Director NIT Sikkim</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Convenor/Bam_Bahadur_Sinha.jpg" class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
+                            <div class="p-4">
+                                <p class="mb-4 text-gray-700">Convenor</p>
+                                <p class="font-bold text-xl mb-2">Dr. Bam Bahadur Sinha</p>
+                                <p class="mb-4 text-gray-700">Prof. Department of Computer Science</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 3 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Convenor/Vishal_Vishnoi.jpg" class="w-full h-[250px] object-cover" alt="Dr. Vishal Vishnoi">
+                            <div class="p-4">
+                                <p class="mb-4 text-gray-700">Convenor</p>
+                                <p class="font-bold text-xl mb-2">Dr. Vishal Vishnoi</p>
+                                <p class="mb-4 text-gray-700">Designation</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div id="div2" class="content grid grid-cols-3 gap-y-4 gap-x-8 hidden">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                    
+                    <div id="div2" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                        <!-- Card 1 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Prof. Binod Kanaujia</p>
+                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Dinesh_Kumar_BennettUniv.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Dinesh Kumar</p>
+                                <p class="mb-2 text-gray-700">Bennett University</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 3 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Lalit Kumar Awasthi</p>
+                                <p class="mb-2 text-gray-700">NIT Hamirpur</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 4 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Laxmidhar Behera</p>
+                                <p class="mb-2 text-gray-700">IIT Mandi</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 5 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg" class="w-full h-[200px] object-cover" alt="R Dhanalakshmi">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">R Dhanalakshmi</p>
+                                <p class="mb-2 text-gray-700">IIIT Trichy</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 6 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Kumar_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Dr. R Kumar">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. R Kumar</p>
+                                <p class="mb-2 text-gray-700">NIT Nagaland</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div id="div3" class="content grid grid-cols-3 gap-y-4 gap-x-8 hidden">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 7 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajendrasinh_Jadeja_Marwadi_University.jpg" class="w-full h-[200px] object-cover" alt="Rajendrasinh Jadeja">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Rajendrasinh Jadeja</p>
+                                <p class="mb-2 text-gray-700">Marwadi University</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 8 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Rajesh Singla">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Rajesh Singla</p>
+                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 9 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Ramprasad_Potluri_IIT_Kanpur.jpg" class="w-full h-[200px] object-cover" alt="Ramprasad Potluri">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Ramprasad Potluri</p>
+                                <p class="mb-2 text-gray-700">IIT Kanpur</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 10 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Sheela Tiwari">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Sheela Tiwari</p>
+                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 11 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sukumar_Nandi_IITGuwahati.JPG" class="w-full h-[200px] object-cover" alt="Sukumar Nandi">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Sukumar Nandi</p>
+                                <p class="mb-2 text-gray-700">IIT Guwahati</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="div4" class="content grid grid-cols-3 gap-y-4 gap-x-8 hidden">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                        <!-- Card 12 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Themrichon_Tuithung_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Themrichon Tuithung">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Themrichon Tuithung</p>
+                                <p class="mb-2 text-gray-700">NIT Nagaland</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div id="div5" class="content grid grid-cols-3 gap-y-4 gap-x-8 hidden">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                    
+                    <div id="div3" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                        <!-- Card 1 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[200px] object-cover" alt="Dr. Hemant Kumar Kathania">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Jeetendra_Singh.jpg" class="w-full h-[200px] object-cover" alt="Dr. Jeetendra Singh">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Jeetendra Singh</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 3 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Krishna_Kumar.jpg" class="w-full h-[200px] object-cover" alt="Dr. Krishna Kumar">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Krishna Kumar</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 4 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Pankaj_Kumar_Kesarwani.jpg" class="w-full h-[200px] object-cover" alt="Dr. Pankaj Kumar Kesarwani">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Pankaj Kumar Kesarwani</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 5 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Reshmi_Dhara.jpg" class="w-full h-[200px] object-cover" alt="Dr. Reshmi Dhara">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Reshmi Dhara</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 6 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sangram_Ray.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sangram Ray">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Sangram Ray</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div id="div6" class="content grid grid-cols-3 gap-y-4 gap-x-8 hidden">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 7 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sanjay_Kumar_Jana.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sanjay Kumar Jana">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Sanjay Kumar Jana</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 8 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sarfaraj Alam Ansari">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="div7" class="content grid grid-cols-3 gap-y-4 gap-x-8 hidden">
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <img src="https://placehold.co/250">
-                            <div class="border-l-2 border-r-2 border-b-2 border-black rounded-b-md">
-                                <p class="font-bold text-xl mb-2 pt-4">Name</p>
-                                <p class="mb-4">Designation</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i
-                                        class="fab fa-linkedin"></i></a>
+                        
+                        <!-- Card 9 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Varun_Gupta.jpg" class="w-full h-[200px] object-cover" alt="Dr. Varun Gupta">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                   
+                    <div id="div4" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+                        <!-- Card 1 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Publication_Committee/Jeetendra_Singh.jpg" class="w-full h-[250px] object-cover" alt="Director MC Govil">
+                            <div class="p-4">
+                              
+                                <p class="font-bold text-xl mb-2">Dr. Jeetendra_Singh</p>
+                                <p class="mb-4 text-gray-700">NIT Sikkim</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Publication_Committee/Sangram_Ray.jpg" class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
+                            <div class="p-4">
+                                
+                                <p class="font-bold text-xl mb-2">Dr. Sangram_Ray</p>
+                                <p class="mb-4 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                 
+                    <div id="div5" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                        <!-- Card 1 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Gajendra_Singh_Shekhawat.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Gajendra Singh Shekhawat</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Card 3 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Card 4 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Varun_Gupta.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="div6" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                        <!-- Card 1 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Arunangshu_Pal.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Arunangshu Pal</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Diksha_Rangwani.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Diksha Rangwani</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Card 3 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Neelima_Singh.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Neelima Singh</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Card 4 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sudipta_Das.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Sudipta Das</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sukanta_Dhar.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Sukanta Dhar</p>
+                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div id="div7" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                        <!-- Card 1 -->
+                       
+                        <!-- Card 2 -->
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/vishwa.jpg" class="w-full h-[200px] object-cover" alt="Lead Developer">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Vishwajeet Kumar</p>
+                                <p class="mb-2 text-gray-700">Final Year Student</p>
+                                <a href="https://www.linkedin.com/in/vishwajeet-kumar-5b7530242/" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/IMG_7398.png" class="w-full h-[200px] object-cover" alt="abhijeet">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Abhijeet Mondal</p>
+                                <p class="mb-2 text-gray-700">Final Year Student</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/harsh.jpg" class="w-full h-[200px] object-cover" alt="harsha">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Harsh Srivastava</p>
+                                <p class="mb-2 text-gray-700">Final Year Student<p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
 
@@ -1381,28 +1494,60 @@
         </div>
     </section>
 
+    <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl" id="callforsponser">
+        <h2 class="text-4xl font-semibold mb-6 text-center border-b-2 border-gray-200 pb-4">Sponsorship Opportunities</h2>
+        
+        <p class="text-lg mb-8" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            RCSC' 2024 provides a variety of sponsorship options that enable small and big businesses and organizations to participate in one of the best conferences. This will lead to the exchange of ideas in the field of mental health and innovation globally, with over 200 projected participants from all over the world.
+        </p>
+        
+        <p class="font-bold mb-4">For more information, please contact RCSC’2024 Sponsorship Chairs:</p>
+        
+        <div class="grid gap-6 md:grid-cols-3">
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-2">Dr. Vishal Vishnoi</h3>
+                <p class="text-lg">
+                    <i class="fa fa-phone"></i> +91-9855273397<br>
+                    <i class="fa fa-envelope"></i> vishalvishnoi@nitsikkim.ac.in
+                </p>
+            </div>
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-2">Dr. Bam Bahadur Sinha</h3>
+                <p class="text-lg">
+                    <i class="fa fa-phone"></i> +91-9199610251<br>
+                    <i class="fa fa-envelope"></i> bambahadursinha@nitsikkim.ac.in
+                </p>
+            </div>
+            <!-- Updated information -->
+            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-2">Dr. Gajendra Singh Shekhawat</h3>
+                <p class="text-lg">
+                    <i class="fa fa-phone"></i> +91-9199610251<br>
+                    <i class="fa fa-envelope"></i> gajendrasinghshekhawat@nitsikkim.ac.in
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+
     <!-- Contact Us & How to Reach Us -->
-    <section class="mb-16">
+    <section class="mb-16" id="howtoreach">
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Contact Us
             </h2>
             <div class="grid grid-cols-3 ">
                 <div>
                     <p class="text-xl font-bold">Name</p>
-                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> vishalvishnoi@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> + +91-9855273397</p>
                 </div>
                 <div>
                     <p class="text-xl font-bold">Name</p>
-                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> bambahadursinha@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-9199610251</p>
                 </div>
-                <div>
-                    <p class="text-xl font-bold">Name</p>
-                    <p><i class="fa fa-envelope" style="font-size:28px"></i> xyz@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-1234567890</p>
-                </div>
-
+               
 
             </div>
 
@@ -1424,15 +1569,15 @@
             <div class="flex justify-between">
                 <div>
                     <div class="flex items-center mb-8">
-                        <img src="img/event-logo.png" class="h-8 me-3" alt="Event Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap ">Event
-                            Name</span>
+                        <img src="img/event_logo.png" class="h-14 me-3" alt="Event Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap ">RCSC' 2024</span>
                     </div>
                     <p class="text-white mb-2">Organized by Indian Institute of Information Technology Ranchi</p>
                     <p class="text-white text-lg"><b>Venue</b> - MP Hall, NIT Sikkim, Ravangla, South Sikkim – 737139,
                         India</p>
+
                     <p class="text-white font-bold text-lg mt-4">Email - <a href="#"
-                            class="font-normal">xyz@nitsikkim.ac.in</a></p>
+                            class="font-normal">bambahadursinha@nitsikkim.ac.in</a></p>
                 </div>
 
                 <div class="flex gap-20">
@@ -1512,19 +1657,38 @@
 
     </script>
 
-    <script>
-        function showDiv(divId) {
-          // Hide all divs
-          const divs = document.querySelectorAll('.content');
-          const btns = document.querySelectorAll('.bttn');
-          divs.forEach(div => div.classList.add('hidden'));
-          btns.forEach(div => div.classList.remove('bg-blue-300'));
-      
-          // Show the selected div
-          document.getElementById(`div${divId}`).classList.remove('hidden');
-          document.getElementById(`bttn${divId}`).classList.add('bg-blue-300');
-        }
-      </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set default section to show
+      const defaultSection = '1'; // Change this to the ID of the default section if needed
+  
+      // Hide all divs initially
+      const divs = document.querySelectorAll('.content');
+      const btns = document.querySelectorAll('.bttn');
+      divs.forEach(div => div.classList.add('hidden'));
+      btns.forEach(btn => btn.classList.remove('bg-blue-300'));
+  
+      // Show the default section
+      const defaultDiv = document.getElementById(`div${defaultSection}`);
+      if (defaultDiv) {
+        defaultDiv.classList.remove('hidden');
+        document.getElementById(`bttn${defaultSection}`).classList.add('bg-blue-300');
+      }
+    });
+  
+    function showDiv(divId) {
+      // Hide all divs
+      const divs = document.querySelectorAll('.content');
+      const btns = document.querySelectorAll('.bttn');
+      divs.forEach(div => div.classList.add('hidden'));
+      btns.forEach(btn => btn.classList.remove('bg-blue-300'));
+  
+      // Show the selected div
+      document.getElementById(`div${divId}`).classList.remove('hidden');
+      document.getElementById(`bttn${divId}`).classList.add('bg-blue-300');
+    }
+  </script>
+  
 </body>
 
 </html>
