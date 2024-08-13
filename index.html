@@ -54,10 +54,11 @@
 
 
     </script>
+
     <style>
         body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
+    
     color: #1b1d1f;
 }
 
@@ -199,7 +200,8 @@
         import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
     
     </script>
-       <script>
+
+    <script>
        function toggleContent(expandedId, button) {
             const expandedContent = document.getElementById(expandedId);
 
@@ -329,19 +331,6 @@
     </div>
 
     <!-- Header -->
-    <header class="relative pb-2 mt-0  w-[100%] mx-1 bg-gradient-to-r from-blue-100 via-white to-blue-100 overflow-hidden">
-        <div class="flex items-center mt-2 justify-between whitespace-nowrap animate-scroll">
-            <div>
-                <p><strong>Submission Deadline:</strong> June 15, 2024</p>
-            </div>
-            <div class="ml-20">
-                <p><strong>Acceptance Date:</strong> July 12, 2024</p>
-            </div>
-            <div class="ml-20">
-                <p><strong>Conference Dates:</strong> September 10, 2024</p>
-            </div>
-        </div>
-    </header>
     <nav class="bg-white border-gray-200">
         <div class="flex flex-wrap items-center justify-between mx-11 p-4">
 
@@ -385,15 +374,15 @@
                         <div id="dropdownNavbar"
                         class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
                       <ul class="py-2 text-sm text-gray-700 space-y-1">
-                          <li><a href="#papers1" class="block px-4 py-2 hover:bg-gray-100">Call for Papers</a></li>
-                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Call for Poster</a></li>
+                          <li><a href="#papers1" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Papers</a></li>
+                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Poster</a></li>
                           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf9_ZGWvDPY5czm_0tbTbUC8PejVLDpMo3HIFH62x6RbrVTSQ/viewform"
-                                target="_blank" class="block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                                target="_blank" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                 Call for Reviewer
                             </a></li>
-                          <li><a href="#callforsponser" class="block px-4 py-2 hover:bg-gray-100">Call for Sponsorship</a></li>
-                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Guidelines for Authors</a></li>
-                          <li><a href="#imp_dates" class="block px-4 py-2 hover:bg-gray-100">Important Dates</a></li>
+                          <li><a href="#callforsponser" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Sponsorship</a></li>
+                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Guidelines for Authors</a></li>
+                          <li><a href="#imp_dates" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Important Dates</a></li>
                       </ul>
                    </div>
                     </li>
@@ -412,13 +401,13 @@
                       <ul class="py-2 text-sm text-gray-700 space-y-1">
                           <li>
                               <a href="#howtoreach"
-                                 class="block px-4 py-2  hover:bg-blue-500 hover:text-whit transition-colors duration-300">
+                                 class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                  Contact Us
                               </a>
                           </li>
                           <li>
                               <a href="#howtoreach"
-                                 class="block px-4 py-2  hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                                 class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                  How to Reach Us
                               </a>
                           </li>
@@ -444,7 +433,7 @@
                                 aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <a href="#"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-blue-500 dark:hover:text-white">Brochure</a>
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Brochure</a>
                                 </li>
                             </ul>
                         </div>
@@ -457,9 +446,10 @@
             </div>
         </div>
     </nav>
+    <marquee class="py-4 bg-gray-400 text-xl text-white">Hello!</marquee>
 
     <!-- Hero Section -->
-    <section class="overflow-hidden">
+    <section class="overflow-hidden -translate-y-2">
         <div class="relative h-[600px]">
             <img class="object-cover h-[600px] w-full" src="img/hero.jpg" alt="Hero Image">
             <div class="absolute inset-0 bg-gray-700 opacity-60"></div>
@@ -468,8 +458,8 @@
                     International Conference on Robotics, Communication and Soft Computing
                 </p>
                 <img class="mb-4" width="200px" height="200px" src="img/college-logo.png" alt="College Logo">
-                <p class="text-white font-black text-4xl mb-4">RCSC' 2024</p>
-                <p class="text-white text-lg mb-4 font-medium">January 29 – January 31’ 2025</p>
+                <p class="text-white font-black text-4xl mb-4">RCSC' 2025</p>
+                <p class="text-white text-lg mb-4 font-medium">January 30 – January 31’ 2025</p>
                 <p class="text-white text-sm mb-4 font-bold">Organized By</p>
                 <p class="text-white text-xl font-extrabold">National Institute of Technology Sikkim</p>
                 <p class="text-white text-lg font-bold">Ravangla, Sikkim - 737139, India</p>
@@ -602,12 +592,9 @@
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </span>
-                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 ">Flowbite
-                            Application UI v2.0.0
+                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 ">Submission Deadline
                         </h3>
-                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+
-                            pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce
-                            & Marketing pages.</p>
+                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">30th November 2024</p>
                     </li>
                     <li class="mb-10 ms-6">
                         <span
@@ -618,10 +605,8 @@
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </span>
-                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Flowbite Figma v1.3.0</h3>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and
-                            components are first designed in Figma and we keep a parity between the two versions even as
-                            we update the project.</p>
+                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Acceptance Date</h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">31st December 2024</p>
                     </li>
                     <li class="ms-6">
                         <span
@@ -632,10 +617,8 @@
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </span>
-                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Flowbite Library v1.2.2
-                        </h3>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web
-                            components and interactive elements built on top of Tailwind CSS.</p>
+                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Confwerence Dates</h3>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">30th, 31st January 2025</p>
                     </li>
                 </ol>
 
@@ -654,7 +637,7 @@
                 <img src="img/images.jpg" alt="About Us Image"   class="h-[400px] w-full">
                 <div class="flex gap-14">
                     <div class="flex flex-col items-start gap-1">
-                        <p class="text-gray-700 text-justify text-lg">
+                        <p class="text-gray-700 text-justify text-lg mb-4 mt-4">
                             Discover the natural beauty and cultural richness of Sikkim. Nestled
                             in the Himalayas, Sikkim offers breathtaking landscapes, vibrant
                             festivals, and warm hospitality. Explore its serene monasteries,
@@ -693,7 +676,7 @@
                 <img src="img/nitsikkim.jpg" alt="About Us Image"  class="h-[400px] w-full" />
                 <div class="flex gap-14">
                     <div class="flex flex-col items-start gap-1">
-                        <p class="text-gray-700 text-justify text-lg">
+                        <p class="text-gray-700 text-justify text-lg mb-4 mt-4">
                             Learn about the esteemed National Institute of Technology Sikkim.
                             Established to empower students with knowledge and skills, the
                             institute offers cutting-edge education in engineering, technology,
@@ -1494,40 +1477,44 @@
         </div>
     </section>
 
-    <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl" id="callforsponser">
-        <h2 class="text-4xl font-semibold mb-6 text-center border-b-2 border-gray-200 pb-4">Sponsorship Opportunities</h2>
-        
-        <p class="text-lg mb-8" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-            RCSC' 2024 provides a variety of sponsorship options that enable small and big businesses and organizations to participate in one of the best conferences. This will lead to the exchange of ideas in the field of mental health and innovation globally, with over 200 projected participants from all over the world.
-        </p>
-        
-        <p class="font-bold mb-4">For more information, please contact RCSC’2024 Sponsorship Chairs:</p>
-        
-        <div class="grid gap-6 md:grid-cols-3">
-            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-2">Dr. Vishal Vishnoi</h3>
-                <p class="text-lg">
-                    <i class="fa fa-phone"></i> +91-9855273397<br>
-                    <i class="fa fa-envelope"></i> vishalvishnoi@nitsikkim.ac.in
-                </p>
-            </div>
-            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-2">Dr. Bam Bahadur Sinha</h3>
-                <p class="text-lg">
-                    <i class="fa fa-phone"></i> +91-9199610251<br>
-                    <i class="fa fa-envelope"></i> bambahadursinha@nitsikkim.ac.in
-                </p>
-            </div>
-            <!-- Updated information -->
-            <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold mb-2">Dr. Gajendra Singh Shekhawat</h3>
-                <p class="text-lg">
-                    <i class="fa fa-phone"></i> +91-9199610251<br>
-                    <i class="fa fa-envelope"></i> gajendrasinghshekhawat@nitsikkim.ac.in
-                </p>
+    <!-- Sponsor -->
+    <section>
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl" id="callforsponser">
+            <h2 class="text-4xl font-semibold mb-6 text-center border-b-2 border-gray-200 pb-4">Sponsorship Opportunities</h2>
+            
+            <p class="text-lg mb-8" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                RCSC' 2024 provides a variety of sponsorship options that enable small and big businesses and organizations to participate in one of the best conferences. This will lead to the exchange of ideas in the field of mental health and innovation globally, with over 200 projected participants from all over the world.
+            </p>
+            
+            <p class="font-bold mb-4">For more information, please contact RCSC’2024 Sponsorship Chairs:</p>
+            
+            <div class="grid gap-6 md:grid-cols-3">
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Dr. Vishal Vishnoi</h3>
+                    <p class="text-lg">
+                        <i class="fa fa-phone"></i> +91-9855273397<br>
+                        <i class="fa fa-envelope"></i> vishalvishnoi@nitsikkim.ac.in
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Dr. Bam Bahadur Sinha</h3>
+                    <p class="text-lg">
+                        <i class="fa fa-phone"></i> +91-9199610251<br>
+                        <i class="fa fa-envelope"></i> bambahadursinha@nitsikkim.ac.in
+                    </p>
+                </div>
+                <!-- Updated information -->
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Dr. Gajendra Singh Shekhawat</h3>
+                    <p class="text-lg">
+                        <i class="fa fa-phone"></i> +91-9199610251<br>
+                        <i class="fa fa-envelope"></i> gajendrasinghshekhawat@nitsikkim.ac.in
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    
     
     
 
@@ -1657,7 +1644,7 @@
 
     </script>
 
-<script>
+    <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Set default section to show
       const defaultSection = '1'; // Change this to the ID of the default section if needed
@@ -1687,7 +1674,7 @@
       document.getElementById(`div${divId}`).classList.remove('hidden');
       document.getElementById(`bttn${divId}`).classList.add('bg-blue-300');
     }
-  </script>
+    </script>
   
 </body>
 
