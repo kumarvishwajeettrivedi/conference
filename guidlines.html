@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+    <title>Guidelines</title>
     
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./src/styles.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
         body, html {
             margin: 0;
             padding: 0;
@@ -14,89 +24,678 @@
             background-color: #f4f4f4;
             color: #333;
         }
+        /* General Styles for Dropdowns */
+.dropdown-menu {
+    display: none; /* Hide dropdown by default */
+}
 
-        div {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+.dropdown-menu.show {
+    display: block; /* Show dropdown when active */
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        min-width: 160px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-menu {
+        display: block;
+    }
+
+    .navbar-menu a {
+        display: block;
+    }
+}
+
+
+        .highlight{
+            text-decoration: underline;
+            color: #0056b3;
         }
-
-     
-        .about article {
+        .navbar {
             background-color: #fff;
-            border-radius: 8px;
-            margin: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            width: 100%;
+            border-bottom: 1px solid #eaeaea;
         }
-
-      
-        h1.article-heading {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #444;
-        }
-        
-        h2 {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 15px;
+        .navbar a {
             color: #333;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: #0056b3;
         }
 
-        hr.bg-ore.underline {
-            border: 0;
-            height: 2px;
-            background: #454444f1;
-            margin: 10px 0 20px;
-            border-radius: 1px;
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
         }
-
-   
-        li {
-            margin-bottom: 10px;
-            list-style: disc;
-            margin-left: 20px;
-        }
-
-      
-        a {
+        footer a {
             color: #007BFF;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
-        a:hover {
+        footer a:hover {
             color: #0056b3;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-social-icons a {
+            color: #fff;
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        /* Additional styles to ensure consistency */
+        .content-wrapper {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./src/styles.css">
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <script type="module">
+        import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
+    
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+       function toggleContent(expandedId, button) {
+            const expandedContent = document.getElementById(expandedId);
+
+            if (expandedContent.classList.contains('hidden')) {
+                expandedContent.classList.remove('hidden');
+                button.textContent = "Read Less";
+            } else {
+                expandedContent.classList.add('hidden');
+                button.textContent = "Read More";
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    
+    color: #1b1d1f;
+}
+
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 300px;
+            background-color: #000;
+            
+            margin-top: 20px;
+        }
+
+
+        .text-light {
+            font-weight: lighter;
+        }
+        .expand-transition {
+            transition: max-height 0.5s ease-out;
+            overflow: hidden;
+        }
+        .expand-transition.collapsed {
+            max-height: 0;
+        }
+        .expand-transition.expanded {
+            max-height: 1000px; /* Adjust based on content height */
+        }
+
+        .background-grid {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: grid-fade 10s ease-in-out infinite;
+        }
+
+        .code-animation {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+            overflow: hidden;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.8);
+            animation: running-code 20s linear infinite;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+   
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-80%); }
+    }
+
+    .animate-scroll {
+        display: flex;
+        animation: scroll 12s linear infinite;
+    }
+
+    a {
+  pointer-events: auto; 
+}
+
+    header {
+        background: linear-gradient(to right, lightblue, white, lightblue);
+    }
+    header div {
+        white-space: nowrap;
+    }
+
+        @keyframes running-code {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(calc(-100% + 1em));
+            }
+        }
+
+        .custom-blur {
+            filter: blur(1.5px);
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 25%;
+            background: url('img/overlay.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        #dropdownNavbar {
+    z-index: 1000; /* Ensure it is on top */
+}
+#dropdownNavbar {
+    pointer-events: auto; /* Ensure pointer events are enabled */
+}
+
+        .carousel {
+            width: 100%;
+            height: 300px;
+            background-color: black;
+            margin-top: 20px;
+        }
+
+        .text-light {
+            font-weight: lighter;
+        }
+
+        .animate-loop-scroll {
+            animation: loop-scroll 20s linear infinite;
+        }
+
+        @keyframes loop-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
 <body>
-    <div>
-        <div class="about">
-            <article>
-                <h1 class="article-heading">Instructions</h1>
-                <hr class="bg-ore underline">
-                <h2>
-                    Preparation of your paper: Your contribution may be prepared in LaTeX/WORD format. 
-                    Authors are recommended to use the following template given below.
-                </h2>
-                <ul>
-                    <li><a href="RCSC.zip" target="blank">Download Latex template zip</a></li>
-                    <li><a href="RCSC.docx" target="blank">Download Word template</a></li>
-                </ul>
-                <h2>
-                    Please go through the following detailed guidelines for submissions:
-                </h2>
-                <ul>
-                    <li><a href="https://easychair.org/cfp/gmhphci2022" target="_blank">Easychair Submissions</a></li>
-                </ul>
-            </article>
+    
+  <!-- Main Navigation -->
+ 
+   <!-- Registration -->
+   <div id="default-modal" tabindex="-1" aria-hidden="true"
+   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+   <div class="relative p-4 w-full max-w-2xl max-h-full">
+       <!-- Modal content -->
+       <div class="relative bg-white rounded-lg shadow">
+           <!-- Modal header -->
+           <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+               <h3 class="text-xl font-semibold text-gray-900">
+                   Registration
+               </h3>
+               <button type="button"
+                   class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                   data-modal-hide="default-modal">
+                   <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                       viewBox="0 0 14 14">
+                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                   </svg>
+                   <span class="sr-only">Close modal</span>
+               </button>
+           </div>
+           <!-- Modal body -->
+           <div class="p-4 md:p-5 space-y-4">
+
+               <div>
+                   <h5 class="font-bold text-lg mb-2">Registration Fees:</h5>
+                   <table class="table-auto text-sm border-collapse border border-gray-500 w-full">
+                       <thead class="text-center text-base">
+                           <tr>
+                               <th class="border-2 border-gray-500 py-4">Category</th>
+                               <th class="border-2 border-gray-500 py-4">Indian delegates<br>(in Rupees)</th>
+                               <th class="border-2 border-gray-500 py-4">Foreign delegates<br>(in USD)</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td class="border-2 border-gray-500 pl-4 py-1">Attendees</td>
+                               <td class="border-2 border-gray-500 text-center">Rs. 3500 + 18% GST</td>
+                               <td class="border-2 border-gray-500 text-center">$80</td>
+                           </tr>
+                           <tr>
+                               <td class="border-2 border-gray-500 pl-4 py-1">Student/Research Scholars</td>
+                               <td class="border-2 border-gray-500 text-center">Rs. 7500 + 18% GST</td>
+                               <td class="border-2 border-gray-500 text-center">$200</td>
+                           </tr>
+                           <tr>
+                               <td class="border-2 border-gray-500 pl-4 py-1">Faculty</td>
+                               <td class="border-2 border-gray-500 text-center">Rs. 8500 + 18% GST</td>
+                               <td class="border-2 border-gray-500 text-center">$250</td>
+                           </tr>
+                           <tr>
+                               <td class="border-2 border-gray-500 pl-4 py-1">Author from Industry</td>
+                               <td class="border-2 border-gray-500 text-center">Rs. 9500 + 18% GST</td>
+                               <td class="border-2 border-gray-500 text-center">$300</td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+
+               <div>
+                   <h5 class="font-bold text-lg mb-2">Mode of Payment:</h5>
+                   <p class="text-sm text-gray-700 mb-2">All payments should be made through online electronic
+                       transfer in the account of conference with following detail:</p>
+                   <div class="flex justify-center">
+                       <table class="table-auto text-sm">
+                           <tbody>
+                               <tr>
+                                   <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Beneficiary Name</td>
+                                   <td class="border-b-2 border-gray-300 py-1">National Institute of
+                                       Technology Sikkim</td>
+                               </tr>
+                               <tr>
+                                   <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Account No</td>
+                                   <td class="border-b-2 border-gray-300 py-1">11111111111</td>
+                               </tr>
+                               <tr>
+                                   <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Branch</td>
+                                   <td class="border-b-2 border-gray-300 py-1">SBI Ravangla</td>
+                               </tr>
+                               <tr>
+                                   <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">IFSC Code</td>
+                                   <td class="border-b-2 border-gray-300 py-1">SBIN0000000</td>
+                               </tr>
+                               <tr>
+                                   <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">CIF No.</td>
+                                   <td class="border-b-2 border-gray-300 py-1">00000000000</td>
+                               </tr>
+                               <tr>
+                                   <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">MICR Code</td>
+                                   <td class="border-b-2 border-gray-300 py-1">000000000</td>
+                               </tr>
+                           </tbody>
+                       </table>
+                   </div>
+
+               </div>
+
+           </div>
+           <!-- Modal footer -->
+           <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUptALLTvWPE9mK-7wPIN7Z3eFQ9cRmWw3NhC0yWL8YZuZ3w/viewform" target="_blank" rel="noopener noreferrer"
+class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+Register
+</a>
+
+           </div>
+       </div>
+   </div>
+</div>
+
+<!-- Header -->
+<nav class="bg-white border-gray-200">
+   <div class="flex flex-wrap items-center justify-between mx-11 p-4">
+
+       <a href="#" class="flex items-center space-x-8 rtl:space-x-reverse">
+           <img src="img/event_logo.png" width="100" height="100" alt="Event Logo" />
+           <img src="img/college-logo.png" alt="College Logo" width="65" height="65">
+       </a>
+
+       <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+           <ul
+               class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+               <li>
+                   <a href="index.html" class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700" aria-current="page">Home</a>
+               </li>
+               <li>
+                   <a href="index.html#aboutus"
+                       class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">About</a>
+               </li>
+               <li>
+                   <a href="index.html#committees"
+                       class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Committees</a>
+               </li>
+               <li>
+                   <a href="index.html#speakers"
+                       class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Speakers</a>
+               </li>
+               <li>
+                   <a href="index.html#callforsponser"
+                       class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Sponsorships</a>
+               </li>
+               <li>
+                   <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar"
+                       class="flex items-center justify-between w-full py-4 px-1 text-gray-500 hover:bg-transparent border-0 hover:text-blue-700">Program
+                       <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                           fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                               stroke-width="2" d="m1 1 4 4 4-4" />
+                       </svg>
+                   </button>
+                   <!-- Dropdown menu -->
+                   <div id="dropdownNavbar"
+                   class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                 <ul class="py-2 text-sm text-gray-700 space-y-1">
+                     <li><a href="index.html#papers1" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Papers</a></li>
+                     <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Poster</a></li>
+                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf9_ZGWvDPY5czm_0tbTbUC8PejVLDpMo3HIFH62x6RbrVTSQ/viewform"
+                           target="_blank" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                           Call for Reviewer
+                       </a></li>
+                     <li><a href="index.html#callforsponsor" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Sponsorship</a></li>
+                     <li><a href="index.html#guidlines.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Guidelines for Authors</a></li>
+                     <li><a href="index.html#imp_dates" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Important Dates</a></li>
+                 </ul>
+              </div>
+               </li>
+               <li>
+                   <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2"
+                       class="flex items-center justify-between w-full py-4 px-1 text-gray-500 hover:bg-transparent border-0 hover:text-blue-700">Contact
+                       <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                           fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                               stroke-width="2" d="m1 1 4 4 4-4" />
+                       </svg>
+                   </button>
+                   <!-- Dropdown menu -->
+                   <div id="dropdownNavbar2"
+                   class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                 <ul class="py-2 text-sm text-gray-700 space-y-1">
+                     <li>
+                         <a href="#howtoreach"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                            Contact Us
+                         </a>
+                     </li>
+                     <li>
+                         <a href="#howtoreach"
+                            class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                            How to Reach Us
+                         </a>
+                     </li>
+                 </ul>
+              </div>
+              
+              
+              
+               </li>
+               <li>
+                   <button id="dropdownNavbarLink3" data-dropdown-toggle="dropdownNavbar3"
+                       class="flex items-center justify-between w-full py-4 px-1 text-gray-500 hover:bg-transparent border-0 hover:text-blue-700">Downloads
+                       <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                           fill="none" viewBox="0 0 10 6">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                               stroke-width="2" d="m1 1 4 4 4-4" />
+                       </svg>
+                   </button>
+                   <!-- Dropdown menu -->
+                   <div id="dropdownNavbar3"
+                       class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                       <ul class="py-2 text-sm text-gray-700 space-y-1"
+                           aria-labelledby="dropdownLargeButton">
+                           <li>
+                               <a href="Brochure.zip"
+                                   class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Brochure</a>
+                           </li>
+                       </ul>
+                   </div>
+               </li>
+               <li>
+                   <button data-modal-target="default-modal" data-modal-toggle="default-modal"
+                       class="block py-2 px-3 text-gray-900  rounded-lg font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</button>
+               </li>
+           </ul>
+       </div>
+   </div>
+</nav>
+<marquee class="py-4 bg-gray-400 text-xl text-white"> 
+   Submission Deadline: 30th November 2024 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   Acceptance Date: 31st December 2024 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   Conference Dates: 30th, 31st January 2025 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</marquee>
+
+    <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="74%" valign="top">
+                <table width="100%" height="178" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="67%" height="180" valign="top">
+                            <table width="99%" height="31" border="0" cellpadding="0" cellspacing="0" class="botm-border">
+                                <tr>
+                                    <h1 style="font-size: 24px; font-weight: bold; text-align: center;">Paper Submission</h1>
+                                </tr>
+                            </table>
+                            <p><strong><u style="font-size: 18px;">Manuscript Style Information:</u></strong></p>
+                            <p align="justify">Authors should submit Full papers, not just an Abstract. Only papers prepared in PDF format will be accepted. Paper Length: Up to 10 pages, including figures, tables & references. Paper Formatting and Margins: Please carefully follow the template for specifications. No page numbers please. The same will be inserted during proceedings. <b>Restrict the Similarity Index below 20% and content overlapping shall be below 3%.</b></p>
+                            <p align="justify"><b>Please ensure that all the figures are of 300 DPI resolutions.</b></p>
+                            <h2 style="color: blue; text-align: center;">Important Instructions for AI-Generated Text such as ChatGPT</h2>
+                            <p align="justify">The use of content generated by artificial intelligence (AI) in an article in any form (text, figures, images, and code) shall be clearly disclosed in the acknowledgments section of the paper submitted for review. The AI system used shall be identified, and specific sections of the article that use AI-generated content shall be identified and accompanied by a brief explanation regarding the level at which the AI system was used to generate the content. Failing which paper shall be directly rejected without any reviewer comments.</p>
+                            <p align="justify"><strong>For Latex users:</strong> Latex users need not submit an MS word file. Instead, they need to include the source files in a folder and include this folder in the camera-ready zip file submitted.</p>
+                            <strong>Please refer to the author templates given below:</strong>
+                            <table align="center">
+                                <tr align="center">
+                                    <td width="50%">MS Word template:</td>
+                                    <td width="50%"><a href="splnproc1703.zip" class="highlight">Doc Template</a></td>
+                                </tr>
+                                <tr align="center">
+                                    <td width="50%">LaTex Formatting Macros:</td>
+                                    <td width="50%"><a href="ProcSci_TeX.zip" class="highlight">Tex Template</a></td>
+                                </tr>
+                                <tr align="center">
+                                    <td width="50%">Copyright/Author's Agreement/Consent Form:</td>
+                                    <td width="50%"><a href="#" class="highlight">Copyright Form</a></td>
+                                </tr>
+                            </table>
+                            <p><strong>Submission System:</strong></p>
+                            <p align="justify">You can log in <b>Microsoft's Conference Management Toolkit</b> using your Username and Password. From the top menu that appears below <b>Author Console</b> Click "Create new submission" and choose the Track to submit the paper. Finally, you fill out all the necessary information concerning the submission, upload the paper, and click on "submit".</p>
+                            <center><a href="#" target="blank"><img src="img/CMT_logo.png" alt="CMT Logo"></a></center>
+                            <p align="justify">Papers must be submitted within the deadline given, and electronic submission in PDF is required. The page limit for a full-length paper is 10 pages, with an extra page charge from the 11th page onwards. Short papers describing novel research visions, work-in-progress, or less mature results are also welcome, with a minimum limit of 5 pages.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <footer class="bg-gray-700">
+        <div class="mx-auto w-full p-4 py-6 px-16">
+            <div class="flex justify-between">
+                <div>
+                    <div class="flex items-center mb-8">
+                        <img src="img/event_logo.png" class="h-14 me-3" alt="Event Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800">RCSC' 2024</span>
+                    </div>
+                    <p class="text-white mb-2">Organized by National Institute Of Technology Sikkim</p>
+                    <p class="text-white text-lg"><b>Venue</b> - MP Hall, NIT Sikkim, Ravangla, South Sikkim – 737139,
+                        India</p>
+
+                    <p class="text-white font-bold text-lg mt-4">Email - <a href="#"
+                            class="font-normal">bambahadursinha@nitsikkim.ac.in</a></p>
+                </div>
+
+                <div class="flex gap-20">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Useful Links</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-1">
+                                <a href="index.html" class="hover:underline text-gray-400">Home</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="index.html#aboutus" class="hover:underline text-gray-400">About Us</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="index.html#callforpapers" class="hover:underline text-gray-400">Call for Papers</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="index.html#imp_dates" class="hover:underline text-gray-400">Important Dates</a>
+                            </li>
+                        </ul>
+
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase  mt-8">Social Media
+                        </h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="text-gray-400 hover:text-[#1877F2] fa-xl"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-[#1DA1F2] fa-xl"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-red-500 fa-xl"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-[#E1306c] fa-xl"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="w-[500px]">
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase">Contact Us</h2>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                    Your email
+                                </label>
+                                <input type="email" id="email" name="email"
+                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                                    placeholder="xyz@gmail.com" required>
+                            </div>
+                    
+                            <div class="sm:col-span-2">
+                                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                                    Your message
+                                </label>
+                                <textarea id="message" name="message" rows="6"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Leave a comment..."></textarea>
+                            </div>
+                    
+                            <button type="submit"
+                                class="mt-4 px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg focus:ring-4 focus:ring-blue-300">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+                        href="https://flowbite.com/" class="hover:underline text-gray-400">vishwa™</a>. All Rights Reserved.
+                </span>
+
+            </div>
         </div>
-    </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js">
+
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+    </script>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default section to show
+            const defaultSection = '1'; // Change this to the ID of the default section if needed
+        
+            // Hide all divs initially
+            const divs = document.querySelectorAll('.content');
+            const btns = document.querySelectorAll('.bttn');
+            divs.forEach(div => div.classList.add('hidden'));
+            btns.forEach(btn => btn.classList.remove('bg-blue-300'));
+        
+            // Show the default section
+            const defaultDiv = document.getElementById(`div${defaultSection}`);
+            if (defaultDiv) {
+              defaultDiv.classList.remove('hidden');
+              document.getElementById(`bttn${defaultSection}`).classList.add('bg-blue-300');
+            }
+          });
+        function showDiv(divId) {
+            // Hide all divs
+            const divs = document.querySelectorAll('.content');
+            const btns = document.querySelectorAll('.bttn');
+            divs.forEach(div => div.classList.add('hidden'));
+            btns.forEach(btn => btn.classList.remove('bg-blue-300'));
+        
+            // Show the selected div
+            document.getElementById(`div${divId}`).classList.remove('hidden');
+            document.getElementById(`bttn${divId}`).classList.add('bg-blue-300');
+          }
+
+    </script>
+    
 </body>
 </html>

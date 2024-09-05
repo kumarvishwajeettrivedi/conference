@@ -313,7 +313,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="border-b-2 border-gray-300 pr-7 py-1 font-bold">Beneficiary Name</td>
-                                        <td class="border-b-2 border-gray-300 py-1">Indian Institute of Information
+                                        <td class="border-b-2 border-gray-300 py-1">National Institute of
                                             Technology Sikkim</td>
                                     </tr>
                                     <tr>
@@ -368,22 +368,22 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
                     <li>
-                        <a href="#" class="block py-4 px-3 text-blue-700" aria-current="page">Home</a>
+                        <a href="#" class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700" aria-current="page">Home</a>
                     </li>
                     <li>
                         <a href="#aboutus"
                             class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">About</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#committees"
                             class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Committees</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#speakers"
                             class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Speakers</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#callforsponser"
                             class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Sponsorships</a>
                     </li>
                     <li>
@@ -452,16 +452,17 @@
                             </svg>
                         </button>
                         <!-- Dropdown menu -->
-                        <div id="dropdownNavbar3"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
-                            <ul class="py-2 text-sm text-gray-700 space-y-1"
-                                aria-labelledby="dropdownLargeButton">
+                        <div id="dropdownNavbar3" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                            <ul class="py-2 text-sm text-gray-700 space-y-1" aria-labelledby="dropdownLargeButton">
                                 <li>
-                                    <a href="Brochure.zip"
-                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Brochure</a>
+                                    <a href="Conference_Brochure.pdf" download="Conference_Brochure.pdf"
+                                       class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                                        Brochure
+                                    </a>
                                 </li>
                             </ul>
                         </div>
+                        
                     </li>
                     <li>
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
@@ -641,7 +642,7 @@
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </span>
-                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Confwerence Dates</h3>
+                        <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Conference Dates</h3>
                         <p class="text-base font-normal text-gray-500 dark:text-gray-400">30th, 31st January 2025</p>
                     </li>
                 </ol>
@@ -891,7 +892,7 @@
     </section>
 
     <!-- Chief Speakers -->
-    <section>
+    <section id="speakers">
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Chief Speakers</h2>
 
@@ -950,19 +951,19 @@
     </section>
 
     <!-- Committee -->
-    <section>
+    <section id="committees">
         <div class="mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl h-full">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
 
             <div class="flex justify-between">
                 <div class="">
                     <div class="flex flex-col gap-y-8">
-                        <button onclick="showDiv(1)" id="bttn1" class="bttn py-3 pr-12 text-left pl-2 bg-blue-300 rounded-r-xl">Chef patron</button>
+                        <button onclick="showDiv(1)" id="bttn1" class="bttn py-3 pr-12 text-left pl-2 bg-blue-300 rounded-r-xl">Chief Patron</button>
                         <button onclick="showDiv(2)" id="bttn2" class="bttn py-3 pr-12 text-left pl-2 bg-blue-300 rounded-r-xl">Patron</button>
-                        <button onclick="showDiv(3)" id="bttn3" class="bttn py-3 pr-12 text-left pl-2 bg-blue-300 rounded-r-xl">Conviners</button>
+                        <button onclick="showDiv(3)" id="bttn3" class="bttn py-3 pr-12 text-left pl-2 bg-blue-300 rounded-r-xl">Conveners</button>
 
                         <button onclick="showDiv(4)" id="bttn4" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Advisory</button>
-                        <button onclick="showDiv(5)" id="bttn5" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical program</button>
+                        <button onclick="showDiv(5)" id="bttn5" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical Program</button>
                         <button onclick="showDiv(6)" id="bttn6" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Publication</button>
                         <button onclick="showDiv(7)" id="bttn7" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Sponsorship, Publicity<br>and Social Media</button>
                         <button onclick="showDiv(8)" id="bttn8" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Logistic</button>
@@ -979,7 +980,7 @@
                             <div class="p-4">
                             
                                 <p class="font-bold text-xl mb-2">Prof. Mahesh Chandra Govil</p>
-                                <p class="mb-4 text-gray-700">Director NIT Sikkim</p>
+                                <p class="mb-4 text-gray-700">Director, NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -997,7 +998,7 @@
                             <img src="img/Committee_Members_Photos/Patron/Sanjay_Kumar_Jana.jpg" class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
                             <div class="p-4">
                               
-                                <p class="font-bold text-xl mb-2">Dr. Sanjay Kumar Jana/p>
+                                <p class="font-bold text-xl mb-2">Dr. Sanjay Kumar Jana </p>
                                 <p class="mb-4 text-gray-700">Associate Professor, ECE, NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
                                     <i class="fab fa-linkedin"></i>
@@ -1066,8 +1067,19 @@
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
                             <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Dr. Lalit Kumar Awasthi</p>
-                                <p class="mb-2 text-gray-700">NIT Hamirpur</p>
+                                <p class="font-bold text-lg mb-1">Prof. Lalit Kumar Awasthi</p>
+                                <p class="mb-2 text-gray-700">NIT Uttarakhand</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Prof. Laxmidhar Behera</p>
+                                <p class="mb-2 text-gray-700">IIT Mandi</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1077,18 +1089,19 @@
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
                             <img src="img/Committee_Members_Photos/Advisory_Committee/Sukumar_Nandi_IITGuwahati.JPG" class="w-full h-[200px] object-cover" alt="Sukumar Nandi">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Sukumar Nandi</p>
+                                <p class="font-bold text-lg mb-1">Prof. Sukumar Nandi</p>
                                 <p class="mb-2 text-gray-700">IIT Guwahati</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
                         </div>
+                   
 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
                             <img src="img/Committee_Members_Photos/Advisory_Committee/R_Kumar_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Dr. R Kumar">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Dr. R Kumar</p>
+                                <p class="font-bold text-lg mb-1">Prof. R Kumar</p>
                                 <p class="mb-2 text-gray-700">NIT Nagaland</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
@@ -1100,7 +1113,7 @@
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
                             <img src="img/Committee_Members_Photos/Advisory_Committee/Rajendrasinh_Jadeja_Marwadi_University.jpg" class="w-full h-[200px] object-cover" alt="Rajendrasinh Jadeja">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Rajendrasinh Jadeja</p>
+                                <p class="font-bold text-lg mb-1">Prof. Rajendrasinh Jadeja</p>
                                 <p class="mb-2 text-gray-700">Marwadi University</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
@@ -1108,26 +1121,55 @@
                             </div>
                         </div>
 
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Themrichon_Tuithung_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Themrichon Tuithung">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Prof. Themrichon Tuithung</p>
+                                <p class="mb-2 text-gray-700">NIT Nagaland</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
                             <img src="img/Committee_Members_Photos/Advisory_Committee/Ramprasad_Potluri_IIT_Kanpur.jpg" class="w-full h-[200px] object-cover" alt="Ramprasad Potluri">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Ramprasad Potluri</p>
+                                <p class="font-bold text-lg mb-1">Dr. Ramprasad Potluri</p>
                                 <p class="mb-2 text-gray-700">IIT Kanpur</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
                         </div>
-                      
 
-                        
-                        
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Sheela Tiwari">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Dr. Laxmidhar Behera</p>
-                                <p class="mb-2 text-gray-700">IIT Mandi</p>
+                                <p class="font-bold text-lg mb-1">Dr. Sheela Tiwari</p>
+                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Rajesh Singla">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Rajesh Singla</p>
+                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg" class="w-full h-[200px] object-cover" alt="R Dhanalakshmi">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. R Dhanalakshmi</p>
+                                <p class="mb-2 text-gray-700">IIIT Trichy</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1144,51 +1186,6 @@
                                 </a>
                             </div>
                         </div>
-
-
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Themrichon_Tuithung_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Themrichon Tuithung">
-                            <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Themrichon Tuithung</p>
-                                <p class="mb-2 text-gray-700">NIT Nagaland</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Sheela Tiwari">
-                            <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Sheela Tiwari</p>
-                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Rajesh Singla">
-                            <div class="p-4">
-                                <p class="font-bold text-lg mb-1">Rajesh Singla</p>
-                                <p class="mb-2 text-gray-700">NIT Jalandhar</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg" class="w-full h-[200px] object-cover" alt="R Dhanalakshmi">
-                            <div class="p-4">
-                                <p class="font-bold text-lg mb-1">R Dhanalakshmi</p>
-                                <p class="mb-2 text-gray-700">IIIT Trichy</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
                     
                        
                         
@@ -1200,7 +1197,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sangram_Ray.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sangram Ray">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sangram Ray</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1212,7 +1209,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sarfaraj Alam Ansari">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1224,7 +1221,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[200px] object-cover" alt="Dr. Hemant Kumar Kathania">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1235,7 +1232,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Pankaj_Kumar_Kesarwani.jpg" class="w-full h-[200px] object-cover" alt="Dr. Pankaj Kumar Kesarwani">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Pankaj Kumar Kesarwani</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1247,7 +1244,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Reshmi_Dhara.jpg" class="w-full h-[200px] object-cover" alt="Dr. Reshmi Dhara">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Reshmi Dhara</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1259,7 +1256,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Jeetendra_Singh.jpg" class="w-full h-[200px] object-cover" alt="Dr. Jeetendra Singh">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Jeetendra Singh</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1271,7 +1268,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Krishna_Kumar.jpg" class="w-full h-[200px] object-cover" alt="Dr. Krishna Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Krishna Kumar</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1282,7 +1279,7 @@
                             <img src="img/Committee_Members_Photos/Technical_Program_Committee/Varun_Gupta.jpg" class="w-full h-[200px] object-cover" alt="Dr. Varun Gupta">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1297,7 +1294,7 @@
                             <div class="p-4">
                                 
                                 <p class="font-bold text-xl mb-2">Dr. Sangram Ray</p>
-                                <p class="mb-4 text-gray-700">Associate Professor, CSE, NIT Sikkim</p>
+                                <p class="mb-4 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1309,7 +1306,7 @@
                             <div class="p-4">
                               
                                 <p class="font-bold text-xl mb-2">Dr. Jeetendra Singh</p>
-                                <p class="mb-4 text-gray-700">Assistant Professor, ECE, NIT Sikkim  </p>
+                                <p class="mb-4 text-gray-700">NIT Sikkim  </p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1329,7 +1326,7 @@
                             <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1340,7 +1337,7 @@
                             <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1351,7 +1348,7 @@
                             <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Varun_Gupta.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1362,7 +1359,7 @@
                             <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Gajendra_Singh_Shekhawat.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Gajendra Singh Shekhawat</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1380,7 +1377,7 @@
                             <img src="img/Committee_Members_Photos/Logistic_Committee/Sukanta_Dhar.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sukanta Dhar</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1390,7 +1387,7 @@
                             <img src="img/Committee_Members_Photos/Logistic_Committee/Sudipta_Das.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sudipta Das</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1401,7 +1398,7 @@
                             <img src="img/Committee_Members_Photos/Logistic_Committee/Neelima_Singh.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Neelima Singh</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1413,7 +1410,7 @@
                             <img src="img/Committee_Members_Photos/Logistic_Committee/Diksha_Rangwani.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Diksha Rangwani</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1424,7 +1421,7 @@
                             <img src="img/Committee_Members_Photos/Logistic_Committee/Arunangshu_Pal.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Mr. Arunangshu Pal</p>
-                                <p class="mb-2 text-gray-700">NIT SIKKIM</p>
+                                <p class="mb-2 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
@@ -1485,17 +1482,17 @@
             <h2 class="text-4xl font-semibold mb-6 text-center border-b-2 border-gray-200 pb-4">Sponsorship Opportunities</h2>
             
             <p class="text-lg mb-8" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                RCSC' 2024 provides a variety of sponsorship options that enable small and big businesses and organizations to participate in one of the best conferences. This will lead to the exchange of ideas in the field of mental health and innovation globally, with over 200 projected participants from all over the world.
+                RCSC' 2025 provides a variety of sponsorship options that enable small and big businesses and organizations to participate in one of the best conferences. This will lead to the exchange of ideas in the field of mental health and innovation globally, with over 200 projected participants from all over the world.
             </p>
             
-            <p class="font-bold mb-4">For more information, please contact RCSC’ 2025 sponsorship Chairs:</p>
+            <p class="font-bold mb-4">For more information, please contact RCSC’ 2025 Sponsorship Chairs:</p>
             
             <div class="grid gap-6 md:grid-cols-3">
                 <div class="p-6 bg-gray-100 rounded-lg shadow-md">
                     <h3 class="text-2xl font-semibold mb-2">Dr. Vishal Vishnoi</h3>
                     <p class="text-lg">
                         <i class="fa fa-phone"></i> +91-9855273397<br>
-                        <i class="fa fa-envelope"></i> vishalvishnoi@nitsikkim.ac.in
+                        <i class="fa fa-envelope"></i> vishal.vishnoi@nitsikkim.ac.in
                     </p>
                 </div>
                 <div class="p-6 bg-gray-100 rounded-lg shadow-md">
@@ -1520,14 +1517,14 @@
             </h2>
             <div class="grid grid-cols-3 ">
                 <div>
-                    <p class="text-xl font-bold">Name</p>
-                    <p><i class="fa fa-envelope" style="font-size:28px"></i> vishalvishnoi@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> + +91-9855273397</p>
+                    <p class="text-xl font-bold">Dr. Vishal Vishnoi</p>
+                    <p><i class="fa fa-envelope" style="font-size:28px"></i> vishal.vishnoi@nitsikkim.ac.in</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-9855273397</p>
                 </div>
                 <div>
-                    <p class="text-xl font-bold">Name</p>
+                    <p class="text-xl font-bold">Dr. Bam Bahadur Sinha</p>
                     <p><i class="fa fa-envelope" style="font-size:28px"></i> bambahadursinha@nitsikkim.ac.in</p>
-                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-9199610251</p>
+                    <p><i class="fa fa-phone" style="font-size:28px"></i> +91-9151522251</p>
                 </div>
                
 
@@ -1550,7 +1547,7 @@
                 <div>
                     <div class="flex items-center mb-8">
                         <img src="img/event_logo.png" class="h-14 me-3" alt="Event Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap ">RCSC' 2024</span>
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap ">RCSC' 2025</span>
                     </div>
                     <p class="text-white mb-2">Organized by National Institute Of Technology Sikkim</p>
                     <p class="text-white text-lg"><b>Venue</b> - MP Hall, NIT Sikkim, Ravangla, South Sikkim – 737139,
@@ -1565,16 +1562,16 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">Useful Links</h2>
                         <ul class="text-gray-400 font-medium">
                             <li class="mb-1">
-                                <a href="#" class="hover:underline">Home</a>
+                                <a href="index.html" class="hover:underline">Home</a>
                             </li>
                             <li class="mb-1">
-                                <a href="#" class="hover:underline">About Us</a>
+                                <a href="index.html#aboutus" class="hover:underline">About Us</a>
                             </li>
                             <li class="mb-1">
-                                <a href="#" class="hover:underline">Call for Papers</a>
+                                <a href="index.html#callforpapers" class="hover:underline">Call for Papers</a>
                             </li>
                             <li class="mb-1">
-                                <a href="#" class="hover:underline">Important Dates</a>
+                                <a href="index.html#imp_dates" class="hover:underline">Important Dates</a>
                             </li>
                         </ul>
 
