@@ -14,16 +14,16 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
-<script type="text/javascript">
+
+    <script type="text/javascript">
     (function() {
         emailjs.init("YOUR_USER_ID"); 
     })();
-</script>
+    </script>
 
 
-<script>
+    <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault(); 
 
@@ -34,9 +34,7 @@
                 alert('Failed to send message. Error: ' + JSON.stringify(error));
             });
     });
-</script>
-
-
+    </script>
 
     <script>
         
@@ -239,6 +237,7 @@
             }
         }
     </script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -400,7 +399,7 @@
                         class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
                       <ul class="py-2 text-sm text-gray-700 space-y-1">
                           <li><a href="#papers1" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Papers</a></li>
-                          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Poster</a></li>
+                          <li><a href="./Files/Poster.pptx" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Poster</a></li>
                           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf9_ZGWvDPY5czm_0tbTbUC8PejVLDpMo3HIFH62x6RbrVTSQ/viewform"
                                 target="_blank" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                 Call for Reviewer
@@ -455,7 +454,7 @@
                         <div id="dropdownNavbar3" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
                             <ul class="py-2 text-sm text-gray-700 space-y-1" aria-labelledby="dropdownLargeButton">
                                 <li>
-                                    <a href="Conference_Brochure.pdf" download="Conference_Brochure.pdf"
+                                    <a href="./Files/Conference_Brochure.pdf" download="Conference_Brochure.pdf"
                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                         Brochure
                                     </a>
@@ -466,7 +465,7 @@
                     </li>
                     <li>
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                            class="block py-2 px-3 text-gray-900  rounded-lg font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</button>
+                            class="block py-2 px-3 text-gray-900 font-bold rounded-full border-4 border-blue-500 hover:bg-blue-500 hover:text-white transition ease-in-out delay-150">Registration</button>
                     </li>
                 </ul>
             </div>
@@ -586,7 +585,7 @@
                             </p>
                         </div>
                         <button
-                            class="px-3 py-2 rounded text-white border-4s  shadow-blue-400/50 transition-all duration-700 bg-blue-400 hover:text-blue-500 hover:bg-transparent"
+                            class="px-3 py-2 rounded text-white border-4 border-blue-400  shadow-blue-400/50 transition-all duration-700 bg-blue-400 hover:text-blue-500 hover:bg-transparent hover:border-blue-500"
                             onclick="toggleContent('expandedContent', this)">Read More</button>
                     </div>
                 </div>
@@ -596,10 +595,10 @@
             <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-md">
 
                 <!-- Sponsor -->
-                <div>
+                <div class="mb-16">
                     <h2 class="font-medium text-4xl border-b-1 border-gray-100">Sponsors</h2>
                     <div class="bg-[#921b1f] h-1 max-w-[50%] mb-6"></div>
-                    <p>TODO</p>
+                    <p>T.B.D.</p>
                    <!-- <img src="#" alt="Sponsor" class="mb-6">-->
                 </div>
 
@@ -607,7 +606,7 @@
                 <h2 class="font-medium text-4xl border-b-1 border-gray-100" id="imp_dates">Important Dates</h2>
                 <div class="bg-[#921b1f] h-1 max-w-[75%] mb-6"></div>
 
-                <ol class="relative border-s border-gray-200">
+                <ol class="relative border-s border-gray-200 translate-x-6">
                     <li class="mb-10 ms-6">
                         <span
                             class="absolute flex items-center justify-center w-6 h-6 bg-blue-900 rounded-full -start-3 ring-8 ring-[#f5f5f5]">
@@ -1503,6 +1502,43 @@
                     </p>
                 </div>
                 
+            </div>
+
+
+            <h2 class="text-4xl font-semibold mb-6 mt-10 text-center border-b-2 border-gray-200 pb-4">Sponsorship Packages</h2>
+            <div class="flex gap-4 justify-around">
+                <div class="mb-10 mt-10">
+                    <p class="font-bold mb-2 text-xl">Platinum Sponsorship (Rs. 3 Lakh)</p>
+                    <p class="translate-x-2 text-lg mb-6">
+                        • Title Sponsorship ( in associated with NIT Sikkim)<br>
+                        • Print online logo with NIT Sikkim<br>
+                        • Event landing page (prominent space )<br>
+                        • Event landing page (prominent space )<br>
+                        • Logo on Brochure colored front page<br>
+                        • Logo on event ID’s<br>
+                        • Branding with conference kit<br>
+                        • Logo will be mentioned in all documents (booklet)<br>
+                        • (except in conference proceedings)<br>
+                        • Logo will be included in all sort of advertisements<br>
+                        • Will be given 4 stands
+                    </p>
+                </div>
+                <div class="mt-10">
+                    <p class="font-bold mb-2 text-xl">Gold Sponsorship (Rs. 2 Lakh)</p>
+                    <p class="translate-x-2 text-lg mb-6">
+                        • Logo on Brochure colored back page<br>
+                        • Logo will be present on website<br>
+                        • Will be given 3 stands
+                    </p>
+                </div>
+            </div>
+            <div class="ml-28">
+                <p class="font-bold mb-2 text-xl">Silver Sponsorship (Rs. 1 lakh)</p>
+                <p class="translate-x-2 text-lg mb-6">
+                    • Logo on brochure(backside of the front page)<br>
+                    • Logo will be present on website<br>
+                    • Will be given 1 stand
+                </p>
             </div>
         </div>
     </section>
