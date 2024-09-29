@@ -9,8 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./src/styles.css">
-
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -79,10 +77,10 @@
     </script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
         body {
-    font-family: 'Roboto', sans-serif;
-    
-    color: #1b1d1f;
+            font-family: "Zilla Slab", serif;
+            color:black;
 }
 
 
@@ -960,7 +958,7 @@
         <div class="mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl h-full">
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Committee</h2>
 
-            <div class="flex justify-start">
+            <div class="flex justify-around">
                 <div class="">
                     <div class="flex flex-col gap-y-8">
                         <button onclick="showDiv(1)" id="bttn1" class="bttn py-3 pr-12 text-left pl-2 bg-blue-300 rounded-r-xl">Chief Patron</button>
@@ -980,7 +978,7 @@
                     <!-- patrons and conviners -->
                     <div id="div1" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         <!-- Card 1 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
                             <img src="img/Committee_Members_Photos/Chief_Patron/Director_MC_Govil.jpg" class="w-full h-[250px] object-cover" alt="Director MC Govil">
                             <div class="p-4">
                             
@@ -995,7 +993,7 @@
 
                     <div id="div2" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         <!-- Card 2 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
                             <img src="img/Committee_Members_Photos/Patron/Sanjay_Kumar_Jana.jpg" class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
                             <div class="p-4">
                               
@@ -1008,7 +1006,7 @@
                         </div>
                     
                         <!-- Card 3 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
                             <img src="img/Committee_Members_Photos/Patron/Pratyay_Kuila.jpg" class="w-full h-[250px] object-cover" alt="Dr. Vishal Vishnoi">
                             <div class="p-4">
                                 
@@ -1024,7 +1022,7 @@
                     <div id="div3" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
 
                         <!-- Card 2 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
                             <img src="img/Committee_Members_Photos/Convenor/vishal_sir.jpeg" class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
                             <div class="p-4">
                               
@@ -1037,7 +1035,7 @@
                         </div>
                        
                         <!-- Card 3 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
                             <img src="img/Committee_Members_Photos/Convenor/Bam_Bahadur_Sinha.jpg" class="w-full h-[250px] object-cover" alt="Dr. Vishal Vishnoi">
                             <div class="p-4">
                                 
@@ -1052,8 +1050,8 @@
                     
                     <div id="div4" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Laxmidhar Behera</p>
                                 <p class="mb-2 text-gray-700">Director</p>
@@ -1065,10 +1063,11 @@
                         </div>
                         
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg" class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Binod Kanaujia</p>
+                                <p class="mb-2 text-gray-700">Director</p>
                                 <p class="mb-2 text-gray-700">NIT Jalandhar</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
@@ -1076,8 +1075,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Lalit Kumar Awasthi</p>
                                 <p class="mb-2 text-gray-700">NIT Uttarakhand</p>
@@ -1087,8 +1086,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Director_ElayaPerumal.jpeg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. A. Elayaperumal</p>
                                 <p class="mb-2 text-gray-700">Director</p>
@@ -1099,8 +1098,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Valentina E. Balas.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Valentina E. Balas</p>
                                 <p class="mb-2 text-gray-700">Aurel Vlaicu University of Arad, Romania</p>
@@ -1110,8 +1109,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Vijayan K. Asari.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Vijayan K. Asari</p>
                                 <p class="mb-2 text-gray-700">University of Dayton, United States</p>
@@ -1121,8 +1120,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Brijesh Kumar.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Brijesh Kumar</p>
                                 <p class="mb-2 text-gray-700">IGDTUW, Delhi</p>
@@ -1132,8 +1131,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Nathi Ram Chauhan.jfif" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Nathi Ram Chauhan</p>
                                 <p class="mb-2 text-gray-700">IGDTUW, Delhi</p>
@@ -1143,8 +1142,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Sheela Tiwari">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg" class="w-full h-[250px] object-cover" alt="Sheela Tiwari">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sheela Tiwari</p>
                                 <p class="mb-2 text-gray-700">NIT Jalandhar</p>
@@ -1154,8 +1153,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg" class="w-full h-[200px] object-cover" alt="Rajesh Singla">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg" class="w-full h-[250px] object-cover" alt="Rajesh Singla">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Rajesh Singla</p>
                                 <p class="mb-2 text-gray-700">NIT Jalandhar</p>
@@ -1165,8 +1164,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg" class="w-full h-[200px] object-cover" alt="R Dhanalakshmi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg" class="w-full h-[250px] object-cover" alt="R Dhanalakshmi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. R Dhanalakshmi</p>
                                 <p class="mb-2 text-gray-700">IIIT Trichy</p>
@@ -1176,8 +1175,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajendrasinh_Jadeja_Marwadi_University.jpg" class="w-full h-[200px] object-cover" alt="Rajendrasinh Jadeja">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajendrasinh_Jadeja_Marwadi_University.jpg" class="w-full h-[250px] object-cover" alt="Rajendrasinh Jadeja">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Rajendrasinh Jadeja</p>
                                 <p class="mb-2 text-gray-700">Marwadi University</p>
@@ -1190,7 +1189,7 @@
                    
                         <!-- 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sukumar_Nandi_IITGuwahati.JPG" class="w-full h-[200px] object-cover" alt="Sukumar Nandi">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sukumar_Nandi_IITGuwahati.JPG" class="w-full h-[250px] object-cover" alt="Sukumar Nandi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Sukumar Nandi</p>
                                 <p class="mb-2 text-gray-700">IIT Guwahati</p>
@@ -1202,7 +1201,7 @@
                    
 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Kumar_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Dr. R Kumar">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Kumar_NIT_Nagaland.jpg" class="w-full h-[250px] object-cover" alt="Dr. R Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. R Kumar</p>
                                 <p class="mb-2 text-gray-700">NIT Nagaland</p>
@@ -1216,7 +1215,7 @@
                         
 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Themrichon_Tuithung_NIT_Nagaland.jpg" class="w-full h-[200px] object-cover" alt="Themrichon Tuithung">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Themrichon_Tuithung_NIT_Nagaland.jpg" class="w-full h-[250px] object-cover" alt="Themrichon Tuithung">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Themrichon Tuithung</p>
                                 <p class="mb-2 text-gray-700">NIT Nagaland</p>
@@ -1227,7 +1226,7 @@
                         </div>
 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Ramprasad_Potluri_IIT_Kanpur.jpg" class="w-full h-[200px] object-cover" alt="Ramprasad Potluri">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Ramprasad_Potluri_IIT_Kanpur.jpg" class="w-full h-[250px] object-cover" alt="Ramprasad Potluri">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Ramprasad Potluri</p>
                                 <p class="mb-2 text-gray-700">IIT Kanpur</p>
@@ -1238,7 +1237,7 @@
                         </div>
 
                         <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Dinesh_Kumar_BennettUniv.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Dinesh_Kumar_BennettUniv.jpg" class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Dinesh Kumar</p>
                                 <p class="mb-2 text-gray-700">Bennett University</p>
@@ -1250,8 +1249,19 @@
                     
                     <div id="div5" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                         
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sangram_Ray.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sangram Ray">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Dr. Vishal Satpute.png" class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Vishal Satpute</p>
+                                <p class="mb-2 text-gray-700">Visvesvaraya National Institute of Technology Nagpur</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sangram_Ray.jpg" class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sangram Ray</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1262,8 +1272,8 @@
                         </div>
 
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sarfaraj Alam Ansari">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[250px] object-cover" alt="Dr. Sarfaraj Alam Ansari">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1274,8 +1284,8 @@
                         </div>
 
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[200px] object-cover" alt="Dr. Hemant Kumar Kathania">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[250px] object-cover" alt="Dr. Hemant Kumar Kathania">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1285,8 +1295,8 @@
                             </div>
                         </div>
                        
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Pankaj_Kumar_Kesarwani.jpg" class="w-full h-[200px] object-cover" alt="Dr. Pankaj Kumar Kesarwani">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Pankaj_Kumar_Kesarwani.jpg" class="w-full h-[250px] object-cover" alt="Dr. Pankaj Kumar Kesarwani">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Pankaj Kumar Kesarwani</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1297,8 +1307,8 @@
                         </div>
                         
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Reshmi_Dhara.jpg" class="w-full h-[200px] object-cover" alt="Dr. Reshmi Dhara">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Reshmi_Dhara.jpg" class="w-full h-[250px] object-cover" alt="Dr. Reshmi Dhara">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Reshmi Dhara</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1309,8 +1319,8 @@
                         </div>
                         
                         <!-- Card 2 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Jeetendra_Singh.jpg" class="w-full h-[200px] object-cover" alt="Dr. Jeetendra Singh">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Jeetendra_Singh.jpg" class="w-full h-[250px] object-cover" alt="Dr. Jeetendra Singh">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Jeetendra Singh</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1321,8 +1331,8 @@
                         </div>
                         
                         <!-- Card 3 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Krishna_Kumar.jpg" class="w-full h-[200px] object-cover" alt="Dr. Krishna Kumar">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Krishna_Kumar.jpg" class="w-full h-[250px] object-cover" alt="Dr. Krishna Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Krishna Kumar</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1332,8 +1342,8 @@
                             </div>
                         </div>
                         
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Varun_Gupta.jpg" class="w-full h-[200px] object-cover" alt="Dr. Varun Gupta">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Varun_Gupta.jpg" class="w-full h-[250px] object-cover" alt="Dr. Varun Gupta">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1346,8 +1356,8 @@
                     
                     <div id="div6" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Publication_Committee/Sangram_Ray.jpg" class="w-full h-[200px] object-cover" alt="Dr. Sangram Ray">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Publication_Committee/Sangram_Ray.jpg" class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
                             <div class="p-4">
                                 
                                 <p class="font-bold text-xl mb-2 px-12">Dr. Sangram Ray</p>
@@ -1358,8 +1368,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Publication_Committee/Jeetendra_Singh.jpg" class="w-full h-[200px] object-cover" alt="Jeetendra Singh">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Publication_Committee/Jeetendra_Singh.jpg" class="w-full h-[250px] object-cover" alt="Jeetendra Singh">
                             <div class="p-4">
                               
                                 <p class="font-bold text-xl mb-2 px-12">Dr. Jeetendra Singh</p>
@@ -1375,8 +1385,8 @@
                     <div id="div7" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                         
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1386,8 +1396,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1397,8 +1407,8 @@
                             </div>
                         </div>
                     
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Varun_Gupta.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Varun_Gupta.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1408,8 +1418,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Gajendra_Singh_Shekhawat.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Gajendra_Singh_Shekhawat.jpg" class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Gajendra Singh Shekhawat</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1424,8 +1434,8 @@
                     <div id="div8" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                         <!-- Card 1 -->
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sukanta_Dhar.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sukanta_Dhar.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-12">Dr. Sukanta Dhar</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1433,8 +1443,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sudipta_Das.jpg" class="w-full h-[200px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sudipta_Das.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-12">Dr. Sudipta Das</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1444,8 +1454,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Neelima_Singh.jpg" class="w-full h-[200px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Neelima_Singh.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-12">Dr. Neelima Singh</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1456,8 +1466,8 @@
                         </div>
 
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Diksha_Rangwani.jpg" class="w-full h-[200px] object-cover" alt="Dr. Dinesh Kumar">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Diksha_Rangwani.jpg" class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-11">Dr. Diksha Rangwani</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1467,8 +1477,8 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Arunangshu_Pal.jpg" class="w-full h-[200px] object-cover" alt="Prof. Binod Kanaujia">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Arunangshu_Pal.jpg" class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-11">Mr. Arunangshu Pal</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1482,8 +1492,8 @@
 
                     <div id="div9" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                        
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/vishwa.jpg" class="w-full h-[200px] object-cover" alt="Lead Developer">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/vishwa.jpg" class="w-full h-[250px] object-cover" alt="Lead Developer">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Vishwajeet Kumar</p>
                                 <p class="mb-2 text-gray-700">Final Year Student</p>
@@ -1493,10 +1503,10 @@
                             </div>
                         </div>
                 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/IMG_7398.png" class="w-full h-[200px] object-cover" alt="abhijit">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/IMG_7398.png" class="w-full h-[250px] object-cover" alt="abhijit">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1 px-11">Abhijit Mondal</p>
+                                <p class="font-bold text-lg mb-1">Abhijit Mondal</p>
                                 <p class="mb-2 text-gray-700">Final Year Student</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
@@ -1504,10 +1514,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden max-w-[275]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/harsh.jpg" class="w-full h-[200px] object-cover" alt="harsh">
+                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/harsh.jpg" class="w-full h-[250px] object-cover" alt="harsh">
                             <div class="p-4">
-                                <p class="font-bold text-lg mb-1 px-11">Harsh Srivastava</p>
+                                <p class="font-bold text-lg mb-1">Harsh Srivastava</p>
                                 <p class="mb-2 text-gray-700">Final Year Student<p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
