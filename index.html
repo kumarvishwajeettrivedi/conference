@@ -16,27 +16,27 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
 
     <script type="text/javascript">
-    (function() {
-        emailjs.init("YOUR_USER_ID"); 
-    })();
+        (function () {
+            emailjs.init("YOUR_USER_ID");
+        })();
     </script>
 
 
     <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); 
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-            .then(function() {
-                alert('Message sent successfully!');
-            }, function(error) {
-                alert('Failed to send message. Error: ' + JSON.stringify(error));
-            });
-    });
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function () {
+                    alert('Message sent successfully!');
+                }, function (error) {
+                    alert('Failed to send message. Error: ' + JSON.stringify(error));
+                });
+        });
     </script>
 
     <script>
-        
+
         module.exports = {
             theme: {
                 extend: {
@@ -79,10 +79,11 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
         body {
             font-family: "Zilla Slab", serif;
-            color:black;
-}
+            color: black;
+        }
 
 
         body::-webkit-scrollbar {
@@ -93,7 +94,7 @@
             width: 100%;
             height: 300px;
             background-color: #000;
-            
+
             margin-top: 20px;
         }
 
@@ -101,15 +102,19 @@
         .text-light {
             font-weight: lighter;
         }
+
         .expand-transition {
             transition: max-height 0.5s ease-out;
             overflow: hidden;
         }
+
         .expand-transition.collapsed {
             max-height: 0;
         }
+
         .expand-transition.expanded {
-            max-height: 1000px; /* Adjust based on content height */
+            max-height: 1000px;
+            /* Adjust based on content height */
         }
 
         .background-grid {
@@ -138,27 +143,33 @@
             padding-right: 20px;
             box-sizing: border-box;
         }
-   
-    @keyframes scroll {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-80%); }
-    }
 
-    .animate-scroll {
-        display: flex;
-        animation: scroll 12s linear infinite;
-    }
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
 
-    a {
-  pointer-events: auto; 
-}
+            100% {
+                transform: translateX(-80%);
+            }
+        }
 
-    header {
-        background: linear-gradient(to right, lightblue, white, lightblue);
-    }
-    header div {
-        white-space: nowrap;
-    }
+        .animate-scroll {
+            display: flex;
+            animation: scroll 12s linear infinite;
+        }
+
+        a {
+            pointer-events: auto;
+        }
+
+        header {
+            background: linear-gradient(to right, lightblue, white, lightblue);
+        }
+
+        header div {
+            white-space: nowrap;
+        }
 
         @keyframes running-code {
             0% {
@@ -185,12 +196,16 @@
             opacity: 0.2;
             pointer-events: none;
         }
+
         #dropdownNavbar {
-    z-index: 1000; /* Ensure it is on top */
-}
-#dropdownNavbar {
-    pointer-events: auto; /* Ensure pointer events are enabled */
-}
+            z-index: 1000;
+            /* Ensure it is on top */
+        }
+
+        #dropdownNavbar {
+            pointer-events: auto;
+            /* Ensure pointer events are enabled */
+        }
 
         .carousel {
             width: 100%;
@@ -220,11 +235,11 @@
 
     <script type="module">
         import preline from 'https://cdn.jsdelivr.net/npm/preline@2.3/+esm'
-    
+
     </script>
 
     <script>
-       function toggleContent(expandedId, button) {
+        function toggleContent(expandedId, button) {
             const expandedContent = document.getElementById(expandedId);
 
             if (expandedContent.classList.contains('hidden')) {
@@ -343,10 +358,11 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUptALLTvWPE9mK-7wPIN7Z3eFQ9cRmWw3NhC0yWL8YZuZ3w/viewform" target="_blank" rel="noopener noreferrer"
-   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-   Register
-</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUptALLTvWPE9mK-7wPIN7Z3eFQ9cRmWw3NhC0yWL8YZuZ3w/viewform"
+                        target="_blank" rel="noopener noreferrer"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Register
+                    </a>
 
                 </div>
             </div>
@@ -366,7 +382,8 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
                     <li>
-                        <a href="#" class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700" aria-current="page">Home</a>
+                        <a href="#" class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700"
+                            aria-current="page">Home</a>
                     </li>
                     <li>
                         <a href="#aboutus"
@@ -395,19 +412,30 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                        class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
-                      <ul class="py-2 text-sm text-gray-700 space-y-1">
-                          <li><a href="#papers1" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Papers</a></li>
-                          <li><a href="./Files/Poster.pptx" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Poster</a></li>
-                          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf9_ZGWvDPY5czm_0tbTbUC8PejVLDpMo3HIFH62x6RbrVTSQ/viewform"
-                                target="_blank" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-                                Call for Reviewer
-                            </a></li>
-                          <li><a href="#callforsponser" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call for Sponsorship</a></li>
-                          <li><a href="/guidlines.html" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Guidelines for Authors</a></li>
-                          <li><a href="#imp_dates" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Important Dates</a></li>
-                      </ul>
-                   </div>
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                            <ul class="py-2 text-sm text-gray-700 space-y-1">
+                                <li><a href="#papers1"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call
+                                        for Papers</a></li>
+                                <li><a href="./Files/Poster.pptx"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call
+                                        for Poster</a></li>
+                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf9_ZGWvDPY5czm_0tbTbUC8PejVLDpMo3HIFH62x6RbrVTSQ/viewform"
+                                        target="_blank"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                                        Call for Reviewer
+                                    </a></li>
+                                <li><a href="#callforsponser"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Call
+                                        for Sponsorship</a></li>
+                                <li><a href="/guidlines.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Guidelines
+                                        for Authors</a></li>
+                                <li><a href="#imp_dates"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">Important
+                                        Dates</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
                         <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2"
@@ -420,25 +448,25 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar2"
-                        class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
-                      <ul class="py-2 text-sm text-gray-700 space-y-1">
-                          <li>
-                              <a href="#howtoreach"
-                                 class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-                                 Contact Us
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#howtoreach"
-                                 class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
-                                 How to Reach Us
-                              </a>
-                          </li>
-                      </ul>
-                   </div>
-                   
-                   
-                   
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                            <ul class="py-2 text-sm text-gray-700 space-y-1">
+                                <li>
+                                    <a href="#howtoreach"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                                        Contact Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#howtoreach"
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                                        How to Reach Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
                     </li>
                     <li>
                         <button id="dropdownNavbarLink3" data-dropdown-toggle="dropdownNavbar3"
@@ -450,16 +478,18 @@
                             </svg>
                         </button>
                         <!-- Dropdown menu -->
-                        <div id="dropdownNavbar3" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
+                        <div id="dropdownNavbar3"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-64">
                             <ul class="py-2 text-sm text-gray-700 space-y-1" aria-labelledby="dropdownLargeButton">
                                 <li>
-                                    <a href="./Files/Conference_Brochure.pdf" download class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
+                                    <a href="./Files/Conference_Brochure.pdf" download
+                                        class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-300">
                                         Brochure
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        
+
                     </li>
                     <li>
                         <button data-modal-target="default-modal" data-modal-toggle="default-modal"
@@ -469,12 +499,14 @@
             </div>
         </div>
     </nav>
-    <marquee class="py-4 bg-gray-400 text-xl text-white"> 
-        Submission Deadline: 31st January 2025 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Acceptance Date: 10th March 2025 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <marquee class="py-4 bg-gray-400 text-xl text-white">
+        Submission Deadline: 31st January 2025
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Acceptance Date: 10th March 2025
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Conference Dates: 10th - 12th April 2025 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </marquee>
-    
+
     <!-- Hero Section -->
     <section class="overflow-hidden -translate-y-2">
         <div class="relative h-[600px]">
@@ -492,7 +524,7 @@
                 <p class="text-white text-lg font-bold">Ravangla, Sikkim - 737139, India</p>
             </div>
 
-            
+
             <div class="absolute left-0 top-0 h-screen w-1/4 custom-blur">
                 <div class="code-animation p-4">
                     <code>
@@ -570,12 +602,21 @@
                 <div class="flex gap-14">
                     <div class="flex flex-col items-start gap-2">
                         <p id="aboutUsContent" class="text-gray-700 text-justify text-lg ">
-                            The objective of Robotics, Communication and Soft Computing is to provide a common platform to researchers, academicians, scientists and industrialists who are working in the area of Robotics and Automation, System Control, Information and Communication, Image Processing, Artificial Intelligence/ Computational Intelligence, etc. 
+                            The objective of Robotics, Communication and Soft Computing is to provide a common platform
+                            to researchers, academicians, scientists and industrialists who are working in the area of
+                            Robotics and Automation, System Control, Information and Communication, Image Processing,
+                            Artificial Intelligence/ Computational Intelligence, etc.
 
                         </p>
                         <div id="expandedContent" class="hidden">
                             <p class="text-gray-700 text-justify text-lg">
-                                The aim of the conference is to highlight the most recent advances, problems and challenges as well as to present the latest outcomes in related fields with a connection to scientific research and its practical applications. The main purpose of RCSC 2025 is to bring together experts, leading researchers and developers to share knowledge, exchange their views and ideas in the fields of above-mentioned areas. This conference especially encourages participation from the young researchers and invite them to present their work on this platform.
+                                The aim of the conference is to highlight the most recent advances, problems and
+                                challenges as well as to present the latest outcomes in related fields with a connection
+                                to scientific research and its practical applications. The main purpose of RCSC 2025 is
+                                to bring together experts, leading researchers and developers to share knowledge,
+                                exchange their views and ideas in the fields of above-mentioned areas. This conference
+                                especially encourages participation from the young researchers and invite them to
+                                present their work on this platform.
                             </p>
                         </div>
                         <button
@@ -593,7 +634,7 @@
                     <h2 class="font-medium text-4xl border-b-1 border-gray-100">Sponsors</h2>
                     <div class="bg-[#921b1f] h-1 max-w-[50%] mb-6"></div>
                     <p>To be updated soon </p>
-                   <!-- <img src="#" alt="Sponsor" class="mb-6">-->
+                    <!-- <img src="#" alt="Sponsor" class="mb-6">-->
                 </div>
 
                 <!-- Dates -->
@@ -644,7 +685,7 @@
                     <h2 class="font-medium text-4xl border-b-1 border-gray-100">Publisher</h2>
                     <div class="bg-[#921b1f] h-1 max-w-[50%] mb-6"></div>
                     <p>Elsevier (Awaiting Confirmation) </p>
-                   <!-- <img src="#" alt="Sponsor" class="mb-6">-->
+                    <!-- <img src="#" alt="Sponsor" class="mb-6">-->
                 </div>
 
             </div>
@@ -653,224 +694,309 @@
 
 
         <!-- About Sikkim and College -->
-<div class="flex flex-col max-w-7xl mx-auto gap-16">
-    <!-- About Sikkim Section -->
-    <div class="mx-auto mt-10 border border-gray-300 rounded-3xl p-8 shadow-lg max-w-7xl">
-        <h2 class="font-semibold text-4xl text-center mb-6 border-b pb-4 border-gray-200">About Sikkim</h2>
-        <img src="img/images.jpg" alt="About Sikkim" class="h-[500px] w-full object-cover  rounded-2xl mb-6">
-        <div class="flex flex-col gap-6">
-            <p class="text-gray-700 text-justify text-lg leading-relaxed">
-                Discover the natural beauty and cultural richness of Sikkim. Nestled in the Himalayas, Sikkim offers breathtaking landscapes, vibrant festivals, and warm hospitality. Explore its serene monasteries, lush valleys, and adventure trails that make it a paradise for travelers and nature enthusiasts. Ravangla, a picturesque town in southern Sikkim, is one of the most serene and beautiful destinations in the state. Perched at an altitude of 7,000 feet, Ravangla offers stunning views of the snow-capped peaks of the Eastern Himalayas, including Kanchenjunga, Pandim, and Siniolchu.
-            </p>
-            <div id="aboutSikkimContent" class="hidden">
-                <p class="text-gray-700 text-justify text-lg leading-relaxed">
-                    The town is a gateway to some of the most scenic treks in Sikkim and is surrounded by dense forests, verdant tea gardens, and quaint villages. One of the major attractions in Ravangla is the Buddha Park (Tathagata Tsal), which features a magnificent 130-foot statue of Lord Buddha. The park is a peaceful place, perfect for meditation and reflection, with beautifully landscaped gardens and panoramic views of the mountains. The area around Ravangla is also rich in biodiversity, making it a great spot for birdwatching, especially in places like the Maenam Wildlife Sanctuary.
-                </p>
+        <div class="flex flex-col max-w-7xl mx-auto gap-16">
+            <!-- About Sikkim Section -->
+            <div class="mx-auto mt-10 border border-gray-300 rounded-3xl p-8 shadow-lg max-w-7xl">
+                <h2 class="font-semibold text-4xl text-center mb-6 border-b pb-4 border-gray-200">About Sikkim</h2>
+                <img src="img/images.jpg" alt="About Sikkim" class="h-[500px] w-full object-cover  rounded-2xl mb-6">
+                <div class="flex flex-col gap-6">
+                    <p class="text-gray-700 text-justify text-lg leading-relaxed">
+                        Discover the natural beauty and cultural richness of Sikkim. Nestled in the Himalayas, Sikkim
+                        offers breathtaking landscapes, vibrant festivals, and warm hospitality. Explore its serene
+                        monasteries, lush valleys, and adventure trails that make it a paradise for travelers and nature
+                        enthusiasts. Ravangla, a picturesque town in southern Sikkim, is one of the most serene and
+                        beautiful destinations in the state. Perched at an altitude of 7,000 feet, Ravangla offers
+                        stunning views of the snow-capped peaks of the Eastern Himalayas, including Kanchenjunga,
+                        Pandim, and Siniolchu.
+                    </p>
+                    <div id="aboutSikkimContent" class="hidden">
+                        <p class="text-gray-700 text-justify text-lg leading-relaxed">
+                            The town is a gateway to some of the most scenic treks in Sikkim and is surrounded by dense
+                            forests, verdant tea gardens, and quaint villages. One of the major attractions in Ravangla
+                            is the Buddha Park (Tathagata Tsal), which features a magnificent 130-foot statue of Lord
+                            Buddha. The park is a peaceful place, perfect for meditation and reflection, with
+                            beautifully landscaped gardens and panoramic views of the mountains. The area around
+                            Ravangla is also rich in biodiversity, making it a great spot for birdwatching, especially
+                            in places like the Maenam Wildlife Sanctuary.
+                        </p>
+                    </div>
+                    <button
+                        class="px-4 py-2 rounded-full text-white bg-green-500 hover:bg-green-600 transition duration-300"
+                        onclick="toggleContent('aboutSikkimContent', this)">Read More</button>
+                </div>
             </div>
-            <button class="px-4 py-2 rounded-full text-white bg-green-500 hover:bg-green-600 transition duration-300"
-                onclick="toggleContent('aboutSikkimContent', this)">Read More</button>
-        </div>
-    </div>
 
-    <!-- About College Section -->
-    <div class="mx-auto mt-16 border border-gray-300 rounded-3xl p-8 shadow-lg max-w-7xl">
-        <h2 class="font-semibold text-4xl text-center mb-6 border-b pb-4 border-gray-200">About College</h2>
-        <img src="img/nitsikkim.jpg" alt="About College" class="h-[400px] w-full object-cover rounded-2xl mb-6">
-        <div class="flex flex-col gap-6">
-            <p class="text-gray-700 text-justify text-lg leading-relaxed">
-                NIT Sikkim is a public engineering and research institution near the city of Ravangla, Sikkim, India. It is one of the 31 NITs in India and has been declared as an Institute of National Importance by the Government of India. It is an autonomous institute functioning under the aegis of the Ministry of Education, Government of India. NIT Sikkim is one among the ten newly sanctioned National Institutes of Technology by the Government of India under the 11th Five-year Plan, 2009.
-            </p>
-            <div id="aboutCollegeContent" class="hidden">
-                <p class="text-gray-700 text-justify text-lg leading-relaxed">
-                    NIT Sikkim started functioning in August 2010. Currently, it is being operated from a temporary campus at the Barfung Block, Ravangla Sub-Division of Namchi district. Ravangla campus is surrounded by great scenic beauty. It is likely to continue its activities at Ravangla campus until its permanent campus comes up at Khamdong, Sikkim. All courses and examinations are conducted in the English language as the only mode of instruction. NIT Sikkim offers a 4-year Bachelor of Technology (B.Tech.) programme in various engineering fields, as well as a 2-year Master of Technology (M.Tech.), Master of Science (M.Sc.) and Ph.D. Programmes. Admissions to undergraduate programmes are taken through IIT-JEE (Mains). Admission to the postgraduate courses is through the GATE/JAM.
-                </p>
+            <!-- About College Section -->
+            <div class="mx-auto mt-16 border border-gray-300 rounded-3xl p-8 shadow-lg max-w-7xl">
+                <h2 class="font-semibold text-4xl text-center mb-6 border-b pb-4 border-gray-200">About College</h2>
+                <img src="img/nitsikkim.jpg" alt="About College" class="h-[400px] w-full object-cover rounded-2xl mb-6">
+                <div class="flex flex-col gap-6">
+                    <p class="text-gray-700 text-justify text-lg leading-relaxed">
+                        NIT Sikkim is a public engineering and research institution near the city of Ravangla, Sikkim,
+                        India. It is one of the 31 NITs in India and has been declared as an Institute of National
+                        Importance by the Government of India. It is an autonomous institute functioning under the aegis
+                        of the Ministry of Education, Government of India. NIT Sikkim is one among the ten newly
+                        sanctioned National Institutes of Technology by the Government of India under the 11th Five-year
+                        Plan, 2009.
+                    </p>
+                    <div id="aboutCollegeContent" class="hidden">
+                        <p class="text-gray-700 text-justify text-lg leading-relaxed">
+                            NIT Sikkim started functioning in August 2010. Currently, it is being operated from a
+                            temporary campus at the Barfung Block, Ravangla Sub-Division of Namchi district. Ravangla
+                            campus is surrounded by great scenic beauty. It is likely to continue its activities at
+                            Ravangla campus until its permanent campus comes up at Khamdong, Sikkim. All courses and
+                            examinations are conducted in the English language as the only mode of instruction. NIT
+                            Sikkim offers a 4-year Bachelor of Technology (B.Tech.) programme in various engineering
+                            fields, as well as a 2-year Master of Technology (M.Tech.), Master of Science (M.Sc.) and
+                            Ph.D. Programmes. Admissions to undergraduate programmes are taken through IIT-JEE (Mains).
+                            Admission to the postgraduate courses is through the GATE/JAM.
+                        </p>
+                    </div>
+                    <button
+                        class="px-4 py-2 rounded-full text-white bg-purple-500 hover:bg-purple-600 transition duration-300"
+                        onclick="toggleContent('aboutCollegeContent', this)">Read More</button>
+                </div>
             </div>
-            <button class="px-4 py-2 rounded-full text-white bg-purple-500 hover:bg-purple-600 transition duration-300"
-                onclick="toggleContent('aboutCollegeContent', this)">Read More</button>
         </div>
-    </div>
-</div>
-
-        
-
-
-
-
 
     </section>
 
 
     <!-- Topics -->
-    <section id="papers1">
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
-            <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200">Topics of Event</h2>
+    <section class="pt-12">
+        <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl bg-white">
+        <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative h-96 overflow-hidden rounded-lg">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
 
-            <!-- Slider -->
-            <div data-hs-carousel='{ "loadingClasses": "opacity-0", "isAutoPlay": true }' class="relative">
-                <div class="hs-carousel relative overflow-hidden w-full min-h-96 bg-white rounded-lg">
-                    <div
-                        class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/Robotics_andMechatronics.jpg" alt="Robotics_andMechatronics"
-                                    style="height: 384px; width: 384px;">
-                                <span class="self-start text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Robotics & Mechatronics</h2>
-                                    <div class="flex flex-col text-lg gap-2">
-                                        <p><b>➼</b> Robotics Control & Navigation</p>
-                                        <p><b>➼</b> Robot Perception & Sensing</p>
-                                        <p><b>➼</b> Human-Robot Interaction</p>
-                                        <p><b>➼</b> Robotics Applications & Systems</p>
-                                        <p><b>➼</b> Mechatronic System Design</p>
-                                        <p><b>➼</b> Intelligent Control Systems</p>
-                                        <p><b>➼</b> Robotic Hardware & Mechanism</p>
-
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/Artificial_intelegence.jpg" alt="Artificial_intelegence"
-                                    style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Artificial Intelligence and Machine Learning</h2>
-                                    <div class="flex flex-col gap-2 text-lg">
-                                        <p><b>➼</b> Supervised Learning</p>
-                                        <p><b>➼</b> Unsupervised Learning</p>
-                                        <p><b>➼</b> Reinforcement Learning</p>
-                                        <p><b>➼</b> Neural Networks</p>
-                                        <p><b>➼</b> Natural Language Processing (NLP)</p>
-                                        <p><b>➼</b> Text Classification</p>
-                                        <p><b>➼</b> Sentiment Analysis</p>
-                                        <p><b>➼</b> Computer Vision</p>
-                                        <p><b>➼</b> AI Ethics, Fairness & Bias</p>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/system_controlandoptimization.jpg" alt="system_controlandoptimization"
-                                    style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Control & Optimizations</h2>
-                                    <div class="flex flex-col gap-2 text-lg">
-                                        <p><b>➼</b> Control Theory & Techniques</p>
-                                        <p><b>➼</b> Multi-Agent Systems & Distributed Control</p>
-                                        <p><b>➼</b> Stochastic Control & Estimation</p>
-                                        <p><b>➼</b> Optimization Algorithms and Techniques</p>
-                                        <p><b>➼</b> System Identification & Parameter Estimation</p>
-                                        <p><b>➼</b> Adaptive & Learning Control Systems</p>
-                                        <p><b>➼</b> Knowledge Base Management Systems (KBMS)</p>
-
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/expert_system.jpg" alt="..." style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Expert System</h2>
-                                    <div class="flex flex-col gap-2 text-lg">
-                                        <p><b>➼</b> Knowledge Representation & Acquisition</p>
-                                        <p><b>➼</b> Rule-Based Systems</p>
-                                        <p><b>➼</b> Ontologies & Semantic Networks</p>
-                                        <p><b>➼</b> Inference Engines & Reasoning</p>
-                                        <p><b>➼</b> Decision Support Systems</p>
-                                        <p><b>➼</b> Bias & Fairness in Expert Systems</p>
-                                        <p><b>➼</b> Knowledge Base Management Systems (KBMS)</p>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/informatin_communicationtechnology.jpg"
-                                    alt="informatin_communicationtechnology" style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Information and Communication Technology
-                                    </h2>
-                                    <div class="flex flex-col gap-2 text-lg">
-                                        <p><b>➼</b> Telecommunication Networks & Systems</p>
-                                        <p><b>➼</b> Internet of Things (IoT) and Smart Cities</p>
-                                        <p><b>➼</b> Cloud Computing & Virtualization</p>
-                                        <p><b>➼</b> Cybersecurity and Privacy</p>
-                                        <p><b>➼</b> Software Defined Networks</p>
-                                        <p><b>➼</b> 5G/6G</p>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/image_processing_example.jpg" alt="image_processing_example"
-                                    style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Image Processing</h2>
-                                    <div class="flex flex-col gap-2 text-lg">
-                                        <p><b>➼</b> Image Enhancement</p>
-                                        <p><b>➼</b> Image Restoration</p>
-                                        <p><b>➼</b> Image Segmentation</p>
-                                        <p><b>➼</b> Feature Extraction and Representation</p>
-                                        <p><b>➼</b> Object Detection & Recognition</p>
-                                        <p><b>➼</b> Biomedical Image Analysis</p>
-                                        <p><b>➼</b> Remote Sensing Image Processing</p>
-                                        <p><b>➼</b> Real-Time Image Processing</p>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="hs-carousel-slide">
-                            <div class="flex justify-start h-full bg-gray-100 gap-10">
-                                <img src="img/softcomputing.jpg" alt="softcomputing "
-                                    style="height: 384px; width: 384px;">
-                                <span class="self-start text-4xl text-gray-800 transition duration-700">
-                                    <h2 class="font-bold text-3xl mb-4 mt-10">Soft Computing/Computational Intelligence
-                                    </h2>
-                                    <div class="flex flex-col gap-2 text-lg">
-                                        <p><b>➼</b> Fuzzy Systems</p>
-                                        <p><b>➼</b> Evolutionary Algorithms</p>
-                                        <p><b>➼</b> Swarm Intelligence</p>
-                                        <p><b>➼</b> Rough Sets and Granular Computing</p>
-                                        <p><b>➼</b> Metaheuristic Optimization</p>
-                                        <p><b>➼</b> Multi-Objective Optimization</p>
-                                        <p><b>➼</b> Explainable and Interpretable Soft Computing</p>
-                                        <p><b>➼</b> Bio-Inspired Computing</p>
-                                    </div>
-                                </span>
-                            </div>
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/Robotics_andMechatronics.jpg" alt="Robotics and Mechatronics"
+                            class="rounded-lg" style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Robotics & Mechatronics</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Robotics Control & Navigation</li>
+                                <li>Robot Perception & Sensing</li>
+                                <li>Human-Robot Interaction</li>
+                                <li>Robotics Applications & Systems</li>
+                                <li>Mechatronic System Design</li>
+                                <li>Intelligent Control Systems</li>
+                                <li>Robotic Hardware & Mechanism</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                <button type="button"
-                    class="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-s-lg">
-                    <span class="text-2xl" aria-hidden="true">
-                        <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m15 18-6-6 6-6"></path>
-                        </svg>
-                    </span>
+                    <!-- Slide 2 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/Artificial_intelegence.jpg" alt="Artificial Intelligence" class="rounded-lg"
+                            style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Artificial Intelligence and Machine Learning</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Supervised Learning</li>
+                                <li>Unsupervised Learning</li>
+                                <li>Reinforcement Learning</li>
+                                <li>Neural Networks</li>
+                                <li>Natural Language Processing (NLP)</li>
+                                <li>Text Classification</li>
+                                <li>Sentiment Analysis</li>
+                                <li>Computer Vision</li>
+                                <li>AI Ethics, Fairness & Bias</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                    <!-- Slide 3 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/system_controlandoptimization.jpg" alt="Control & Optimization"
+                            class="rounded-lg" style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Control & Optimizations</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Control Theory & Techniques</li>
+                                <li>Multi-Agent Systems & Distributed Control</li>
+                                <li>Stochastic Control & Estimation</li>
+                                <li>Optimization Algorithms and Techniques</li>
+                                <li>System Identification & Parameter Estimation</li>
+                                <li>Adaptive & Learning Control Systems</li>
+                                <li>Knowledge Base Management Systems (KBMS)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                    <!-- Slide 4 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/expert_system.jpg" alt="Expert System" class="rounded-lg"
+                            style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Expert System</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Knowledge Representation & Acquisition</li>
+                                <li>Rule-Based Systems</li>
+                                <li>Ontologies & Semantic Networks</li>
+                                <li>Inference Engines & Reasoning</li>
+                                <li>Decision Support Systems</li>
+                                <li>Bias & Fairness in Expert Systems</li>
+                                <li>Knowledge Base Management Systems (KBMS)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                    <!-- Slide 5 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/ICT.jpg" alt="ICT" class="rounded-lg"
+                            style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Information and Communication Technology</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Telecommunication Networks & Systems</li>
+                                <li>Internet of Things (IoT) and Smart Cities</li>
+                                <li>Cloud Computing & Virtualization</li>
+                                <li>Cybersecurity and Privacy</li>
+                                <li>Software Defined Networks</li>
+                                <li>5G/6G</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Item 6 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                    <!-- Slide 6 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/image_processing_example.jpg" alt="Image Processing" class="rounded-lg"
+                            style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Image Processing</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Image Enhancement</li>
+                                <li>Image Restoration</li>
+                                <li>Image Segmentation</li>
+                                <li>Feature Extraction and Representation</li>
+                                <li>Object Detection & Recognition</li>
+                                <li>Biomedical Image Analysis</li>
+                                <li>Remote Sensing Image Processing</li>
+                                <li>Real-Time Image Processing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Item 7 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                    <!-- Slide 7 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/softcomputing.jpg" alt="Soft Computing" class="rounded-lg"
+                            style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Soft Computing/Computational Intelligence</h3>
+                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                <li>Fuzzy Systems</li>
+                                <li>Evolutionary Algorithms</li>
+                                <li>Swarm Intelligence</li>
+                                <li>Rough Sets and Granular Computing</li>
+                                <li>Metaheuristic Optimization</li>
+                                <li>Multi-Objective Optimization</li>
+                                <li>Explainable and Interpretable Soft Computing</li>
+                                <li>Bio-Inspired Computing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Item 8 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                    <!-- Slide 8 -->
+                    <div class="flex-none w-full flex justify-start gap-10 p-6">
+                        <img src="img/Topics/IoT.jpg" alt="Soft Computing" class="rounded-lg"
+                            style="height: 300px; width: 300px;">
+                        <div>
+                            <h3 class="font-bold text-3xl mb-4">Internet of Things(IoT)</h3>
+                            <ul class="list-disc list-inside [column-count:2] [column-gap:1.25rem] text-lg text-gray-800 space-y-2">
+                                <li>IoT Architecture and Protocols</li>
+                                <li>IoT Security and Privacy</li>
+                                <li>Edge and Fog Computing in IoT</li>
+                                <li>IoT-based Smart Cities</li>
+                                <li>Industrial IoT (IIoT) Applications</li>
+                                <li>IoT-enabled Healthcare Systems</li>
+                                <li>IoT Device Management and Analytics</li>
+                                <li>IoT Interoperability and Standards</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slider indicators -->
+            <div class="relative flex space-x-3 rtl:space-x-reverse bottom-1 left-[40%]">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                    data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                    data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                    data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                    data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                    data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
+                    data-carousel-slide-to="5"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7"
+                    data-carousel-slide-to="6"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8"
+                    data-carousel-slide-to="7"></button>
+            </div>
+            
+            <!-- Slider controls -->
+            <button type="button"
+                class="absolute top-40 start-0 z-30 flex items-center -translate-x-9 justify-center cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-gray-800  rtl:rotate-180" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 1 1 5l4 4" />
+                    </svg>
                     <span class="sr-only">Previous</span>
-                </button>
-                <button type="button"
-                    class="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-e-lg">
+                </span>
+            </button>
+            <button type="button"
+                class="absolute top-40 end-0 z-30 flex items-center translate-x-9 justify-center cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
                     <span class="sr-only">Next</span>
-                    <span class="text-2xl" aria-hidden="true">
-                        <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6"></path>
-                        </svg>
-                    </span>
-                </button>
+                </span>
+            </button>
+            
             </div>
 
         </div>
+
     </section>
 
     <!-- Keynote Speakers -->
@@ -880,7 +1006,8 @@
 
             <div class="grid grid-cols-3 place-content-between place-items-center gap-10">
                 <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                    <img src="img/Keynote Speakers/Prof. Xiao-Zhi Gao.jpg" class="w-full h-[250px] object-cover" alt="Prof. Xiao-Zhi Gao">
+                    <img src="img/Keynote Speakers/Prof. Xiao-Zhi Gao.jpg" class="w-full h-[250px] object-cover"
+                        alt="Prof. Xiao-Zhi Gao">
                     <div class="p-4">
                         <p class="font-bold text-xl mb-2 pt-4">Prof. Xiao-Zhi Gao</p>
                         <p class="mb-4 text-gray-700">Professor</p>
@@ -890,7 +1017,8 @@
                 </div>
 
                 <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                    <img src="img/Keynote Speakers/Prof. Shubhendu Bhasin.jpg" class="w-full h-[250px] object-cover" alt="Prof. Shubhendu Bhasin">
+                    <img src="img/Keynote Speakers/Prof. Shubhendu Bhasin.jpg" class="w-full h-[250px] object-cover"
+                        alt="Prof. Shubhendu Bhasin">
                     <div class="p-4">
                         <p class="font-bold text-xl mb-2 pt-4">Prof. Shubhendu Bhasin</p>
                         <p class="mb-4 text-gray-700">Professor</p>
@@ -898,9 +1026,10 @@
                         <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                    <img src="img/Keynote Speakers/Prof. Nishchal K. Verma.jpg" class="w-full h-[250px] object-cover" alt="Prof. Nischal K Verma">
+                    <img src="img/Keynote Speakers/Prof. Nishchal K. Verma.jpg" class="w-full h-[250px] object-cover"
+                        alt="Prof. Nischal K Verma">
                     <div class="p-4">
                         <p class="font-bold text-xl mb-2 pt-4">Prof. Nishchal K. Verma</p>
                         <p class="mb-4 text-gray-700">Professor</p>
@@ -910,7 +1039,8 @@
                 </div>
 
                 <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                    <img src="https://placehold.co" class="w-full h-[250px] object-cover" alt="Dr. Santosh Kumar Vipparthi">
+                    <img src="https://placehold.co" class="w-full h-[250px] object-cover"
+                        alt="Dr. Santosh Kumar Vipparthi">
                     <div class="p-4">
                         <p class="font-bold text-xl mb-2 pt-4">Dr. Santosh Kumar Vipparthi</p>
                         <p class="mb-4 text-gray-700">Associate Professor</p>
@@ -920,7 +1050,8 @@
                 </div>
 
                 <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                    <img src="img/Keynote Speakers/Dr. Damodar Reddy Edla.png" class="w-full h-[250px] object-cover" alt="Dr. Damodar Reddy Edla">
+                    <img src="img/Keynote Speakers/Dr. Damodar Reddy Edla.png" class="w-full h-[250px] object-cover"
+                        alt="Dr. Damodar Reddy Edla">
                     <div class="p-4">
                         <p class="font-bold text-xl mb-2 pt-4">Dr. Damodar Reddy Edla</p>
                         <p class="mb-4 text-gray-700">Associate Professor</p>
@@ -928,7 +1059,7 @@
                         <a href="#" class="text-gray-400 hover:text-blue-500 fa-xl"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-        </div>
+            </div>
     </section>
 
     <!-- Committee -->
@@ -939,27 +1070,39 @@
             <div class="flex justify-around">
                 <div class="">
                     <div class="flex flex-col gap-y-8">
-                        
-                        <button onclick="showDiv(1)" id="bttn1" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Patron</button>
-                        <button onclick="showDiv(2)" id="bttn2" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Conveners</button>
-                        <button onclick="showDiv(3)" id="bttn3" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Advisory</button>
-                        <button onclick="showDiv(4)" id="bttn4" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Local Advisory</button>
-                        <button onclick="showDiv(5)" id="bttn5" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical Program</button>
-                        <button onclick="showDiv(6)" id="bttn6" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Publication</button>
-                        <button onclick="showDiv(7)" id="bttn7" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Sponsorship, Publicity<br>and Social Media</button>
-                        <button onclick="showDiv(8)" id="bttn8" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Logistic</button>
-                        <button onclick="showDiv(9)" id="bttn9" class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical and Website</button>
-                      </div>
+
+                        <button onclick="showDiv(1)" id="bttn1"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Patron</button>
+                        <button onclick="showDiv(2)" id="bttn2"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Conveners</button>
+                        <button onclick="showDiv(3)" id="bttn3"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Advisory</button>
+                        <button onclick="showDiv(4)" id="bttn4"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Local Advisory</button>
+                        <button onclick="showDiv(5)" id="bttn5"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical Program</button>
+                        <button onclick="showDiv(6)" id="bttn6"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Publication</button>
+                        <button onclick="showDiv(7)" id="bttn7"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Sponsorship, Publicity<br>and Social
+                            Media</button>
+                        <button onclick="showDiv(8)" id="bttn8"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Logistic</button>
+                        <button onclick="showDiv(9)" id="bttn9"
+                            class="bttn py-3 pr-12 text-left pl-2 rounded-r-xl">Technical and Website</button>
+                    </div>
                 </div>
 
                 <div>
                     <!-- patrons -->
                     <div id="div1" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
                         <!-- Card 1 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Chief_Patron/Director_MC_Govil.jpg" class="w-full h-[250px] object-cover" alt="Director MC Govil">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Chief_Patron/Director_MC_Govil.jpg"
+                                class="w-full h-[250px] object-cover" alt="Director MC Govil">
                             <div class="p-4">
-                            
+
                                 <p class="font-bold text-lg mb-1">Prof. Mahesh Chandra Govil</p>
                                 <p class="mb-4 text-gray-700">Director</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
@@ -967,16 +1110,18 @@
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <!-- Convenor -->
                     <div id="div2" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
 
                         <!-- Card 2 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Convenor/vishal_sir.jpeg" class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Convenor/vishal_sir.jpeg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Bam Bahadur Sinha">
                             <div class="p-4">
-                              
+
                                 <p class="font-bold text-lg mb-1">Dr. Vishal Vishnoi</p>
                                 <p class="mb-4 text-gray-700">Assistant Professor, ECE</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
@@ -985,12 +1130,14 @@
                                 </a>
                             </div>
                         </div>
-                       
+
                         <!-- Card 3 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Convenor/Bam_Bahadur_Sinha.jpg" class="w-full h-[250px] object-cover" alt="Dr. Vishal Vishnoi">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Convenor/Bam_Bahadur_Sinha.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Vishal Vishnoi">
                             <div class="p-4">
-                                
+
                                 <p class="font-bold text-lg mb-1">Dr. Bam Bahadur Sinha</p>
                                 <p class="mb-4 text-gray-700">Assistant Professor, CSE</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
@@ -1003,8 +1150,10 @@
                     <!-- Advisory -->
                     <div id="div3" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg" class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Lalit_Kumar_Awasthi_NIT_Hamirpur.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Lalit Kumar Awasthi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Lalit Kumar Awasthi</p>
                                 <p class="mb-2 text-gray-700">NIT Uttarakhand</p>
@@ -1013,10 +1162,12 @@
                                 </a>
                             </div>
                         </div>
-                        
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg" class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Binod_Kanaujia_NIT_Jalandhar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Binod Kanaujia</p>
                                 <p class="mb-2 text-gray-700">NIT Jalandhar</p>
@@ -1027,8 +1178,10 @@
                         </div>
 
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Laxmidhar_Behera_IIT_Mandi.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Laxmidhar Behera</p>
                                 <p class="mb-2 text-gray-700">IIT Mandi</p>
@@ -1038,8 +1191,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Director_ElayaPerumal.jpeg" class="w-full h-[250px] object-cover" alt="Prof. A. Elayaperumal">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Director_ElayaPerumal.jpeg"
+                                class="w-full h-[250px] object-cover" alt="Prof. A. Elayaperumal">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. A. Elayaperumal</p>
                                 <p class="mb-2 text-gray-700">NIT Nagaland</p>
@@ -1049,8 +1204,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Valentina E. Balas.jpg" class="w-full h-[250px] object-cover" alt="Prof. Valentina E. Balas">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Valentina E. Balas.jpg"
+                                class="w-full h-[250px] object-cover" alt="Prof. Valentina E. Balas">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Valentina E. Balas</p>
                                 <p class="mb-2 text-gray-700">Aurel Vlaicu University of Arad, Romania</p>
@@ -1060,8 +1217,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Vijayan K. Asari.jpg" class="w-full h-[250px] object-cover" alt="Prof. Vijayan K. Asari">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Vijayan K. Asari.jpg"
+                                class="w-full h-[250px] object-cover" alt="Prof. Vijayan K. Asari">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Vijayan K. Asari</p>
                                 <p class="mb-2 text-gray-700">University of Dayton, United States</p>
@@ -1071,8 +1230,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Brijesh Kumar.jpg" class="w-full h-[250px] object-cover" alt="Prof. Brijesh Kumar">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Brijesh Kumar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Prof. Brijesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Brijesh Kumar</p>
                                 <p class="mb-2 text-gray-700">IGDTUW, Delhi</p>
@@ -1082,8 +1243,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Nathi Ram Chauhan.jfif" class="w-full h-[250px] object-cover" alt="Prof. Nathi Ram Chauhan">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Prof. Nathi Ram Chauhan.jfif"
+                                class="w-full h-[250px] object-cover" alt="Prof. Nathi Ram Chauhan">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Nathi Ram Chauhan</p>
                                 <p class="mb-2 text-gray-700">IGDTUW, Delhi</p>
@@ -1093,8 +1256,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg" class="w-full h-[250px] object-cover" alt="Sheela Tiwari">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Sheela_Tiwari_NIT_Jalandhar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Sheela Tiwari">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sheela Tiwari</p>
                                 <p class="mb-2 text-gray-700">NIT Jalandhar</p>
@@ -1104,8 +1269,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg" class="w-full h-[250px] object-cover" alt="Rajesh Singla">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajesh_singla_NIT_Jalandhar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Rajesh Singla">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Rajesh Singla</p>
                                 <p class="mb-2 text-gray-700">NIT Jalandhar</p>
@@ -1115,8 +1282,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg" class="w-full h-[250px] object-cover" alt="R Dhanalakshmi">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/R_Dhanalakshmi_IIIT_Trichy.jpg"
+                                class="w-full h-[250px] object-cover" alt="R Dhanalakshmi">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. R Dhanalakshmi</p>
                                 <p class="mb-2 text-gray-700">IIIT Trichy</p>
@@ -1126,8 +1295,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajendrasinh_Jadeja_Marwadi_University.jpg" class="w-full h-[250px] object-cover" alt="Rajendrasinh Jadeja">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/Rajendrasinh_Jadeja_Marwadi_University.jpg"
+                                class="w-full h-[250px] object-cover" alt="Rajendrasinh Jadeja">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Prof. Rajendrasinh Jadeja</p>
                                 <p class="mb-2 text-gray-700">Marwadi University</p>
@@ -1139,9 +1310,11 @@
                     </div>
                     <!-- TPC -->
                     <div id="div5" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
-                        
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Dr. Vishal Satpute.png" class="w-full h-[250px] object-cover" alt="Dr. Vishal">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Dr. Vishal Satpute.png"
+                                class="w-full h-[250px] object-cover" alt="Dr. Vishal">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Vishal Satpute</p>
                                 <p class="mb-2 text-gray-700">VNIT Nagpur</p>
@@ -1150,9 +1323,11 @@
                                 </a>
                             </div>
                         </div>
-                        
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sangram_Ray.jpg" class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sangram_Ray.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sangram Ray</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1163,8 +1338,10 @@
                         </div>
 
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sarfaraj_Alam_Ansari.jpg" class="w-full h-[250px] object-cover" alt="Dr. Sarfaraj Alam Ansari">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Sarfaraj_Alam_Ansari.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Sarfaraj Alam Ansari">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Sarfaraj Alam Ansari</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1175,8 +1352,10 @@
                         </div>
 
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Hemant_Kumar_Kathania.jpg" class="w-full h-[250px] object-cover" alt="Dr. Hemant Kumar Kathania">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Hemant_Kumar_Kathania.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Hemant Kumar Kathania">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Hemant Kumar Kathania</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1187,8 +1366,10 @@
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Krishna_Kumar.jpg" class="w-full h-[250px] object-cover" alt="Dr. Krishna Kumar">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Krishna_Kumar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Krishna Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Krishna Kumar</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1198,8 +1379,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/rohit gupta.jpg" class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/rohit gupta.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Sangram Ray">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Rohit Gupta</p>
                                 <p class="mb-2 text-gray-700">SRM Chennai</p>
@@ -1209,59 +1392,69 @@
                             </div>
                         </div>
 
-                            <!-- Card for Dr. Tanmoy Dubey -->
-                            <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                                <img src="img/Committee_Members_Photos/Technical_Program_Committee/tanmay dubey.jpg" class="w-full h-[250px] object-cover" alt="Dr. Tanmoy Dubey">
-                                <div class="p-4">
-                                    <p class="font-bold text-lg mb-1">Dr. Tanmay Dubey</p>
-                                    <p class="mb-2 text-gray-700">IIIT Surat</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
+                        <!-- Card for Dr. Tanmoy Dubey -->
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/tanmay dubey.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Tanmoy Dubey">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Tanmay Dubey</p>
+                                <p class="mb-2 text-gray-700">IIIT Surat</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
-                        
-                            <!-- Card for Himanshu Patnayak -->
-                            <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                                <img src="img/Committee_Members_Photos/Technical_Program_Committee/himanshu.jpg" class="w-full h-[250px] object-cover" alt="Himanshu Patnayak">
-                                <div class="p-4">
-                                    <p class="font-bold text-lg mb-1">Dr. Himansu Sekhar Pattanayak</p>
-                                    <p class="mb-2 text-gray-700">NIT Kurukshetra</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
+                        </div>
+
+                        <!-- Card for Himanshu Patnayak -->
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/himanshu.jpg"
+                                class="w-full h-[250px] object-cover" alt="Himanshu Patnayak">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Himansu Sekhar Pattanayak</p>
+                                <p class="mb-2 text-gray-700">NIT Kurukshetra</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
-                        
-                            <!-- Card for Dr. Jitendra Kumar Samriya -->
-                            <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                                <img src="img/Committee_Members_Photos/Technical_Program_Committee/jitendra kumar.jpg" class="w-full h-[250px] object-cover" alt="Dr. Jitendra Kumar">
-                                <div class="p-4">
-                                    <p class="font-bold text-lg mb-1">Dr. Jitendra Kumar Samriya</p>
-                                    <p class="mb-2 text-gray-700">IIIT Sonepat</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
+                        </div>
+
+                        <!-- Card for Dr. Jitendra Kumar Samriya -->
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/jitendra kumar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Jitendra Kumar">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Jitendra Kumar Samriya</p>
+                                <p class="mb-2 text-gray-700">IIIT Sonepat</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
-                        
-                            <!-- Card for Dr. Ravindra Singh -->
-                            <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                                <img src="img/Committee_Members_Photos/Technical_Program_Committee/ravinder singh.jpg" class="w-full h-[250px] object-cover" alt="Dr. Ravindra Singh">
-                                <div class="p-4">
-                                    <p class="font-bold text-lg mb-1">Dr. Ravinder Singh</p>
-                                    <p class="mb-2 text-gray-700">NSUT Delhi</p>
-                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
+                        </div>
+
+                        <!-- Card for Dr. Ravindra Singh -->
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/ravinder singh.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Ravindra Singh">
+                            <div class="p-4">
+                                <p class="font-bold text-lg mb-1">Dr. Ravinder Singh</p>
+                                <p class="mb-2 text-gray-700">NSUT Delhi</p>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
                             </div>
+                        </div>
                     </div>
-                   <!-- Local Adv. -->
+                    <!-- Local Adv. -->
                     <div id="div4" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
                         <!-- Card 1 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/basak.jpg" class="w-full h-[250px] object-cover" alt="Member 1">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/basak.jpg"
+                                class="w-full h-[250px] object-cover" alt="Member 1">
                             <div class="p-4">
                                 <p class="font-bold text-xl mb-2">Dr. Ranjan Basak</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
@@ -1270,10 +1463,12 @@
                                 </a>
                             </div>
                         </div>
-                    
+
                         <!-- Card 2 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/akra.jpg" class="w-full h-[250px] object-cover" alt="Member 2">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/akra.jpg"
+                                class="w-full h-[250px] object-cover" alt="Member 2">
                             <div class="p-4">
                                 <p class="font-bold text-xl mb-2">Dr Anjan Ray</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
@@ -1282,11 +1477,13 @@
                                 </a>
                             </div>
                         </div>
-                        
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Patron/Pratyay_Kuila.jpg" class="w-full h-[250px] object-cover" alt="Dr. Pratay Kuliya">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Patron/Pratyay_Kuila.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Pratay Kuliya">
                             <div class="p-4">
-                                
+
                                 <p class="font-bold text-xl mb-2">Dr. Pratyay Kuila</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
@@ -1296,8 +1493,10 @@
                         </div>
 
                         <!-- Card 3 -->
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Advisory_Committee/panda.jpg" class="w-full h-[250px] object-cover" alt="Member 3">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Advisory_Committee/panda.jpg"
+                                class="w-full h-[250px] object-cover" alt="Member 3">
                             <div class="p-4">
                                 <p class="font-bold text-xl mb-2">Dr. Aurobinda Panda</p>
                                 <p class="mb-4 text-gray-700">NIT Sikkim</p>
@@ -1306,13 +1505,15 @@
                                 </a>
                             </div>
                         </div>
-                    
+
                     </div>
                     <!-- Publication -->
                     <div id="div6" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
-                        
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Pankaj_Kumar_Kesarwani.jpg" class="w-full h-[250px] object-cover" alt="Dr. Pankaj Kumar Kesarwani">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_Program_Committee/Pankaj_Kumar_Kesarwani.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Pankaj Kumar Kesarwani">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Pankaj Kumar Kesarwani</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1322,24 +1523,28 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Publication_Committee/Jeetendra_Singh.jpg" class="w-full h-[250px] object-cover" alt="Jeetendra Singh">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Publication_Committee/Jeetendra_Singh.jpg"
+                                class="w-full h-[250px] object-cover" alt="Jeetendra Singh">
                             <div class="p-4">
-                              
+
                                 <p class="font-bold text-lg mb-1">Dr. Jeetendra Singh</p>
-                                <p class="mb-4 text-gray-700">NIT Sikkim  </p>
+                                <p class="mb-4 text-gray-700">NIT Sikkim </p>
                                 <a href="#" class="text-gray-400 hover:text-blue-500 text-xl">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
                         </div>
-                        
+
                     </div>
                     <!-- Sponsor -->
                     <div id="div7" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-  
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Varun_Gupta.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Varun_Gupta.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Varun Gupta</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1349,8 +1554,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[290px]">
-                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Gajendra_Singh_Shekhawat.jpg" class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[290px]">
+                            <img src="img/Committee_Members_Photos/Sponsor_Publicity_SocialMedia_Committee/Gajendra_Singh_Shekhawat.jpg"
+                                class="w-full h-[250px] object-cover" alt="Prof. Binod Kanaujia">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Mr. Gajendra Singh Shekhawat</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1365,18 +1572,23 @@
                     <div id="div8" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
                         <!-- Card 1 -->
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sukanta_Dhar.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sukanta_Dhar.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-12">Dr. Sukanta Dhar</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg"><i class="fab fa-linkedin"></i>
+                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg"><i
+                                        class="fab fa-linkedin"></i>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sudipta_Das.jpg" class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Sudipta_Das.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Laxmidhar Behera">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-12">Dr. Sudipta Das</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1386,8 +1598,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Diksha_Rangwani.jpg" class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Diksha_Rangwani.jpg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Dr. Diksha Rangwani</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1397,8 +1611,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/amit.jpeg" class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/amit.jpeg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-11">Mr. Amit Maity</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1408,8 +1624,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/tapan.jpeg" class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/tapan.jpeg"
+                                class="w-full h-[250px] object-cover" alt="Dr. Dinesh Kumar">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-11">Mr. Tapan Chhetri</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1419,8 +1637,10 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Logistic_Committee/Abhishek_Ray.jpeg" class="w-full h-[250px] object-cover" alt="Abhishek Ray">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Logistic_Committee/Abhishek_Ray.jpeg"
+                                class="w-full h-[250px] object-cover" alt="Abhishek Ray">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1 px-11">Mr. Abhishek Ray</p>
                                 <p class="mb-2 text-gray-700">NIT Sikkim</p>
@@ -1433,20 +1653,25 @@
                     </div>
                     <!-- Credit -->
                     <div id="div9" class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
-                       
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/vishwa.jpg" class="w-full h-[250px] object-cover" alt="Lead Developer">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/vishwa.jpg"
+                                class="w-full h-[250px] object-cover" alt="Lead Developer">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Vishwajeet Kumar</p>
                                 <p class="mb-2 text-gray-700">Final Year Student</p>
-                                <a href="https://www.linkedin.com/in/vishwajeet-kumar-5b7530242/" class="text-gray-400 hover:text-blue-500 text-lg">
+                                <a href="https://www.linkedin.com/in/vishwajeet-kumar-5b7530242/"
+                                    class="text-gray-400 hover:text-blue-500 text-lg">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
                         </div>
-                
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/abhijit.jpg" class="w-full h-[250px] object-cover" alt="abhijit">
+
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/abhijit.jpg"
+                                class="w-full h-[250px] object-cover" alt="abhijit">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Abhijit Mondal</p>
                                 <p class="mb-2 text-gray-700">Final Year Student</p>
@@ -1456,47 +1681,60 @@
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/harsh.jpg" class="w-full h-[250px] object-cover" alt="harsh">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/harsh.jpg"
+                                class="w-full h-[250px] object-cover" alt="harsh">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Harsh Srivastava</p>
-                                <p class="mb-2 text-gray-700">Final Year Student<p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
+                                <p class="mb-2 text-gray-700">Final Year Student
+                                <p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/khushi.jpeg" class="w-full h-[250px] object-cover" alt="harsh">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/khushi.jpeg"
+                                class="w-full h-[250px] object-cover" alt="harsh">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Khushi Kumari</p>
-                                <p class="mb-2 text-gray-700"> Pre Final Year Student<p>
-                                <a href="https://linkedin.com/in/khushi-kumari-8a4426280/" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
+                                <p class="mb-2 text-gray-700"> Pre Final Year Student
+                                <p>
+                                    <a href="https://linkedin.com/in/khushi-kumari-8a4426280/"
+                                        class="text-gray-400 hover:text-blue-500 text-lg">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/tanmoy.jpeg" class="w-full h-[250px] object-cover" alt="harsh">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/tanmoy.jpeg"
+                                class="w-full h-[250px] object-cover" alt="harsh">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Tanmoy Samantha</p>
-                                <p class="mb-2 text-gray-700"> Pre Final Year Student<p>
-                                <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
+                                <p class="mb-2 text-gray-700"> Pre Final Year Student
+                                <p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
                             </div>
                         </div>
 
-                        <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                            <img src="img/Committee_Members_Photos/Technical_and_website/sahil.jpeg" class="w-full h-[250px] object-cover" alt="harsh">
+                        <div
+                            class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
+                            <img src="img/Committee_Members_Photos/Technical_and_website/sahil.jpeg"
+                                class="w-full h-[250px] object-cover" alt="harsh">
                             <div class="p-4">
                                 <p class="font-bold text-lg mb-1">Sahil Kumar</p>
-                                <p class="mb-2 text-gray-700"> Pre Final Year Student<p>
-                                <a href="#"class="text-gray-400 hover:text-blue-500 text-lg">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
+                                <p class="mb-2 text-gray-700"> Pre Final Year Student
+                                <p>
+                                    <a href="#" class="text-gray-400 hover:text-blue-500 text-lg">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -1510,15 +1748,21 @@
 
     <!-- Sponsor -->
     <section>
-        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl" id="callforsponser">
-            <h2 class="text-4xl font-semibold mb-6 text-center border-b-2 border-gray-200 pb-4">Sponsorship Opportunities</h2>
-            
-            <p class="text-lg mb-8" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                RCSC' 2025 provides a variety of sponsorship options that enable small and big businesses and organizations to participate in one of the best conferences. This will lead to the exchange of ideas in the field of mental health and innovation globally, with over 200 projected participants from all over the world.
+        <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl"
+            id="callforsponser">
+            <h2 class="text-4xl font-semibold mb-6 text-center border-b-2 border-gray-200 pb-4">Sponsorship
+                Opportunities</h2>
+
+            <p class="text-lg mb-8"
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                RCSC' 2025 provides a variety of sponsorship options that enable small and big businesses and
+                organizations to participate in one of the best conferences. This will lead to the exchange of ideas in
+                the field of mental health and innovation globally, with over 200 projected participants from all over
+                the world.
             </p>
-            
+
             <p class="font-bold mb-4">For more information, please contact RCSC’ 2025 Sponsorship Chairs:</p>
-            
+
             <div class="grid gap-6 md:grid-cols-3">
                 <div class="p-6 bg-gray-100 rounded-lg shadow-md">
                     <h3 class="text-2xl font-semibold mb-2">Dr. Vishal Vishnoi</h3>
@@ -1534,11 +1778,12 @@
                         <i class="fa fa-envelope"></i> bambahadursinha@nitsikkim.ac.in
                     </p>
                 </div>
-                
+
             </div>
 
 
-            <h2 class="text-4xl font-semibold mb-6 mt-10 text-center border-b-2 border-gray-200 pb-4">Sponsorship Packages</h2>
+            <h2 class="text-4xl font-semibold mb-6 mt-10 text-center border-b-2 border-gray-200 pb-4">Sponsorship
+                Packages</h2>
             <div class="flex gap-4 justify-around">
                 <div class="mb-10 mt-10">
                     <p class="font-bold mb-2 text-xl">Platinum Sponsorship (Rs. 3 Lakh)</p>
@@ -1575,7 +1820,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Us & How to Reach Us -->
     <section class="mb-16" id="howtoreach">
         <div class="container mt-12 mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl">
@@ -1592,13 +1837,14 @@
                     <p><i class="fa fa-envelope" style="font-size:28px"></i> bambahadursinha@nitsikkim.ac.in</p>
                     <p><i class="fa fa-phone" style="font-size:28px"></i> +91-9151522251</p>
                 </div>
-               
+
 
             </div>
 
             <h2 class="font-medium text-5xl text-center mb-8 border-b-2 border-gray-200 mt-12">How to Reach Us
             </h2>
-            <p class="text-gray-500 mb-8">National Institute Of Technology Sikkim, 79X4+2W7, Barfung Rd, Block, Ravangla, Sikkim 737139</p>
+            <p class="text-gray-500 mb-8">National Institute Of Technology Sikkim, 79X4+2W7, Barfung Rd, Block,
+                Ravangla, Sikkim 737139</p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.4866987041128!2d88.3570138982879!3d27.297952727662235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e69b043d020435%3A0x6accf5242d3a7518!2sNational%20Institute%20Of%20Technology%20Sikkim!5e0!3m2!1sen!2sin!4v1718091914332!5m2!1sen!2sin"
                 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -1608,77 +1854,83 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white">
-    <div class="mx-auto w-full p-4 py-6 px-16">
-        <div class="flex justify-between">
-            <div>
-                <div class="flex items-center mb-8">
-                    <img src="img/event_logo.png" class="h-14 me-3" alt="Event Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap">RCSC' 2025</span>
-                </div>
-                <p class="text-lg mb-2">Organized By - National Institute of Technology Sikkim</p>
-                <p class="text-lg"><b>Venue</b> - Multipurpose Hall, NIT Sikkim, Ravangla, South Sikkim – 737139, India</p>
-                <p class="font-bold text-lg mt-4">Email - <a href="mailto:rcsc2025@gmail.com" class="font-normal">rcsc2025@gmail.com</a></p>
-            </div>
-
-            <div class="flex gap-20">
+        <div class="mx-auto w-full p-4 py-6 px-16">
+            <div class="flex justify-between">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold uppercase">Useful Links</h2>
-                    <ul class="font-medium">
-                        <li class="mb-1">
-                            <a href="index.html" class="hover:underline">Home</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="index.html#aboutus" class="hover:underline">About Us</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="index.html#callforpapers" class="hover:underline">Call for Papers</a>
-                        </li>
-                        <li class="mb-1">
-                            <a href="index.html#imp_dates" class="hover:underline">Important Dates</a>
-                        </li>
-                    </ul>
+                    <div class="flex items-center mb-8">
+                        <img src="img/event_logo.png" class="h-14 me-3" alt="Event Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap">RCSC' 2025</span>
+                    </div>
+                    <p class="text-lg mb-2">Organized By - National Institute of Technology Sikkim</p>
+                    <p class="text-lg"><b>Venue</b> - Multipurpose Hall, NIT Sikkim, Ravangla, South Sikkim – 737139,
+                        India</p>
+                    <p class="font-bold text-lg mt-4">Email - <a href="mailto:rcsc2025@gmail.com"
+                            class="font-normal">rcsc2025@gmail.com</a></p>
+                </div>
 
-                    <h2 class="mb-6 text-sm font-semibold uppercase mt-8">Social Media</h2>
-                    <div class="grid grid-cols-2 gap-4">
-                        <a href="#" class="text-gray-400 hover:text-blue-600 fa-xl"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-blue-400 fa-xl"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-red-500 fa-xl"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-pink-600 fa-xl"><i class="fab fa-instagram"></i></a>
+                <div class="flex gap-20">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase">Useful Links</h2>
+                        <ul class="font-medium">
+                            <li class="mb-1">
+                                <a href="index.html" class="hover:underline">Home</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="index.html#aboutus" class="hover:underline">About Us</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="index.html#callforpapers" class="hover:underline">Call for Papers</a>
+                            </li>
+                            <li class="mb-1">
+                                <a href="index.html#imp_dates" class="hover:underline">Important Dates</a>
+                            </li>
+                        </ul>
+
+                        <h2 class="mb-6 text-sm font-semibold uppercase mt-8">Social Media</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 fa-xl"><i
+                                    class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-blue-400 fa-xl"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-red-500 fa-xl"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-pink-600 fa-xl"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="w-[500px]">
+                        <h2 class="mb-6 text-sm font-semibold uppercase">Contact Us</h2>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label for="email" class="block mb-2 text-sm font-medium">Your email</label>
+                                <input type="email" id="email" name="email"
+                                    class="shadow-sm bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    placeholder="xyz@gmail.com" required>
+                            </div>
+
+                            <div class="sm:col-span-2 mb-4">
+                                <label for="message" class="block mb-2 text-sm font-medium">Your message</label>
+                                <textarea id="message" name="message" rows="6"
+                                    class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg shadow-sm border border-gray-600 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Leave a comment..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg focus:ring-4 focus:ring-blue-300 text-white">
+                                Submit
+                            </button>
+                        </form>
                     </div>
                 </div>
-
-                <div class="w-[500px]">
-                    <h2 class="mb-6 text-sm font-semibold uppercase">Contact Us</h2>
-                    <form id="contactForm">
-                        <div class="mb-4">
-                            <label for="email" class="block mb-2 text-sm font-medium">Your email</label>
-                            <input type="email" id="email" name="email"
-                                class="shadow-sm bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="xyz@gmail.com" required>
-                        </div>
-
-                        <div class="sm:col-span-2 mb-4">
-                            <label for="message" class="block mb-2 text-sm font-medium">Your message</label>
-                            <textarea id="message" name="message" rows="6"
-                                class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg shadow-sm border border-gray-600 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Leave a comment..."></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg focus:ring-4 focus:ring-blue-300 text-white">
-                            Submit
-                        </button>
-                    </form>
-                </div>
+            </div>
+            <hr class="my-6 border-gray-600" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-400 sm:text-center">© 2024 <a href="https://flowbite.com/"
+                        class="hover:underline">nitsk™</a>. All Rights Reserved.
+                </span>
             </div>
         </div>
-        <hr class="my-6 border-gray-600" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-400 sm:text-center">© 2024 <a
-                    href="https://flowbite.com/" class="hover:underline">nitsk™</a>. All Rights Reserved.
-            </span>
-        </div>
-    </div>
     </footer>
 
 
@@ -1691,37 +1943,80 @@
 
     </script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Set default section to show
-      const defaultSection = '1'; // Change this to the ID of the default section if needed
-  
-      // Hide all divs initially
-      const divs = document.querySelectorAll('.content');
-      const btns = document.querySelectorAll('.bttn');
-      divs.forEach(div => div.classList.add('hidden'));
-      btns.forEach(btn => btn.classList.remove('bg-blue-300'));
-  
-      // Show the default section
-      const defaultDiv = document.getElementById(`div${defaultSection}`);
-      if (defaultDiv) {
-        defaultDiv.classList.remove('hidden');
-        document.getElementById(`bttn${defaultSection}`).classList.add('bg-blue-300');
-      }
-    });
-  
-    function showDiv(divId) {
-      // Hide all divs
-      const divs = document.querySelectorAll('.content');
-      const btns = document.querySelectorAll('.bttn');
-      divs.forEach(div => div.classList.add('hidden'));
-      btns.forEach(btn => btn.classList.remove('bg-blue-300'));
-  
-      // Show the selected div
-      document.getElementById(`div${divId}`).classList.remove('hidden');
-      document.getElementById(`bttn${divId}`).classList.add('bg-blue-300');
-    }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default section to show
+            const defaultSection = '1'; // Change this to the ID of the default section if needed
+
+            // Hide all divs initially
+            const divs = document.querySelectorAll('.content');
+            const btns = document.querySelectorAll('.bttn');
+            divs.forEach(div => div.classList.add('hidden'));
+            btns.forEach(btn => btn.classList.remove('bg-blue-300'));
+
+            // Show the default section
+            const defaultDiv = document.getElementById(`div${defaultSection}`);
+            if (defaultDiv) {
+                defaultDiv.classList.remove('hidden');
+                document.getElementById(`bttn${defaultSection}`).classList.add('bg-blue-300');
+            }
+        });
+
+        function showDiv(divId) {
+            // Hide all divs
+            const divs = document.querySelectorAll('.content');
+            const btns = document.querySelectorAll('.bttn');
+            divs.forEach(div => div.classList.add('hidden'));
+            btns.forEach(btn => btn.classList.remove('bg-blue-300'));
+
+            // Show the selected div
+            document.getElementById(`div${divId}`).classList.remove('hidden');
+            document.getElementById(`bttn${divId}`).classList.add('bg-blue-300');
+        }
     </script>
-  
+    <script>
+        const slides = document.getElementById('carousel-slides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const totalSlides = slides.children.length;
+        let index = 0; // Current slide index
+
+        const updateSlidePosition = () => {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        };
+
+        const resetSlidePosition = (resetIndex) => {
+            slides.style.transition = "none"; // Disable transition
+            index = resetIndex;
+            updateSlidePosition();
+            // Re-enable transition after resetting
+            setTimeout(() => {
+                slides.style.transition = "transform 0.7s ease-in-out";
+            }, 10);
+        };
+
+        prevBtn.addEventListener('click', () => {
+            if (index <= 0) {
+                resetSlidePosition(totalSlides - 1);
+            } else {
+                index--;
+                updateSlidePosition();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (index >= totalSlides - 1) {
+                resetSlidePosition(0);
+            } else {
+                index++;
+                updateSlidePosition();
+            }
+        });
+
+        // Initialize the carousel position
+        updateSlidePosition();
+    </script>
+
 </body>
 
 </html>
