@@ -231,6 +231,16 @@
                 transform: translateX(-50%);
             }
         }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .animate-blink {
+            animation: blink 1s infinite;
+        }
     </style>
 
     <script type="module">
@@ -435,6 +445,19 @@
                                         Dates</a></li>
                             </ul>
                         </div>
+                        <!--<li>
+                            <a href="Sessions.html"
+                                class="block py-4 px-3 text-gray-500 hover:bg-transparent hover:text-blue-700">Special Sessions</a>
+                        </li>-->
+                        <li class="relative">
+                            <a href="Sessions.html"
+                                class="block py-4 pr-16 pl-3 text-gray-500 hover:bg-transparent hover:text-blue-700">
+                                Special Sessions
+                            </a>
+                            <span class="absolute top-[40%] right-2 transform -translate-y-1/2 text-blue-600 text-sm font-bold animate-blink">
+                                 Update!!!
+                            </span>
+                        </li>
                     </li>
                     <li>
                         <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2"
@@ -651,7 +674,8 @@
                                     d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                             </svg>
                         </span>
-                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 ">Submission Deadline (Extended)
+                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 ">Submission Deadline
+                            (Extended)
                         </h3>
                         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">28th February, 2025</p>
                     </li>
@@ -768,234 +792,266 @@
     <!-- Topics -->
     <section class="pt-12">
         <div class="container mx-auto border-2 border-gray-300 rounded-3xl p-10 shadow-2xl max-w-7xl bg-white">
-        <div id="indicators-carousel" class="relative w-full" data-carousel="static">
-            <!-- Carousel wrapper -->
-            <div class="relative h-96 overflow-hidden rounded-lg">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="relative h-96 overflow-hidden rounded-lg">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
 
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/Robotics_andMechatronics.jpg" alt="Robotics and Mechatronics"
-                            class="rounded-lg" style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Robotics & Mechatronics</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Robotics Control & Navigation</li>
-                                <li>Robot Perception & Sensing</li>
-                                <li>Human-Robot Interaction</li>
-                                <li>Robotics Applications & Systems</li>
-                                <li>Mechatronic System Design</li>
-                                <li>Intelligent Control Systems</li>
-                                <li>Robotic Hardware & Mechanism</li>
-                            </ul>
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/Robotics_andMechatronics.jpg" alt="Robotics and Mechatronics"
+                                class="rounded-lg" style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Robotics & Mechatronics</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Robotics Control & Navigation</li>
+                                    <li>Robot Perception & Sensing</li>
+                                    <li>Human-Robot Interaction</li>
+                                    <li>Robotics Applications & Systems</li>
+                                    <li>Mechatronic System Design</li>
+                                    <li>Intelligent Control Systems</li>
+                                    <li>Robotic Hardware & Mechanism</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                    <!-- Slide 2 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/Artificial_intelegence.jpg" alt="Artificial Intelligence" class="rounded-lg"
-                            style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Artificial Intelligence and Machine Learning</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Supervised Learning</li>
-                                <li>Unsupervised Learning</li>
-                                <li>Reinforcement Learning</li>
-                                <li>Neural Networks</li>
-                                <li>Natural Language Processing (NLP)</li>
-                                <li>Text Classification</li>
-                                <li>Sentiment Analysis</li>
-                                <li>Computer Vision</li>
-                                <li>AI Ethics, Fairness & Bias</li>
-                            </ul>
+                        <!-- Slide 2 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/Artificial_intelegence.jpg" alt="Artificial Intelligence"
+                                class="rounded-lg" style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Artificial Intelligence and Machine Learning</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Supervised Learning</li>
+                                    <li>Unsupervised Learning</li>
+                                    <li>Reinforcement Learning</li>
+                                    <li>Neural Networks</li>
+                                    <li>Natural Language Processing (NLP)</li>
+                                    <li>Text Classification</li>
+                                    <li>Sentiment Analysis</li>
+                                    <li>Computer Vision</li>
+                                    <li>AI Ethics, Fairness & Bias</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                    <!-- Slide 3 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/system_controlandoptimization.jpg" alt="Control & Optimization"
-                            class="rounded-lg" style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Control & Optimizations</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Control Theory & Techniques</li>
-                                <li>Multi-Agent Systems & Distributed Control</li>
-                                <li>Stochastic Control & Estimation</li>
-                                <li>Optimization Algorithms and Techniques</li>
-                                <li>System Identification & Parameter Estimation</li>
-                                <li>Adaptive & Learning Control Systems</li>
-                                <li>Knowledge Base Management Systems (KBMS)</li>
-                            </ul>
+                        <!-- Slide 3 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/system_controlandoptimization.jpg" alt="Control & Optimization"
+                                class="rounded-lg" style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Control & Optimizations</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Control Theory & Techniques</li>
+                                    <li>Multi-Agent Systems & Distributed Control</li>
+                                    <li>Stochastic Control & Estimation</li>
+                                    <li>Optimization Algorithms and Techniques</li>
+                                    <li>System Identification & Parameter Estimation</li>
+                                    <li>Adaptive & Learning Control Systems</li>
+                                    <li>Knowledge Base Management Systems (KBMS)</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                    <!-- Slide 4 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/expert_system.jpg" alt="Expert System" class="rounded-lg"
-                            style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Expert System</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Knowledge Representation & Acquisition</li>
-                                <li>Rule-Based Systems</li>
-                                <li>Ontologies & Semantic Networks</li>
-                                <li>Inference Engines & Reasoning</li>
-                                <li>Decision Support Systems</li>
-                                <li>Bias & Fairness in Expert Systems</li>
-                                <li>Knowledge Base Management Systems (KBMS)</li>
-                            </ul>
+                        <!-- Slide 4 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/expert_system.jpg" alt="Expert System" class="rounded-lg"
+                                style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Expert System</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Knowledge Representation & Acquisition</li>
+                                    <li>Rule-Based Systems</li>
+                                    <li>Ontologies & Semantic Networks</li>
+                                    <li>Inference Engines & Reasoning</li>
+                                    <li>Decision Support Systems</li>
+                                    <li>Bias & Fairness in Expert Systems</li>
+                                    <li>Knowledge Base Management Systems (KBMS)</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                    <!-- Slide 5 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/ICT.jpg" alt="ICT" class="rounded-lg"
-                            style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Information and Communication Technology</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Telecommunication Networks & Systems</li>
-                                <li>Internet of Things (IoT) and Smart Cities</li>
-                                <li>Cloud Computing & Virtualization</li>
-                                <li>Cybersecurity and Privacy</li>
-                                <li>Software Defined Networks</li>
-                                <li>5G/6G</li>
-                            </ul>
+                        <!-- Slide 5 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/ICT.jpg" alt="ICT" class="rounded-lg"
+                                style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Information and Communication Technology</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Telecommunication Networks & Systems</li>
+                                    <li>Internet of Things (IoT) and Smart Cities</li>
+                                    <li>Cloud Computing & Virtualization</li>
+                                    <li>Cybersecurity and Privacy</li>
+                                    <li>Software Defined Networks</li>
+                                    <li>5G/6G</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Item 6 --->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                        <!-- Slide 6 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/image_processing_example.jpg" alt="Image Processing" class="rounded-lg"
+                                style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Image Processing</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Image Enhancement</li>
+                                    <li>Image Restoration</li>
+                                    <li>Image Segmentation</li>
+                                    <li>Feature Extraction and Representation</li>
+                                    <li>Object Detection & Recognition</li>
+                                    <li>Biomedical Image Analysis</li>
+                                    <li>Remote Sensing Image Processing</li>
+                                    <li>Real-Time Image Processing</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                        <!-- Slide 7 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/softcomputing.jpg" alt="Soft Computing" class="rounded-lg"
+                                style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Soft Computing/Computational Intelligence</h3>
+                                <ul
+                                    class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
+                                    <li>Fuzzy Systems</li>
+                                    <li>Evolutionary Algorithms</li>
+                                    <li>Swarm Intelligence</li>
+                                    <li>Rough Sets and Granular Computing</li>
+                                    <li>Metaheuristic Optimization</li>
+                                    <li>Multi-Objective Optimization</li>
+                                    <li>Explainable and Interpretable Soft Computing</li>
+                                    <li>Bio-Inspired Computing</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                        <!-- Slide 8 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/IoT.jpg" alt="Soft Computing" class="rounded-lg"
+                                style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Internet of Things(IoT)</h3>
+                                <ul
+                                    class="list-disc list-inside [column-count:2] [column-gap:1.25rem] text-lg text-gray-800 space-y-2">
+                                    <li>IoT Architecture and Protocols</li>
+                                    <li>IoT Security and Privacy</li>
+                                    <li>Edge and Fog Computing in IoT</li>
+                                    <li>IoT-based Smart Cities</li>
+                                    <li>Industrial IoT (IIoT) Applications</li>
+                                    <li>IoT-enabled Healthcare Systems</li>
+                                    <li>IoT Device Management and Analytics</li>
+                                    <li>IoT Interoperability and Standards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+                        <!-- Slide 8 -->
+                        <div class="flex-none w-full flex justify-start gap-10 p-6">
+                            <img src="img/Topics/9.jpeg" alt="Soft Computing" class="rounded-lg"
+                                style="height: 300px; width: 300px;">
+                            <div>
+                                <h3 class="font-bold text-3xl mb-4">Scope of the Special Session</h3>
+                                <ul
+                                    class="list-disc list-inside [column-count:2] [column-gap:1.25rem] text-lg text-gray-800 space-y-2">
+                                    <li> Biomedical image processing and segmentation.</li>
+                                    <li>Biomedical signal processing and analysis.</li>
+                                    <li>AI-driven diagnostics and healthcare solutions.</li>
+                                    <li>Wearable healthcare monitoring and rehabilitation technologies.</li>
+                                    <li>Machine learning for disease prediction and risk assessment.</li>
+                                    <li>Deep learning applications in medical imaging and bioinformatics.</li>
+                                    <li>Internet of Things (IoT) and smart healthcare systems.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- Item 6 --->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                    <!-- Slide 6 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/image_processing_example.jpg" alt="Image Processing" class="rounded-lg"
-                            style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Image Processing</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Image Enhancement</li>
-                                <li>Image Restoration</li>
-                                <li>Image Segmentation</li>
-                                <li>Feature Extraction and Representation</li>
-                                <li>Object Detection & Recognition</li>
-                                <li>Biomedical Image Analysis</li>
-                                <li>Remote Sensing Image Processing</li>
-                                <li>Real-Time Image Processing</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                <!-- Slider indicators -->
+                <div class="relative flex space-x-3 rtl:space-x-reverse bottom-1 left-[40%]">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                        data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                        data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                        data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                        data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                        data-carousel-slide-to="4"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
+                        data-carousel-slide-to="5"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7"
+                        data-carousel-slide-to="6"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8"
+                        data-carousel-slide-to="7"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9"
+                    data-carousel-slide-to="8"></button>
                 </div>
-                <!-- Item 7 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
 
-                    <!-- Slide 7 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/softcomputing.jpg" alt="Soft Computing" class="rounded-lg"
-                            style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Soft Computing/Computational Intelligence</h3>
-                            <ul class="list-disc list-inside text-lg [column-count:2] [column-gap:1.25rem] text-gray-800 space-y-2">
-                                <li>Fuzzy Systems</li>
-                                <li>Evolutionary Algorithms</li>
-                                <li>Swarm Intelligence</li>
-                                <li>Rough Sets and Granular Computing</li>
-                                <li>Metaheuristic Optimization</li>
-                                <li>Multi-Objective Optimization</li>
-                                <li>Explainable and Interpretable Soft Computing</li>
-                                <li>Bio-Inspired Computing</li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Slider controls -->
+                <button type="button"
+                    class="absolute top-40 start-0 z-30 flex items-center -translate-x-9 justify-center cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-gray-800  rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 1 1 5l4 4" />
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button"
+                    class="absolute top-40 end-0 z-30 flex items-center translate-x-9 justify-center cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
 
-                </div>
-                <!-- Item 8 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-
-                    <!-- Slide 8 -->
-                    <div class="flex-none w-full flex justify-start gap-10 p-6">
-                        <img src="img/Topics/IoT.jpg" alt="Soft Computing" class="rounded-lg"
-                            style="height: 300px; width: 300px;">
-                        <div>
-                            <h3 class="font-bold text-3xl mb-4">Internet of Things(IoT)</h3>
-                            <ul class="list-disc list-inside [column-count:2] [column-gap:1.25rem] text-lg text-gray-800 space-y-2">
-                                <li>IoT Architecture and Protocols</li>
-                                <li>IoT Security and Privacy</li>
-                                <li>Edge and Fog Computing in IoT</li>
-                                <li>IoT-based Smart Cities</li>
-                                <li>Industrial IoT (IIoT) Applications</li>
-                                <li>IoT-enabled Healthcare Systems</li>
-                                <li>IoT Device Management and Analytics</li>
-                                <li>IoT Interoperability and Standards</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Slider indicators -->
-            <div class="relative flex space-x-3 rtl:space-x-reverse bottom-1 left-[40%]">
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                    data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                    data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                    data-carousel-slide-to="2"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                    data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                    data-carousel-slide-to="4"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
-                    data-carousel-slide-to="5"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7"
-                    data-carousel-slide-to="6"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8"
-                    data-carousel-slide-to="7"></button>
-            </div>
-            
-            <!-- Slider controls -->
-            <button type="button"
-                class="absolute top-40 start-0 z-30 flex items-center -translate-x-9 justify-center cursor-pointer group focus:outline-none"
-                data-carousel-prev>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-gray-800  rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button"
-                class="absolute top-40 end-0 z-30 flex items-center translate-x-9 justify-center cursor-pointer group focus:outline-none"
-                data-carousel-next>
-                <span
-                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
-            
             </div>
 
         </div>
@@ -1042,8 +1098,8 @@
                 </div>
 
                 <div class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
-                    <img src="img/Keynote Speakers/Dr. Santosh Kumar Vipparthi.jpeg" class="w-full h-[350px] object-cover"
-                        alt="Dr. Santosh Kumar Vipparthi">
+                    <img src="img/Keynote Speakers/Dr. Santosh Kumar Vipparthi.jpeg"
+                        class="w-full h-[350px] object-cover" alt="Dr. Santosh Kumar Vipparthi">
                     <div class="p-4">
                         <p class="font-bold text-xl mb-2 pt-4">Dr. Santosh Kumar Vipparthi</p>
                         <p class="mb-4 text-gray-700">Associate Professor</p>
@@ -1311,7 +1367,7 @@
                             </div>
                         </div>
 
-                        
+
 
                         <div
                             class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
@@ -1669,7 +1725,7 @@
                             </div>
                         </div>
 
-<!--                         <div
+                        <!--                         <div
                             class="text-center bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden w-[275px]">
                             <img src="img/Committee_Members_Photos/Logistic_Committee/SidharthPradhan.jpg"
                                 class="w-full h-[300px] object-cover" alt="Mr. Sidharth Pradhan">

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Sessions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2,
+        h3 {
+            color: #0056b3;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+
+        .session {
+            border-top: 2px solid #0056b3;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .top-label {
+            color: red;
+            font-weight: bold;
+        }
+
+        .speakers-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            /* Ensures responsiveness */
+            gap: 20px;
+        }
+
+        .speaker-card {
+            text-align: center;
+            background: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 250px;
+        }
+
+        .speaker-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .speaker-card p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .linkedin-icon {
+            color: gray;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .linkedin-icon:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Special Session(s)</h2><br>
+        <p class="highlight">Send the proposals for the Special Sessions to <a
+                href="rcsc2025@gmail.com">rcsc2025@gmail.com</a> with the following details:</p><br>
+        <ul>
+            <li>Title of the special session:</li>
+            <li>Names of proposers:</li>
+            <li>Affiliations:</li>
+            <li>Email addresses:</li>
+            <li>Description of the special session:
+
+            </li>
+        </ul>
+        <br>
+        <marquee class="py-4 bg-gray-400 text-xl text-white">
+            Last Date of Proposal: 5th March 2025
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </marquee>
+        <br>
+        <br>
+        <h3>Selected Special Sessions</h3>
+        <p><a href="#session1">Emerging Tools and Techniques in Healthcare</a></p><br>
+
+        <div class="session" id="session1">
+            <h3>Special Session #1 </h3><br>
+            <p><strong>Title of the special session:</strong><br>
+                Emerging Tools and Techniques in Healthcare</p>
+            <br>
+            <h3>Names of Proposers</h3><br>
+            <div class="speakers-container">
+                <!-- Speaker 1 -->
+                <div class="speaker-card">
+                    <img src="img/a.jpeg" alt="Prof. Xiao-Zhi Gao">
+                    <p><strong>Prof. Varshini Karthik</strong></p>
+                    <p>SRM University of Science and Technology, Chennai</p>
+                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="speaker-card">
+                    <img src="img/b.jpeg" alt="Prof. Shubhendu Bhasin">
+                    <p><strong>Prof. Ashok Kumar D</strong></p>
+                    <p>SRM University of Science and Technology, Chennai</p>
+                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="speaker-card">
+                    <img src="img/c.jpeg" alt="Prof. Nishchal K. Verma">
+                    <p><strong>Prof. Rohit Gupta</strong></p>
+                    <p>SRM University of Science and Technology, Chennai</p>
+                    <a href="#" class="linkedin-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <br>
+            <p><strong>Email addresses:</strong><br>
+                <a href="mailto:rohitg@srmist.edu.in">rohitg@srmist.edu.in</a>,
+                <a href="mailto:varshink@srmist.edu.in">varshink@srmist.edu.in</a>,
+                <a href="mailto:ashokd@srmist.edu.in">ashokd@srmist.edu.in</a>
+            </p>
+            <br>
+            <p><strong>Description of the special session:</strong><br>
+                The integration of emerging tools and techniques in healthcare is
+                revolutionizing medical diagnostics, patient monitoring, and treatment planning. This special
+                session aims to provide a platform for researchers, academicians, and industry professionals to
+                present their latest findings in biomedical image processing, biomedical signal processing,
+                wearable healthcare technologies, and the application of AI, machine learning, and deep
+                learning in healthcare. Recent advancements in artificial intelligence and deep learning have
+                significantly enhanced healthcare applications, enabling more accurate diagnostics, predictive
+                analytics, and personalized treatments. The proposed session will highlight novel
+                methodologies, algorithms, and real-world applications that contribute to improving patient
+                outcomes and healthcare efficiency
+            </p>
+            <br>
+
+            <p><strong>Scope of the Special Session</strong><br>
+                • Biomedical image processing and segmentation.<br>
+                • Biomedical signal processing and analysis.<br>
+                • AI-driven diagnostics and healthcare solutions.<br>
+                • Wearable healthcare monitoring and rehabilitation technologies.<br>
+                • Machine learning for disease prediction and risk assessment.<br>
+                • Deep learning applications in medical imaging and bioinformatics.<br>
+                • Internet of Things (IoT) and smart healthcare systems.<br>
+                
+            </p>
+            <br>
+        </div>
+    </div>
+</body>
+
+</html>
